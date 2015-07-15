@@ -23,7 +23,8 @@
         "willdurand/js-translation-bundle": "^2.2"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "phpunit/phpunit": "*"
     },
     "scripts": {
         "post-root-package-install": [
