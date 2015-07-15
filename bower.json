@@ -1,0 +1,41 @@
+{
+  "name": "Vliegtickets",
+  "version": "0.0.1",
+  "description": "Vliegtickets.nl mobile app",
+  "authors": [
+    {
+      "name": "Andrii Maglovanyi",
+      "email": "andrii.maglovanyi@gmail.com"
+    }
+  ],
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vliegtickets/vliegtickets.git"
+  },
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-resource": "~1.4.2",
+    "angular-ui-router": "~0.2.15",
+    "jquery": "2.x.x",
+    "fastclick": "1.x.x",
+    "font-awesome": "4.3.x",
+    "google-fastbutton": "1.0.x",
+    "bootstrap-sass": "3.3.x",
+    "bootstrap-select": "x",
+    "awesome-bootstrap-checkbox": "x",
+    "nouislider": "7.x",
+    "moment": "~2.9.0",
+    "open-sans-fontface": "*",
+    "angular-symfony-translation": "~1.0.0"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular": "1.4.2"
+  },
+  "private": true
+}

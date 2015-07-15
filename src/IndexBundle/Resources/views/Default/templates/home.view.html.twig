@@ -1,0 +1,434 @@
+<!-- Global container -->
+<div class="global_container" id="global_container">
+    <!-- Left menu -->
+    <div class="menu left">
+        <div class="menu_wrapper">
+            <ul>
+                <li>
+                    <a href="../pages/bookingLoginPage.html">
+                        <span class="icon icon-user"> </span>
+                        <span class="title">{% trans %}Login{% endtrans %}</span>
+                    </a>
+                </li>
+            </ul>                
+
+            <ul>
+                <li class="active">
+                    <a href="../pages/searchPage.html">
+                        <span class="icon icon-plane_depart_big"> </span>
+                        <span class="title">{% trans %}Search a flight{% endtrans %}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/checkinOnlinePage.html">
+                        <span class="icon icon-checkin_online"> </span>
+                        <span class="title">{% trans %}Online check-in{% endtrans %}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://m.booking.com/?aid=349310&label=Vliegt-nl-navtab" target="blank">
+                        <span class="icon icon-hotel"> </span>
+                        <span class="title">{% trans %}Book a hotel{% endtrans %}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://autohuur.vliegtickets.nl/?preflang=nl&adplat=menu&adcamp=homepage" target="blank">
+                        <span class="icon icon-car"> </span>
+                        <span class="title">{% trans %}Rent a car{% endtrans %}</span>
+                    </a>
+                </li>
+                <li class="phone">
+                    <a href="tel:09009556">
+                        <span class="icon icon-phone"> </span>
+                        <span class="title"><strong>0900 - 9556</strong> <span class="price-per-minute">(€ 0,45 p/m)</span></span>
+                        <br />
+                        <span class="subtitle"> <strong>9:00 - 17:00</strong></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-logout"> </span>
+                        <span class="title">{% trans %}Logout{% endtrans %}</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="footer">
+                <li>
+                    <a href="http://www.vliegtickets.nl">
+                        <span class="icon icon-desktop"> </span>
+                        <span class="title">{% trans %}View desktop version{% endtrans %}</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="clear: both"></div>
+            <div class="menu_divider"></div>
+        </div> 
+    </div> <!-- /Left menu -->
+    <!-- <div class="menu right"> OPTIONAL RIGHT MENU </div>-->
+
+    <!-- CONTENT_CONTAINER PUSHER -->
+    <div class="content_container_pusher">
+
+        <!-- NAVIGATION BAR -->      
+        <div class="navigation_bar">      
+            <div class="navigation_bar_overlay" id="navigation_bar_overlay"></div>
+            <table>
+                <tr>
+                <div class="navigation_bar_wrapper">
+
+                    <!-- LEFT ELEMENT -->
+                    <div class="left">
+                        <div class="nav_btn menu_left"></div>
+                    </div>
+
+                    <!-- MIDDLE ELEMENT -->
+                    <div class="middle nopadding">       
+                        <div class="logo_wrapper">
+                            <h1 class="logo logo_vliegtickets">
+                                Vliegtickets.nl
+                                <span></span>
+                            </h1>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT ELEMENT -->
+                    <div class="right">
+                        <div class="nav_btn menu_right"></div>
+                    </div>
+
+                </div>     
+                </tr>
+            </table>                
+
+        </div><!-- /NAVIGATION BAR -->
+
+        <!-- PAGE -->
+        <div class="content_container searchPage">
+            <div class="vt-margin">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+                            <span class="input-group-text">Van:</span></div>
+                        <input type="text" class="form-control" id="flyFrom" placeholder="Kies uw vertrek luchthaven…" onfocus="searchModule.showSearchOverlay('from');" value="Amsterdam (AMS), Nederland">
+                        <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+                            <span class="input-group-text">Naar:</span></div>
+                            <input type="text" class="form-control" id="flyTo" placeholder="Kies uw bestemming…" onfocus="searchModule.showSearchOverlay('to');">
+                        <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></span></div>
+                    </div>
+                </div>
+                <div class="checkbox vt-margin-groupbottom">
+                    <input id="checkbox1" type="checkbox">
+                    <label for="checkbox1">
+                        {% trans %}Including alternative airports{% endtrans %}
+                    </label>
+                </div>
+                <div class="btn-group btn-group-justified vt-margin-groupbottom" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                        <input type="radio" name="flightType" id="typeRoundTrip" autocomplete="off" checked>Retourvlucht
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="flightType" id="typeSingleFlight" autocomplete="off">Enkele vlucht
+                    </label>
+                </div>
+                <div class="form-group">
+                    <span class="form-label" for="date">Heen & terug</span>
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                        <div class="btn-group" role="group">
+                            <a id="dp-button" class="btn btn-default btn-icon-left" onclick="$j('#datepicker_overlay').show();$j('#global_container').hide();datepicker.showDatePicker();"><span class="icon icon-color-cerulean icon-date">&nbsp;</span><span id="startDate"></span><span id="endDate"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <span class="form-label">Volwassenen</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="form-label">Kind <span class="subtext">(2-11jr)</span></span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="form-label">Baby <span class="subtext">(0-1jr)</span></span>
+                    </div>
+                </div>
+                <div class="row vt-margin-groupbottom">
+                    <div class="col-xs-4">
+                        <div class="input-group">
+                            <div class="input-group-addon nopadding"><span class="icon icon-size-medium icon-color-cerulean icon-adult"></span></div>
+                            <select class="form-control" id="travelerAdult" >
+                                <option value="0">0</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="2">3</option>
+                                <option value="2">4</option>
+                                <option value="2">5</option>
+                                <option value="2">6</option>
+                                <option value="2">7</option>
+                                <option value="2">8</option>
+                                <option value="2">9</option>
+                                <option value="2">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="input-group">
+                            <div class="input-group-addon nopadding"><span class="icon icon-size-medium icon-color-cerulean icon-child"></span></div>
+                            <select class="form-control" id="travelerChild" >
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="2">3</option>
+                                <option value="2">4</option>
+                                <option value="2">5</option>
+                                <option value="2">6</option>
+                                <option value="2">7</option>
+                                <option value="2">8</option>
+                                <option value="2">9</option>
+                                <option value="2">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="input-group">
+                            <div class="input-group-addon nopadding"><span class="icon icon-size-medium icon-color-cerulean icon-baby"></span></div>
+                            <select class="form-control" id="travelerBaby" >
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="2">3</option>
+                                <option value="2">4</option>
+                                <option value="2">5</option>
+                                <option value="2">6</option>
+                                <option value="2">7</option>
+                                <option value="2">8</option>
+                                <option value="2">9</option>
+                                <option value="2">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <a class="collapsed" data-toggle="collapse" href="#extendedSearch" aria-expanded="false" aria-controls="extendedSearch">
+                            <span class="collapse-show">Toon</span><span class="collapse-hide">Verberg</span> uitgebreid zoeken
+                            <span class="icon icon-collapse pull-right">
+                                <span class="path1 icon-size-medium icon-color-hawkes_blue"></span><span class="path2 icon-size-medium icon-color-cerulean"></span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="collapse" id="extendedSearch">
+                        <div class="form-group btn-group btn-group-justified" data-toggle="buttons">
+                            <label class="btn btn-default active">
+                                <input type="radio" name="options" id="typeRoundTrip" autocomplete="off" checked>Economy
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="options" id="typeSingleFlight" autocomplete="off">Business & first
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label" for="airline">Luchtvaartmaatschappij</span>
+                            <select class="form-control" id="airline">
+                                <option selected>Selecteer een luchtvaartmaatschappij</option>
+                                <option>KLM</option>
+                                <option>Lufthansa</option>
+                                <option>SAS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <a onclick="$j('.vt-loading-overlay-dark').show();loader.transitionToNextPage();event.preventDefault();" href="../pages/searchResultsPage.html" class="btn btn-block btn-rounded btn-limeade btn-lg vt-margin-grouptop">Vind de beste vliegtickets</a>
+            </div>      
+            <ul class="fullwidth-list">
+                <li>
+                    <a href="../pages/checkinOnlinePage.html">
+                        <span class="icon icon-size-medium icon-color-cerulean icon-checkin_online"></span>
+                        Online inchecken
+                        <span class="icon icon-size-medium icon-color-suva_gray icon-list_arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://m.booking.com/?aid=349310&label=Vliegt-nl-navtab" target="blank"><span class="icon icon-size-medium icon-color-cerulean icon-hotel"></span>
+                        Boek hotel<span class="icon icon-size-medium icon-color-suva_gray icon-list_arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://autohuur.vliegtickets.nl/?preflang=nl&adplat=menu&adcamp=homepage" target="blank"><span class="icon icon-size-medium icon-color-cerulean icon-car"></span>
+                        Boek huurauto<span class="icon icon-size-medium icon-color-suva_gray icon-list_arrow"></span>
+                    </a>
+                </li>
+                <li class="phone">
+                    <a href="tel:09009556"><span class="icon icon-size-medium icon-color-cerulean icon-phone"></span>
+                        0900 - 9556 <span class="subtitle">(€ 0,45 p/m)</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="view-desktop">
+                <a href="http://www.vliegtickets.nl">
+                    <span class="icon icon-size-medium icon-color-cerulean icon-desktop_invert"></span>
+                    Bekijk desktopversie
+                </a>
+            </div>
+        </div><!-- /PAGE -->
+    </div><!-- /CONTAINER PUSHER -->
+</div><!-- /GLOBAL CONTAINER -->
+    <div id="search_overlay" class="overlay">
+        <div class="navigation_bar">
+            <span class="icon icon-size-large icon-color-white icon-back close-btn" onclick="searchModule.hideSearchOverlay();"></span>
+            <div class="input-group" style="padding-left: 10px;">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span id="searchLabel" class="input-group-text">Van:</span> </div>
+                <input type="text" class="form-control hasclear" id="searchInput" placeholder="Kies uw vertrek luchthaven…" onkeyup="searchModule.onSearch();">
+                <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;
+                        $j('#suggestions').hide();"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></div>
+            </div> 
+        </div>
+        <div class="results">
+            <table id="suggestions" class="table table-hover" style="margin-bottom: 0;display: none;">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Gevonden luchthavens
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Amsterdam (AMS), Nederland
+                        </td>
+                    </tr>                   <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Ahmedabad (AMD), India
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Akdal Lumpu (AKD), Someplace
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover" style="margin-bottom: 0">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Meest gekozen luchthavens
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Amsterdam (AMS), Nederland
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Eindhoven (EIN), Nederland
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Rotterdam (RTM), Nederland
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Düsseldorf (DUS), Duitsland
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Recente zoekopdrachten
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Barcelona (BCN), Spanje
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td onclick="searchModule.selectResult($j(this));">
+                            Eindhoven (EIN), Nederland
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- /SEARCH OVERLAY -->
+    <div id="loading_overlay" class="vt-loading-overlay">
+        <div class="spinner">
+            <img class="spinner-icon" src="../assets/img/loader.svg" alt="">
+        </div>
+    </div>
+    <div id="loading_overlay" class="vt-loading-overlay">
+        <div class="spinner">
+            <img class="spinner-icon" src="../assets/img/loader.svg" alt="">
+        </div>
+    </div>
+    <div class="vt-loading-overlay vt-loading-overlay-dark"></div>
+    <div class="next-page-overlay searching" id="loader-nextpage">
+        <div class="loader">
+            <div class="progress vt-margin">
+                <div class="progress-bar vt-progress-bar-international-orange" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                </div>
+            </div>
+            <div class="ad-image text-center">
+                <img id="ad-image" class="airmiles-image" src="../assets/img/loader-airmiles.png">
+            </div>
+            <div class="vt-margin-left vt-margin-right vt-margin-top text-center">
+                Wij zoeken de <span class="bold">beste tarieven</span> voor u,<br>een ogenblik geduld!
+            </div>
+            <ul class="vt-list vt-list-border-bottom">
+                <li>
+                    <div class="row">
+                        <span class="col-xs-2 icon icon-color-cerulean icon-plane_depart_big"></span>
+                        <span class="col-xs-8">
+                            Amsterdam <span class="bold">(AMS)</span><br>
+                            Paramaribo <span class="bold">(PBM)</span><br>
+                            <span class="bold">7.11.2014</span><br>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <span class="col-xs-2 icon icon-color-cerulean icon-plane_return_big"></span>
+                        <span class="col-xs-8">
+                            Paramaribo <span class="bold">(PBM)</span><br>
+                            Amsterdam <span class="bold">(AMS)</span><br>
+                            <span class="bold">15.11.2014</span><br>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <div class="text-center safe-booking vt-margin-bot">
+                Veilig online boeken met:<br>
+                <div class="bg-loading-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div id="datepicker_overlay" class="overlay">
+        <div class="navigation_bar text-center">
+            <div class="row">
+                <div class="col-xs-2">
+                    <span class="icon icon-size-medium icon-color-white icon-close_1 close-btn" onclick="$j('#datepicker_overlay').hide();$j('#global_container').show();datepicker.hideDatePicker();datepicker.reset();"></span>
+                </div>
+                <div class="col-xs-8 text-center">
+                    Kies je vliegdata
+                </div> 
+            </div>
+        </div>            
+        <div id="datePicker"></div>
+    </div><!-- /DatePicker -->

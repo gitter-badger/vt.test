@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////////////////////////////////
+// Internal IMPORTS
+////////////////////////////////////////////////////////////////////////////////
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_datePicker.scss";
+@import "_searchOverlay.scss";
+
+////////////////////////////////////////////////////////////////////////////////
+// BOOTSTRAP OVERRIDES - SEARCH PAGE SPECIFIC
+////////////////////////////////////////////////////////////////////////////////
+.content_container.searchPage {
+    .form-group .input-group .input-group-addon {
+        text-align: 														left;
+        min-width: 															78px;													
+    }
+}
+
+.view-desktop {
+    display:                    block;
+    width:                      100%;
+    float:                      left;
+    text-align:                 center;
+    margin-top:                 -10px;
+
+    a {
+        display:                block;
+        padding:                10px;
+        color:                  $color_cerulean;
+        background-color:       $color_hawkes_blue;
+        span {
+            display:            inline-block;
+            vertical-align:     middle;
+        }
+    }
+}
+#includeAlt:before {
+    content: "Inclusief alternatieve luchthavens";
+}
+.content_container.searchPage {
+    margin-bottom: 0;
+}
+#endDate {
+    &:before{
+        content: '\2192';
+        margin: 0px 5px;
+    }
+}

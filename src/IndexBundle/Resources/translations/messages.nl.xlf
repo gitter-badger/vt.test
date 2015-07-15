@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="nl" target-language="nl" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="96a584bb438f13400f592714faeaae6f" resname="Including alternative airports">
+        <source>Including alternative airports</source>
+        <target>Inclusief alternatieve luchthavens</target>
+      </trans-unit>
+      <trans-unit id="99dea78007133396a7b8ed70578ac6ae" resname="Login">
+        <source>Login</source>
+        <target>Inloggen</target>
+      </trans-unit>
+      <trans-unit id="f6868aa7217f741798f0c1ff3bc26c2e" resname="Search a flight">
+        <source>Search a flight</source>
+        <target>Vlucht zoeken</target>
+      </trans-unit>
+      <trans-unit id="d847f0313d7ccc16a5bac2f2600e9096" resname="Online check-in">
+        <source>Online check-in</source>
+        <target>Online inchecken</target>
+      </trans-unit>
+      <trans-unit id="c6b6e029a9d20702ca28d5f352e38796" resname="Book a hotel">
+        <source>Book a hotel</source>
+        <target>Boek hotel</target>
+      </trans-unit>
+      <trans-unit id="f38a1c701135faa51071aa483c1cd5b0" resname="Rent a car">
+        <source>Rent a car</source>
+        <target>Boek huurauto</target>
+      </trans-unit>
+      <trans-unit id="0323de4f66a1700e2173e9bcdce02715" resname="Logout">
+        <source>Logout</source>
+        <target>Uitloggen</target>
+      </trans-unit>
+      <trans-unit id="1ca3581b28ba4eb410d127bc3743e953" resname="View desktop version">
+        <source>View desktop version</source>
+        <target>Bekijk desktopversie</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

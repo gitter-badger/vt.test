@@ -1,0 +1,1388 @@
+////////////////////////////////////////////////////////////////////////////////
+// External IMPORTS
+////////////////////////////////////////////////////////////////////////////////
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$OpenSansPath: "../../bower_components/open-sans-fontface/fonts";
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
+@import "../../bower_components/open-sans-fontface/open-sans.scss";
+
+////////////////////////////////////////////////////////////////////////////////
+// Internal IMPORTS
+////////////////////////////////////////////////////////////////////////////////
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_glyphicons.scss";
+@import "_overlay.scss";
+@import "_slider.scss";
+
+////////////////////////////////////////////////////////////////////////////////
+// GLOBAL STYLING
+////////////////////////////////////////////////////////////////////////////////
+h1 {
+    font-size:               $text-size-large;
+}
+h2 {
+    font-size:              $text-size-medium;
+}
+
+* { 
+    -webkit-tap-highlight-color:                                            rgba(0,0,0,0); 
+}
+
+input, select:not(.with-caret) {
+    -webkit-appearance:                                                     none;
+}
+html,
+body,
+.global_container,
+.st-pusher,
+.content_container {
+    font-family:                                                        	"Open Sans";
+    height:                                                                 100%;
+    margin:                                                                 0px;
+    padding:                                                                0px;
+    -webkit-text-size-adjust:                                               100%; /* Prevent font scaling in landscape while allowing user zoom */
+    background-color:                                                       $color_white;
+}
+input[type="text"] {
+   text-overflow: ellipsis; 
+}
+.content_container {
+    margin-bottom:                                                          $margin-groupbottom;
+}
+a {
+    text-decoration:                                                        none !important;
+    color:                                                                  $color_cerulean;
+    &:hover,&:focus,&:active{
+        color:                                                              $color_ceruleanDark;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+.global_container {
+    position:                                                               relative;
+    overflow-x:																hidden;
+    height:                                                                 auto;     
+}
+
+.content_container_pusher::after {
+    position:                                                               absolute;
+    top:                                                                    0;
+    right:                                                                  0;
+    width:                                                                  0;
+    height:                                                                 0;
+    background:                                                             $color_black;
+    content:                                                                '';
+    opacity:                                                                0;
+    visibility:                                                             hidden;
+}
+
+.content_container_pusher{
+    position:                                                               relative;
+    left:                                                                   0;
+    z-index:                                                                1;
+    height:                                                                 100%;
+    -moz-transition:                                                        -moz-transform 0.4s;
+    -webkit-transition:                                                     -webkit-transform 0.4s;
+    -ms-transition:                                                         -ms-transform 0.4s;
+    transition:                                                             transform 0.4s;
+    background-color:                                                       $color_white;    
+}
+
+.content_container {
+    overflow:																visible;
+    width:                                                                  100%;
+    height:                                                                 auto;
+    display:                                                                block;
+    float:                                                                  left;
+}
+
+// Styling when menu is open
+
+.menu_open {
+    overflow:                                                               hidden;
+}
+
+.menu_open .content_container {
+    overflow:                                                               hidden; 
+    height:                                                                 100%;
+}
+
+.menu_open .navigation_bar {
+    //position:                                                             absolute;
+}
+
+.menu_open .content_container_pusher::after {
+    width:                                                                  100%;
+    height:                                                                 100%;
+    opacity:                                                                0.01;
+    visibility:                                                             visible;
+}
+
+// Effect
+
+.menu_left.menu_open .content_container_pusher{
+    -webkit-transform:                                                      translate3d(250px, 0, 0);
+    -moz-transform:                                                         translate3d(250px, 0, 0);
+    -ms-transform:                                                          translate(250px, 0);
+    transform:                                                              translate3d(250px, 0, 0);
+}
+
+.menu_right.menu_open .content_container_pusher{
+    -webkit-transform:                                                      translate3d(-250px, 0, 0);
+    -moz-transform:                                                         translate3d(-250px, 0, 0);
+    -ms-transform:                                                          translate(-250px, 0);
+    transform:                                                              translate3d(-250px, 0, 0);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SIDE MENU
+////////////////////////////////////////////////////////////////////////////////
+
+.menu {
+    position:                                                               absolute;
+    top:                                                                    0;
+
+    z-index:                                                                1;
+    visibility:                                                             hidden;
+    width:                                                                  250px;
+    height:                                                                 auto;
+    overflow:																hidden;
+
+    background:                                                             $color_cerulean;
+
+    -webkit-transition:                                                     all 0.4s;
+    -moz-transition:                                                        all 0.4s;
+    -ms-transition:                                                         all 0.4s;
+    transition:                                                             all 0.4s;
+
+    z-index:                                                                1;
+
+    background-image:                                                   	url("../assets/img/bg_menu.jpg");
+    background-size:														600px 500px;
+    background-repeat:														no-repeat;
+
+
+    // Content style
+
+    ul {
+        margin:                                                                 15px 0px;
+        padding:                                                                0;
+        list-style:                                                             none;
+        width: 																	100%;
+        display: 																block;
+        float: 																	left;
+    }
+
+    ul li {
+        display:																block;
+        float:																	left;
+        width:																	100%;
+    }
+
+    ul li a {
+        display:                                                                block;
+        float:                                                                  left;
+        width:                                                                  100%;
+        text-decoration: 														none;
+
+        &:active {
+
+        }
+    }
+
+    ul li a span.icon {
+        color:                                                                  $color_white;
+        font-size:																35px;
+        line-height: 															60px;
+        margin:																	0 0 0 20px;
+        vertical-align: 														middle;
+    }
+
+    ul li a span.title {
+        color:                                                                  $color_white;
+        font-weight:                                                            400;
+        line-height: 															60px;
+        font-size:                                                              15px;
+        vertical-align: 														middle;
+    }
+
+    // Side menu link - phone with subtitle
+
+    ul li.phone {
+        margin-bottom:															25px;		
+    }
+
+    ul li.phone a span.title {
+        margin-top:																12px;
+        .price-per-minute {
+            font-size:                                                          75%;
+        }
+    }
+
+    ul li.phone span.subtitle {
+        color:																	$color_white;
+        margin-left:															60px;
+        font-size: 																12px;
+        opacity:																0.9;
+        margin-top:																-28px;
+    }
+
+    ul li.phone a span.title, ul li.phone a span.subtitle {
+        line-height: 															20px;
+        display:																inline-block;
+        vertical-align: 														top;
+    }
+
+    // Side menu footer link
+
+    ul.footer {
+        margin:																	0px;				
+    }
+
+    ul.footer li a {
+        text-align: 															center;		
+        margin-left:															-8px;
+    }
+
+    ul.footer li a span.title {
+        font-size:                                                              12px;				
+    }
+
+    ul.footer li a span.icon {
+        margin:																	0;
+    }
+
+    // Side menu active link
+
+    ul li.active a {
+
+        span.title {
+            font-weight:                                                        700;
+        }
+
+
+        // IE9 SVG, needs conditional override of 'filter' to 'none'
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+        background: -moz-linear-gradient(left,  rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%); // FF3.6+
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(255,255,255,0))); // Chrome,Safari4+
+        background: -webkit-linear-gradient(left,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); // Chrome10+,Safari5.1+
+        background: -o-linear-gradient(left,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); // Opera 11.10+
+        background: -ms-linear-gradient(left,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); // IE10+
+        background: linear-gradient(to right,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); // W3C
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#00ffffff',GradientType=1 ); // IE6-8
+    }   
+}
+
+.menu::after {
+    position:                                                               absolute;
+    top:                                                                    0;
+    right:                                                                  0;
+    width:                                                                  100%;
+    height:                                                                 100%;
+    background:                                                             rgba(0,0,0,0.3);
+    content:                                                                '';
+    opacity:                                                                1;
+    -webkit-transition:                                                     opacity 0.4s;
+    -ms-transition:                                                         opacity 0.4s;
+    -moz-transition:                                                        opacity 0.4s;
+    transition:                                                             opacity 0.4s;
+}
+
+// Menu, side specific 
+
+.menu.left {
+    left:                                                                   0;    
+    -webkit-transform:                                                      translate3d(-50%, 0, 0);
+    -moz-transform:                                                         translate3d(-50%, 0, 0);
+    -ms-transform:                                                          translate(-50%, 0);
+    transform:                                                              translate3d(-50%, 0, 0);
+}
+
+.menu.right {
+    right:                                                                  0;    
+    -webkit-transform:                                                      translate3d(50%, 0, 0);
+    -moz-transform:                                                         translate3d(50%, 0, 0);
+    -ms-transform:                                                          translate(50%, 0);
+    transform:                                                              translate3d(50%, 0, 0);
+}
+
+.menu_open.menu_left .menu.right, .menu_open.menu_right .menu.left {
+    display:                                                                none; //hides menu on opposite direciton
+}
+
+// Styling when menu is open
+
+.menu_open .menu::after {
+    width:                                                                  0;
+    height:                                                                 0;
+    opacity:                                                                0;
+    -webkit-transition:                                                     opacity 0.4s, width 0.1s 0.4s, height 0.1s 0.4s;
+    -ms-transition:                                                         opacity 0.4s, width 0.1s 0.4s, height 0.1s 0.4s;
+    -moz-transition:                                                        opacity 0.4s, width 0.1s 0.4s, height 0.1s 0.4s;
+    transition:                                                             opacity 0.4s, width 0.1s 0.4s, height 0.1s 0.4s;
+}
+
+.menu_open .menu {
+    visibility:                                                             visible;
+    -webkit-transition:                                                     -webkit-transform 0.4s;
+    -moz-transition:                                                        -moz-transform 0.4s;
+    -ms-transition:                                                         -ms-transform 0.4s;
+    transition:                                                             transform 0.4s;
+    -webkit-transform:                                                      translate3d(0, 0, 0);
+    -moz-transform:                                                         translate3d(0, 0, 0);
+    -ms-transform:                                                          translate(0, 0);    
+    transform:                                                              translate3d(0, 0, 0);
+}
+
+.menu_open.menu::after {
+    display:                                                                none;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// NAVIGATION BAR 
+////////////////////////////////////////////////////////////////////////////////
+
+.navigation_bar {
+    display:                                                                block;
+    float:																	left;
+    width:                                                                  100%;
+    height:                                                                 45px;
+    margin:                                                                 0px;
+    padding:                                                                0px;
+    z-index:                                                                3;
+    color:                                                                  $color_white;
+    background-color:                                                       $color_internationalorange;
+
+    -webkit-transition:                                                     -webkit-transform 0.4s;
+    -moz-transition:                                                        -moz-transform 0.4s;
+    -ms-transition:                                                         -ms-transform 0.4s;
+    transition:                                                             transform 0.4s;
+    -webkit-transform:                                                      translate3d(0, 0, 0);
+    -moz-transform:                                                         translate3d(0, 0, 0);
+    -ms-transform:                                                          translate(0, 0);
+    transform:                                                              translate3d(0, 0, 0);   
+    &.with-title{
+        line-height:                                                        36px;
+        .close-btn {
+            margin-top:                                                     6px;
+        }
+    }
+    .title {
+        display:                                                            block;
+        float:                                                              left;
+        width:                                                              100%;
+        text-align:                                                         center;
+        font-size:                                                          16px;
+        line-height:                                                        38px;
+        text-overflow:                                                      ellipsis;
+        overflow:                                                           hidden;
+        white-space:                                                        nowrap;
+        text-shadow:                                                        0 1px 1px rgba(0,0,0,0.45);
+    }
+
+    .logo {
+        display:                                                            block;
+        float:                                                              left;
+        position:                                                           relative;
+        z-index:                                                            2;
+        padding:                                                            0px;
+        margin:                                                             0px;
+        font-weight:                                                        normal;
+        width:                                                              100%;
+        text-align:                                                         center;
+        line-height:                                                        45px;
+        font-size:                                                          15px;
+        span {
+            top:                                                            0;
+            left:                                                           0;
+            position:                                                       absolute;
+            height:                                                         45px;
+            width:                                                          100%;
+            background-position:                                            center center;
+            background-size:                                                200px 27px;
+            background-repeat:                                              no-repeat;	
+        }
+    }
+
+    .logo_vliegtickets span {		
+        background-image:                                                   url("../assets/img/logo_vliegtickets.svg");
+    }
+
+    .navigation_bar_wrapper {
+        height:                                                             45px;
+        width:                                                              100%;
+
+        .left, .right {
+            display:                                                        block;
+            width:                                                          50px;
+            z-index:                                                        3;
+        }
+        .right {
+            position:                                                       absolute;
+            right:                                                          0px;
+        }
+        .left {
+            position:                                                       absolute;
+            left:                                                           0;
+        }
+
+        .middle {
+            display:                                                        block;
+            position:                                                       absolute;
+            height:                                                         45px;
+            width:                                                          100%;
+            padding-left:                                                   50px;
+            padding-right:                                                  50px;
+            overflow:                                                       hidden;				
+        }
+        .input_wrapper {
+            display:                                                        none;
+        }
+    }
+}
+
+// Navigation bar - Overlay that blocks interaction when menu is open
+
+.navigation_bar_overlay {
+    display:                                                                none;
+    position:                                                             	absolute;
+    top:                                                                    0px;
+    left:                                                                   40px;
+    height:                                                                 45px;
+    background-color:                                                       $color_white;
+    width:                                                                  100%;
+    opacity:                                                                0.01;
+    z-index: 																4;
+}
+
+.navigation_bar_overlay.visible {
+    display:                                                                block;
+}
+
+// Buttons
+
+.nav_btn {
+    display:                                                                block;
+    float:                                                                  left;
+
+    background-color:                                                       $color_internationalorange;
+}
+
+.nav_btn.menu_left {
+    float:                                                                  left;
+    background-image:                                                       url("../assets/img/btn_navbar_menu.svg");
+    background-position:                                                    0 0;
+    background-repeat:                                                      no-repeat;
+    background-size:                                                        90px 45px;
+    width:                                                                  45px;
+    height:                                                                 45px;
+
+    margin-right:                                                           35px;
+
+    &:active {
+        background-position:                                                -45px 0px;
+    }
+}
+.nav_btn.icon.icon-search {
+    float:                                                                  right;
+    width:                                                                  45px;
+    height:                                                                 45px;
+    padding-top:                                                            5px;
+    &:active, &.active {
+        border-top-left-radius:                                             10px;
+        background-color:                                                   $color_white;
+        background-position:                                                -45px 0px;
+        &:before {
+            color:                                                          $color_cerulean;
+        }
+    }
+    &:before {
+        font-size:                                                          35px;
+        color:                                                              $color_white;
+        margin-top:                                                         5px;
+    }
+}
+
+// Margins
+.vt-margin {
+    margin: 					$margin;
+}
+.vt-margin-top {
+    margin-top: 				$margin-vertical;
+}
+.vt-margin-bot {
+    margin-bottom: 				$margin-vertical;
+}
+.vt-margin-top-small {
+    margin-top: 				$margin-vertical-small;
+}
+.vt-margin-bot-small {
+    margin-bottom: 				$margin-vertical-small;
+}
+.vt-margin-topbot {
+    margin: 					$margin-vertical 0;
+}
+.vt-margin-topbot-small {
+    margin: 					$margin-vertical-small 0;
+}
+.vt-margin-left {
+    margin-left: 				$margin-horizontal;
+}
+.vt-margin-left-small {
+    margin-left: 				$margin-horizontal-small;
+}
+.vt-margin-right {
+    margin-right: 				$margin-horizontal;
+}
+.vt-margin-leftright {
+    margin: 					0 $margin-horizontal;
+}
+
+.vt-margin-grouptop {
+    margin-top: 				$margin-grouptop;
+}
+
+.vt-margin-groupbottom {
+    margin-bottom: 				$margin-groupbottom;
+}
+
+.vt-padding-bot {
+    padding-bottom: 				$margin-vertical;
+}
+.vt-padding-topbot-small {
+    padding:                        $margin-vertical-small 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GENERAL RE-USABLE OBJECT STYLING
+////////////////////////////////////////////////////////////////////////////////
+.input-group:not(.has-content){
+    .input-group-addon.clear-btn{
+        padding:1px;
+        .icon {
+            display: none;
+        }
+    }
+}
+ 
+
+.nopadding{
+    padding:                    0;
+}
+.subtext{
+    font-size:                 10px;
+}
+.form-label {
+    display:                    block;
+    margin-bottom:				5px;
+}
+
+.fixed-bottom {
+    position:                   fixed;
+    bottom:                     0;
+}
+.sub-header {
+    width:                      100%;
+    .sub-header-body {
+        border-top:             1px solid rgba(255,255,255,0.3);
+        background-color:       $color_internationalorange;
+    }
+}
+
+.fullwidth-list {
+    float:                      left;
+    list-style:                 none;
+    padding:                    0;
+    display:                    block;
+    margin-top:                 30px;
+    width:                      100%;
+    li {
+        border-bottom:          1px solid $color_mercury;
+        a {
+            padding:            15px $margin-horizontal;
+            display:            block;
+            color:              black;
+            &:active {
+                background-color: $color_alabaster;
+            }
+
+        }
+        &.phone {
+            a {
+                color:          $color_cerulean;
+                .subtitle {
+                    font-size:  12px;
+                    color:      black;
+                }
+            }
+
+        }
+        .icon{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .icon-collapse, .icon-expand, .icon-list_arrow {
+            float:              right;
+        }
+        &:first-child{
+            border-top:         1px solid  $color_mercury;
+        }
+
+    }
+}
+.list-group.fullWidth{
+    .list-group-item{
+        a {
+            display: block;
+        }
+        &:first-child, &:last-child{
+            border-radius: 0;
+        }
+    }
+    .icon-collapse, .icon-expand, .icon-list_arrow {
+        float:              right;
+    }
+
+}
+
+.overlay-body{
+    padding:                    55px 0 0 0;
+}
+.content_container.searchPage .form-group .input-group .input-group-addon.clear-btn{
+    min-width:                  35px;
+}
+.btn-lg {
+    font-size:                  16px;
+    line-height:                26px;
+}
+.btn-rounded{
+    &.btn-md{
+        border-radius: $borderradius-mediumbutton;
+    }
+    &.btn-lg{
+        border-radius: $borderradius-bigbutton;
+    }
+}
+.btn-icon-left{
+    .icon {
+        float: left;
+        margin: -8px;
+        &:before{
+            font-size: 35px;
+        }
+    }
+}
+.btn-nobg{
+    background: none;
+}
+.btn-group.btn-small-select {
+    .btn.selectpicker {
+        padding: 6px 9px;
+    }
+}
+.btn-booking{
+    font-size: 14px;
+    margin: 10px 0px;
+    span:not(.icon){
+        line-height: 35px;
+        vertical-align: middle;
+    }
+
+    .btn-text{
+        display:inline-block;
+        width:auto;
+        span {
+            display: block;
+        }
+        .phone-text{
+            line-height: 16px;
+        }
+        .phone-info{
+            font-size: 10px;
+            line-height: 10px;
+        }
+    }
+    .price{
+        float: right;
+    }
+}
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Currency
+////////////////////////////////////////////////////////////////////////////////
+.curreny-small{
+    font-size:      10px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// BOOTSTRAP OVERRIDES - GENERAL
+////////////////////////////////////////////////////////////////////////////////
+.page-header {
+    margin:0;
+    border-bottom: 1px solid $color_mercury;
+}
+.radio label {
+    display: block;
+    .col-xs-8 {
+        padding-left: 0;
+    }
+    .col-xs-4 {
+        padding-right: 0;
+    }
+}
+.collapsed.open{
+    .icon-collapse .path1:before {
+        content: "\e60c";
+        color: rgba(0, 0, 0, 0.100000001490116);
+    }
+    .icon-collapse .path2:before {
+        content: "\e60d";
+        margin-left: -1em;
+        color: rgb(35, 31, 32);
+    }
+}
+
+.collapse-hide{
+    display: inline;
+}
+.collapse-show {
+    display: none;
+}
+.collapsed{
+    .collapse-hide{
+        display: none;
+    }
+    .collapse-show {
+        display: inline;
+    }
+}
+.btn.text-left {
+    text-align:     left;
+}
+.btn.active, .btn:active {
+    box-shadow: 	none;
+}
+
+// Btn group
+.btn-group .btn {
+    padding: 																9px 9px;
+    box-shadow:																none;
+    border-color:															$color_silver;	
+    background-color:														$color_white;
+    color:																	$color_black;
+}
+
+.btn-group .btn.active {
+    box-shadow:																none;
+    background-color:														$color_cerulean;
+    border-color:															$color_cerulean;
+    color:																	$color_white;
+}
+
+// Tables
+.table {
+    thead{
+        tr{
+            th{
+                background:     											$color_wild_sand;
+                border-color:   											$color_mercury;
+                border-bottom-width: 										1px;
+                color:          											$color_suva_gray;
+                padding:        											8px 12px;
+                font-weight:    											normal;
+            }
+        }
+    }   
+    tbody{
+        tr{
+            td{
+                border-color:   											$color_mercury;
+                padding:        											8px 12px;
+            }
+        }
+    }
+}
+
+// Glyphicons
+
+.glyphicon {
+    color:																	$color_cerulean;
+}
+
+// Input
+.input-group {
+    .form-control {
+        &:not(:first-child) {
+            border-left:													0px;
+        }
+        height:																40px;
+        border:																1px solid $color_silver;
+        box-shadow: 														none;
+        color:																$color_black;
+    }
+
+    .input-group-addon {
+        background-color:													$color_white;				
+    }
+
+    .input-group-addon .input-group-text {
+        color:																$color_black;
+        font-weight: 														700;
+        font-size:															13px;			
+    }
+    input.form-control:not(:last-child){
+        border-right:                                                       0;
+        padding-right:                                                      0;
+    }
+    input.form-control:not(:first-child){
+        padding-left:                                                       0;
+    }
+}
+//checkbox 
+.checkbox {
+    padding-left:           												35px;
+    input[type="checkbox"]{
+        width:              												30px;
+        height:             												30px;
+    }
+    input[type="checkbox"]:checked + label::after {
+        font-family: 														'icomoon';
+        content: 															"\e61a";
+        font-size: 															30px;
+        margin-left:    													-37px;
+        color: 																$color_internationalorange;
+    }
+    label{
+        > * {
+            pointer-events:                                                 none;
+        }
+        line-height:        												30px;
+        &:before{
+            width:          												30px;
+            height:         												30px;
+            margin-left:    												-35px;
+        }
+    }
+    .checkbox-row {
+        padding-left:                                                       5px;
+    }
+    &.checkbox-inverse {
+        padding-left:           0;
+        label {
+            padding-left:       0;
+            padding-right:      35px;
+            &::before{
+                left:           auto;
+                right:          3px;
+            }
+            &::after {
+                left:           auto;
+                right:          8px;
+            }
+        }
+    }
+}
+.checkbox.checkbox-medium {
+    padding-left:           												35px;
+    input[type="checkbox"]{
+        width:              												28px;
+        height:             												28px;
+    }
+    input[type="checkbox"]:checked + label::after {
+        font-family: 														'icomoon';
+        content: 															"\e61a";
+        font-size: 															28px;
+        margin-left:    													-38px;
+        color: 																$color_internationalorange;
+    }
+    label{
+        line-height:        												30px;
+        &:before{
+            width:          												28px;
+            height:         												28px;
+            margin-left:    												-35px;
+        }
+    }
+}
+.radio {
+    label {
+        > * {
+            pointer-events:     none;
+        }
+        &::before, &::after {
+            transition: none;
+            -webkit-transition: none;
+        }
+    }
+    &.radio-medium {
+        padding-left:           35px;
+        label{
+            padding-left:       5px;
+            &::before{
+                width:          28px;
+                height:         28px;
+                margin-left:    -35px;
+            }
+            &::after{
+                width:          18px;
+                height:         18px;
+                left:           5px;
+                top:            5px;
+                margin-left:    -35px;
+            }
+        }
+    }
+    &.radio-inverse {
+        padding-left:           0;
+        label {
+            padding-left:       0;
+            padding-right:      35px;
+            &::before{
+                left:           auto;
+                right:          3px;
+            }
+            &::after {
+                left:           auto;
+                right:          8px;
+            }
+        }
+    }
+    &.radio-seperator{
+        padding-bottom:         20px;
+        border-bottom:          1px solid $color_mercury;
+    }
+}
+//checkbox list {
+.checkbox.list {
+    border-bottom: 1px solid $color_mercury;
+    padding-left: 2px;
+    margin: 0px;
+    height: 50px;
+
+    label, input {
+        float:right;
+        display: block;
+    }
+
+    label::before {
+        margin-top: 8px;
+        margin-left: -28px;
+    }
+
+    label::after {
+        margin-top: 7px;
+        padding-left: 9px;
+    }
+}
+
+
+.checkbox.list.first {
+    margin-top: 15px;
+    display: block;
+}
+
+.checkbox.list.last {
+    border-bottom: 0 solid transparent;	
+    display: block;
+}
+
+.checkbox.list span {
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    word-wrap: none;
+    max-width: 260px;
+    white-space: nowrap;
+}
+
+//list group item
+
+.list-group-item {
+    border-bottom: 1px solid $color_mercury;	
+}
+
+//
+.vt-radio-panel{
+    .btn-group > .btn {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .panel {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+.vt-list {
+    list-style:                 none;
+    padding:                    0;
+    display:                    block;
+    width:                      100%;
+    li {
+        padding:                10px;
+        &:not(:last-child){
+            border-bottom:      1px solid $color_mercury;
+        }
+        &:first-child{
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        &:last-child{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+.vt-list.vt-list-border-bottom {
+    li {
+        &:last-child{
+            border-bottom:      1px solid $color_mercury;
+        }
+    }
+}
+.vt-checkbox{
+    padding-left:           35px;
+    input[type="checkbox"]{
+        width:              30px;
+        height:             30px;
+    }
+    input[type="checkbox"]:checked + label::after {
+        font-family: 'icomoon';
+        content: "\e61a";
+        font-size: 30px;
+        margin-left:    -37px;
+        color: $color_internationalorange;
+    }
+    label{
+        width:100%;
+        line-height:        30px;
+        &:before{
+            width:          30px;
+            height:         30px;
+            margin-left:    -35px;
+        }
+    }
+}
+.vt-loading-overlay{
+    display:                    none;
+    position:                   fixed;
+    top:                        0;
+    right:                      0;
+    bottom:                     0;
+    left:                       0;
+    width:                      100%;
+    height:                     100%;
+    z-index:                    10;
+    .spinner {
+        position:               fixed;
+        top:                    50%;
+        left:                   50%;
+        height:                 150px;
+        width:                  150px;
+        margin:                 -75px 0px 0px -75px;
+        border-radius:          $borderradius-mediumbutton;
+        background-color:       rgba(0, 0, 0, 0.8);
+        .spinner-icon {
+            position:           absolute;
+            top:                50%;
+            left:               50%;
+            width:              100px;
+            height:             100px;
+            margin:             -50px 0 0 -50px;
+            -webkit-animation:  spin 4s linear infinite;
+            -moz-animation:     spin 4s linear infinite;
+            animation:          spin 4s linear infinite;
+        }
+        @-moz-keyframes         spin { 100% { -moz-transform: rotate(360deg); } }
+        @-webkit-keyframes      spin { 100% { -webkit-transform: rotate(360deg); } }
+        @keyframes              spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    }
+    &.vt-loading-overlay-dark{
+        background-color:       rgba(0, 0, 0, 0.7);
+    }
+}
+.next-page-overlay{
+    display:                    none;
+    z-index:                15;
+    position:               fixed;
+    top:                    50px;
+    left:                   50%;
+    width:                  250px;
+    margin:                 0 0 0 -125px;
+    background:             white;
+    border-radius:          $borderradius-mediumbutton;
+    background-image:       url(../assets/img/logo_vliegtickets.svg);
+    background-repeat:      no-repeat;
+    background-position:    25px 10px;
+    background-size:        200px;
+    .progress {
+        margin-top: 45px;
+        height: 5px;
+    }
+}
+
+.vt-logo {		
+    height:                     30px;
+    background-position:        center;
+    background-size:            200px;
+    background-repeat:          no-repeat;
+    background-image:           url("../assets/img/logo_vliegtickets.svg");
+}
+.vt-price-bold{
+    font-size: 16px;
+    font-weight: bold;
+}    
+.vt-price-sub{
+    font-size: 12px;
+}
+.vt-text-extra-small{
+    font-size: $text-size-extra-small;
+    line-height:  $text-size-extra-small+2;
+}
+.vt-text-small{
+    font-size: $text-size-small;
+    line-height:  $text-size-small+2;
+}
+.vt-text-medium{
+    font-size: $text-size-medium;
+    line-height:  $text-size-medium+2;
+}
+.vt-text-large{
+    font-size: $text-size-large;
+    line-height:  $text-size-large+2;
+}
+.vt-text-color-white{
+    color: $color_white;
+}
+.vt-text-color-black{
+    color: $color_black;
+    &:hover, &:active {
+        color: $color_black;
+    }
+}
+.vt-text-color-wildwatermelon{
+    color: $color_wildwatermelon;
+}
+.vt-text-color-limeade{
+    color: $color_limeade;
+}
+.vt-text-color-grenadier {
+    color: $color_grenadier;
+}
+.vt-text-color-international-orange{
+    color: $color_internationalorange;
+}
+.vt-text-white-space-normal {
+    white-space: normal;
+}
+.vt-text-color-cerulean {
+    color: $color_cerulean;
+}
+.vt-text-color-dove-gray {
+    color: $color_dove_gray;
+}
+.vt-text-color-lochmara {
+    color:          $color_lochmara;
+}
+.vt-text-small-dove-gray {
+    font-size:      10px;
+    color:          $color_dove_gray;
+    line-height:    20px;
+}
+.vt-text-transfer {
+    font-size:      12px;
+    color:          $color_cerulean;
+    line-height:    20px;
+}
+.vt-text-opac {
+    opacity:        0.5;
+}
+.vt-date {
+    text-transform: uppercase;
+    font-size:      12px;
+    font-weight:    bold;
+}
+.flight-time{
+    font-weight:    bold;
+}
+.flight-day {
+    font-size:      10px;
+    text-transform: uppercase;
+}
+.vt-seperator {
+    border-bottom:              1px solid $color_mercury;
+    &.size-10{
+        line-height:            10px;
+    }
+    &.radio {
+        margin-bottom:          0;
+        margin-top:             $margin-vertical;
+    }
+}
+.vt-border-top {
+    border-top:                 1px solid $color_mercury;
+}
+.vt-progress-bar-international-orange{
+    background-color:           $color_internationalorange;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Images
+////////////////////////////////////////////////////////////////////////////////
+.bg-direct-departure {		
+    height:                     20px;
+    background-position:        center;
+    background-repeat:          no-repeat;
+    background-image:           url("../assets/img/bg_direct_departure.svg");
+}
+.bg-direct-return {		
+    height:                     20px;
+    background-position:        center;
+    background-repeat:          no-repeat;
+    background-image:           url("../assets/img/bg_direct_return.svg");
+}
+.bg-transfer-departure {		
+    height:                     20px;
+    background-position:        center;
+    background-repeat:          no-repeat;
+    background-image:           url("../assets/img/bg_transfer_departure.svg");
+}
+.bg-transfer-return {		
+    height:                     20px;
+    background-position:        center;
+    background-repeat:          no-repeat;
+    background-image:           url("../assets/img/bg_transfer_return.svg");
+}
+.bg-flightduration {
+    height:                     55px;
+    width:                      20px;
+    background-image:           url("../assets/img/ico_flightduration_repeat.svg");
+    background-position:        center center;
+    background-repeat:          repeat;
+    display:                    inline-block;
+    &:before{
+        content:                    "";
+        height:                     20px;
+        width:                      20px;
+        display:                    inline-block;
+        background-image:           url("../assets/img/ico_flightduration_top.svg");
+        background-position:        center top;
+        background-repeat:          no-repeat;
+    }    
+    &:after{
+        margin-top:                 27px;
+        content:                    "";
+        height:                     20px;
+        width:                      20px;
+        display:                    inline-block;
+        background-image:           url("../assets/img/ico_flightduration_bottom.svg");
+        background-position:        center bottom;
+        background-repeat:          no-repeat;
+    }
+}
+.bg-loading-footer {
+    height:                     30px;
+    background-position:        center;
+    background-repeat:          no-repeat;
+    background-image:           url("../assets/img/loading_footer.svg");
+    background-size:            160px;
+}
+
+// Airlines
+
+.bg-airline {
+    height:                     20px;
+    background-position:        center;
+    background-repeat:          no-repeat;
+    background-size:            20px;
+    width:                      20px;
+    display:                    inline-block;
+}
+
+.bg-airline-alitalia{
+    background-image:           url("../assets/img/airlines/alitalia.svg");
+}
+
+.bg-airline-klm{
+    background-image:           url("../assets/img/airlines/klm.svg");
+}
+
+.bg-airline-lufthansa{
+    background-image:           url("../assets/img/airlines/lufthansa.svg");
+}
+
+.bg-airline-swiss{
+    background-image:           url("../assets/img/airlines/swiss.svg");
+}
+
+.bg-airline-transavia{
+    background-image:           url("../assets/img/airlines/transavia.svg");
+}
+
+.bg-airline-veuling{
+    background-image:           url("../assets/img/airlines/veuling.svg");
+}
+
+.bg-payment {
+    height:                     26px;
+    background-repeat:          no-repeat;
+    background-size:            60px;
+    display:                    block;
+    background-image:           url("../assets/img/logos_betaalmethode.svg");
+    &.bg-payment-paypal{
+        background-position:    -4px -3px;
+    }
+    &.bg-payment-americanexpress{
+        background-position:    -4px -33px;
+    }
+    &.bg-payment-ideal{
+        background-position:    -4px -63px;
+    }
+    &.bg-payment-visa{
+        background-position:    -4px -93px;
+    }
+    &.bg-payment-mastercard{
+        background-position:    -4px -123px;
+    }
+    &.bg-payment-maestro{
+        background-position:    -4px -153px;
+    }
+    &.bg-payment-mistercash{
+        background-position:    -4px -183px;
+    }
+}
+
+.icon-margin5 {
+    margin: 5px;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Input variants
+////////////////////////////////////////////////////////////////////////////////
+.btn-limeade {
+    @include button-variant(white,$color_limeade,$color_limeade);
+}
+.btn-cerulean {
+    @include button-variant(white,$color_cerulean,$color_cerulean);
+}
+.btn-lochmara {
+    @include button-variant(white,$color_lochmara,$color_lochmara);
+}
+.btn-cerulean-inverse {
+    @include button-variant($color_cerulean,white,$color_cerulean);
+}
+.btn-hawkes_blue{
+    @include button-variant($color_cerulean,$color_hawkes_blue,$color_hawkes_blue);
+}
+@include radio-variant('.radio-cerulean', $color_cerulean); 
+@include checkbox-variant('.checkbox-cerulean', $color_cerulean); 

@@ -1,0 +1,8 @@
+{
+  "name": "google-fastbutton",
+  "homepage": "https://github.com/msbit/google-fastbutton",
+  "version": "1.0.1",
+  "main": [
+    "jquery.google.fastbutton.js"
+  ]
+}
