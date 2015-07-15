@@ -3,14 +3,14 @@
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
         
     <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="phpunit" haltonerror="true" haltonfailure="true">
+        <exec executable="phpunit" passthru="true" checkreturn="true">
             <arg value="-c" />
             <arg value="app" />
         </exec>
     </target>
     
     <target name="vendors" description="Update vendors">
-        <exec executable="php" haltonerror="true">
+        <exec executable="php">
             <arg value="composer.phar" />
             <arg value="update" />
         </exec>

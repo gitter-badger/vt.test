@@ -12,6 +12,6 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertTrue($crawler->filter('html:contains("<section data-ui-view></section>")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("TEST")')->count() > 0);
     }
 }
