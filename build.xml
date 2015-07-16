@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
-        
+    <property name="basedir" value="." override="true"/>
+    
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
             <arg value="-c" />
@@ -10,10 +11,11 @@
     </target>
     
     <target name="vendors" description="Update vendors">
-        <exec executable="php">
-            <arg value="composer" />
-            <arg value="update" />
-        </exec>
+        <delete dir="${basedir}/../library/Symfony/vendor"/>
+                
+        <composer command="install" composer="${basedir}/composer.phar">
+            <arg value="--optimize-autoloader" />
+        </composer>
     </target>
     
     <target name="build" depends="vendors,phpunit">
