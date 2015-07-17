@@ -63,6 +63,16 @@ assetic:
                 - 'assets/js/translations/config.js'
                 - 'assets/js/translations/*/*.js'
                 - 'assets/js/vendor/angular-symfony-translation/dist/angular-symfony-translation.js'
+                
+        jsConfig:
+            inputs:
+                - 'assets/js/config.js'
+                - 'assets/js/app.js'
+                
+        jsModules:
+            inputs:
+                - '@IndexBundle/Resources/public/js/*.js'
+                - '@IndexBundle/Resources/public/js/**/*.js'
 
 # Doctrine Configuration
 doctrine:
