@@ -13,8 +13,7 @@
     </target>
     
     <target name="vendors" description="Update vendors">
-        <delete dir="${vendors.dir}"/>
-                
+               
         <exec
             command="composer update"
             dir="${vendors.dir}"
