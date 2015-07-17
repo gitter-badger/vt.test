@@ -2,8 +2,8 @@
 
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
     <!-- Required properties -->
-    <property name="base.dir" value="." override="true"/>
-    <property name="vendors.dir" value="../library/Symfony/vendor" />
+    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc" override="true"/>
+    <property name="vendors.dir" value="${base.dir}/../library/Symfony/vendor" />
     
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
@@ -16,8 +16,8 @@
         <delete dir="${vendors.dir}"/>
                 
         <exec
-            command="sudo composer update"
-            dir="${base.dir}"
+            command="composer update"
+            dir="${vendors.dir}"
             checkreturn="true"
             passthru="true"
             level="verbose"
