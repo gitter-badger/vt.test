@@ -13,7 +13,7 @@
     </target>
     
     <target name="vendors" description="Update vendors">
-         <exec command="composer install" checkreturn="true" passthru="true" level="verbose">
+         <exec command="composer update" checkreturn="true" passthru="true" level="verbose">
             <arg value="--optimize-autoloader" />
         </exec>      
     </target>
