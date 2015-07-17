@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
-    <property name="basedir" value="." override="true"/>
+    <!-- Required properties -->
+    <property name="base.dir" value="." override="true"/>
+    <property name="vendors.dir" value="../library/Symfony/vendor" />
     
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
@@ -11,11 +13,15 @@
     </target>
     
     <target name="vendors" description="Update vendors">
-        <delete dir="${basedir}/../library/Symfony/vendor"/>
+        <delete dir="${vendors.dir}"/>
                 
-        <composer command="install" composer="${basedir}/composer.phar">
-            <arg value="--optimize-autoloader" />
-        </composer>
+        <exec
+            command="sudo composer update"
+            dir="${base.dir}"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"
+        />
     </target>
     
     <target name="build" depends="vendors,phpunit">

@@ -24,7 +24,8 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "~4.0.10",
+        "phing/phing": "2.*"
     },
     "scripts": {
         "post-root-package-install": [
