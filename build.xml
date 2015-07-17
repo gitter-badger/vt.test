@@ -4,12 +4,23 @@
     <!-- Required properties -->
     <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc" override="true"/>
     <property name="vendors.dir" value="${base.dir}/../library/Symfony/vendor" />
+    <property name="build.dir" value="${base.dir}/app/build" />
     
-    <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="phpunit" passthru="true" checkreturn="true">
-            <arg value="-c" />
-            <arg value="app" />
-        </exec>
+    <target name="clean" description="Cleanup build artifacts">
+        <delete dir="${build.dir}/api"/>
+        <delete dir="${build.dir}/code-browser"/>
+        <delete dir="${build.dir}/coverage"/>
+        <delete dir="${build.dir}/logs"/>
+        <delete dir="${build.dir}/pdepend"/>
+        <delete dir="${build.dir}/docs/*"/>
+    </target>
+    
+    <target name="prepare" depends="clean" description="Prepare for build">
+        <mkdir dir="${build.dir}/api"/>
+        <mkdir dir="${build.dir}/code-browser"/>
+        <mkdir dir="${build.dir}/coverage"/>
+        <mkdir dir="${build.dir}/logs"/>
+        <mkdir dir="${build.dir}/pdepend"/>
     </target>
     
     <target name="vendors" description="Update vendors">
@@ -18,7 +29,14 @@
         </exec>      
     </target>
     
-    <target name="build" depends="vendors,phpunit">
+    <target name="phpunit" description="Run unit tests with PHPUnit">
+        <exec executable="phpunit" passthru="true" checkreturn="true">
+            <arg value="-c" />
+            <arg path="${base.dir}/app/phpunit.xml" />
+        </exec>
+    </target>
+
+    <target name="build" depends="prepare,vendors,phpunit">
     </target>
     
 </project>
