@@ -32,7 +32,7 @@
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
             <arg value="-c" />
-            <arg path="${base.dir}/app/phpunit.xml" />
+            <arg path="${base.dir}/app/phpunit.xml.dist" />
         </exec>
     </target>
 

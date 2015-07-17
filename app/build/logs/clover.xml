@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1437126456">
-  <project timestamp="1437126456">
+<coverage generated="1437128000">
+  <project timestamp="1437128000">
     <package name="IndexBundle\Controller">
       <file name="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Controller/DefaultController.php">
         <class name="DefaultController" namespace="IndexBundle\Controller">
