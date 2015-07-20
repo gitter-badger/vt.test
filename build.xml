@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
     <!-- Required properties -->
-    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc" override="true"/>
+    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.jenkins" override="true"/>
     <property name="vendors.dir" value="${base.dir}/../library/Symfony/vendor" />
     <property name="source.dir" value="${base.dir}/src" />
     <property name="build.dir" value="${base.dir}/app/build" />
