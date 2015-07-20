@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
     <!-- Required properties -->
     <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc" override="true"/>
@@ -83,6 +82,5 @@
     </target>
 
     <!-- Default target -->
-    <target name="build" depends="phpmd"></target>
-    
+    <target name="build" depends="prepare,vendors,lint,phpmd,phpunit"></target>
 </project>
