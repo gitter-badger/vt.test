@@ -8,6 +8,36 @@ use Assetic\Asset\FileAsset;
 
 class IndexBundle extends Bundle
 {
+    
+    public function index() {
+        if(1) {
+            if(1) {
+                if(1) {
+                    if(1) {
+                        if(1) {
+                            if(1) {
+                                if(1) {
+                                    if(1) {
+                                        if(1) {
+                                            if(1) {
+                                                if(1) {
+                                                    if(1) {
+                                                        echo 123;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
 //    public function boot()
 //    {
 //        $paths = array(

@@ -2,10 +2,19 @@
 
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
     <!-- Required properties -->
-    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.jenkins" override="true"/>
+    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc" override="true"/>
     <property name="vendors.dir" value="${base.dir}/../library/Symfony/vendor" />
+    <property name="source.dir" value="${base.dir}/src" />
     <property name="build.dir" value="${base.dir}/app/build" />
     
+    <!-- Filesets -->
+    <fileset id="sourcecode" dir="${source.dir}">
+        <include name="**/*.php"/>
+        <exclude name="Tests/"/>
+        <exclude name="vendor/"/>
+    </fileset>
+    
+     <!-- Project build clean -->
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="${build.dir}/api"/>
         <delete dir="${build.dir}/code-browser"/>
@@ -15,6 +24,7 @@
         <delete dir="${build.dir}/docs/*"/>
     </target>
     
+    <!-- Project build prepare -->
     <target name="prepare" depends="clean" description="Prepare for build">
         <mkdir dir="${build.dir}/api"/>
         <mkdir dir="${build.dir}/code-browser"/>
@@ -23,12 +33,48 @@
         <mkdir dir="${build.dir}/pdepend"/>
     </target>
     
-    <target name="vendors" description="Update vendors">
-         <exec command="composer update" checkreturn="true" passthru="true" level="verbose">
+    <target name="install:composer" description="Installing composer">
+        <echo msg="Fetching Composer"/>
+        <exec
+            command="curl -sS https://getcomposer.org/installer | php"
+            passthru="true"/>
+    </target>
+    
+    <target name="install:phpmd" description="Install PHPMD globally">
+        <exec
+            command="wget -c http://static.phpmd.org/php/latest/phpmd.phar"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>   
+    </target>   
+    
+    <target name="vendors" depends="install:composer" description="Update vendors">
+         <exec command="php composer.phar update" checkreturn="true" passthru="true" level="verbose">
             <arg value="--optimize-autoloader" />
         </exec>      
     </target>
     
+    <!-- Syntax errors detector -->
+    <target name="lint" description="Check syntax of source.">
+        <phplint>
+            <fileset refid="sourcecode" />
+        </phplint>
+    </target>
+    
+    <!-- copy/paste detector -->
+    <target name="check:cpd" description="Checks similar code blocks.">
+        <echo msg="Checking similar code blocks ..."/>
+        <phpcpd>
+            <fileset refid="sourcecode"/>
+            <formatter type="pmd" outfile="${dir.reports}/pmd-cpd.xml"/>
+        </phpcpd>
+    </target>
+
+    <!-- Mess detector -->
+    <target name="phpmd" depends="install:phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+        <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${base.dir}/app/build/logs/pmd.xml" />
+    </target>
+
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
             <arg value="-c" />
@@ -36,7 +82,7 @@
         </exec>
     </target>
 
-    <target name="build" depends="prepare,vendors,phpunit">
-    </target>
+    <!-- Default target -->
+    <target name="build" depends="phpmd"></target>
     
 </project>

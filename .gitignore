@@ -6,10 +6,15 @@
 !app/logs/.gitkeep
 /app/phpunit.xml
 /bin/
-/composer.phar
+
 /vendor/
 /web/bundles/
 /web/assets/vendor/
+
+# Executable php archives, downloaded by task
+*.phar
 *~
 *.log
+
+# Automatic build logs and results
 /app/build/
