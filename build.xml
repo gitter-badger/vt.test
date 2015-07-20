@@ -71,7 +71,17 @@
 
     <!-- Mess detector -->
     <target name="phpmd" depends="install:phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-        <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${base.dir}/app/build/logs/pmd.xml" />
+        <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${build.dir}/logs/phpmd.xml" />
+    </target>
+    
+    <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
+        <exec executable="phpmd">
+            <arg path="${source.dir}" />
+            <arg value="xml" />
+            <arg value="${build.dir}/logs/phpmd.xml" />
+            <arg value="--reportfile" />
+            <arg value="${build.dir}/logs/pmd.xml" />
+        </exec>
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">
