@@ -92,5 +92,5 @@
     </target>
 
     <!-- Default target -->
-    <target name="build" depends="prepare,vendors,lint,phpmd,phpunit"></target>
+    <target name="build" depends="prepare,vendors,lint,phpmd-ci,phpunit"></target>
 </project>
