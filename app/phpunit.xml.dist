@@ -13,8 +13,12 @@
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
             <directory>../src/*Bundle/Tests</directory>
         </testsuite>
+        
+        <testsuite name="Airtrade API Test Suite">
+            <directory>../../library/Symfony/services/*/Tests</directory>
+        </testsuite>
     </testsuites>
-
+    
     <!--
     <php>
         <server name="KERNEL_DIR" value="/path/to/your/app/" />
