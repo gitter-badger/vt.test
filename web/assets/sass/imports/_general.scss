@@ -1,26 +1,26 @@
-////////////////////////////////////////////////////////////////////////////////
-// External IMPORTS
-////////////////////////////////////////////////////////////////////////////////
-$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-$OpenSansPath: "../../bower_components/open-sans-fontface/fonts";
-$fa-font-path: "../../bower_components/font-awesome/fonts";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "../../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
-@import "../../bower_components/open-sans-fontface/open-sans.scss";
+// -----------------------------------------------------------------
+// External imports
+// -----------------------------------------------------------------
+$icon-font-path: "../js/vendor/bootstrap-sass/assets/fonts/bootstrap/";
+$OpenSansPath: "../js/vendor/open-sans-fontface/fonts";
+$fa-font-path: "../js/vendor/font-awesome/fonts";
+@import "../../js/vendor/font-awesome/scss/font-awesome.scss";
+@import "../../js/vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../js/vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
+@import "../../js/vendor/open-sans-fontface/open-sans.scss";
 
-////////////////////////////////////////////////////////////////////////////////
-// Internal IMPORTS
-////////////////////////////////////////////////////////////////////////////////
+// -----------------------------------------------------------------
+// Internal imports
+// -----------------------------------------------------------------
 @import "_variables.scss";
 @import "_mixins.scss";
 @import "_glyphicons.scss";
 @import "_overlay.scss";
 @import "_slider.scss";
 
-////////////////////////////////////////////////////////////////////////////////
-// GLOBAL STYLING
-////////////////////////////////////////////////////////////////////////////////
+// -----------------------------------------------------------------
+// Global styling
+// -----------------------------------------------------------------
 h1 {
     font-size:               $text-size-large;
 }
@@ -37,52 +37,52 @@ input, select:not(.with-caret) {
 }
 html,
 body,
-.global_container,
+.global-container,
 .st-pusher,
-.content_container {
+.content-container {
     font-family:                                                        	"Open Sans";
     height:                                                                 100%;
     margin:                                                                 0px;
     padding:                                                                0px;
     -webkit-text-size-adjust:                                               100%; /* Prevent font scaling in landscape while allowing user zoom */
-    background-color:                                                       $color_white;
+    background-color:                                                       $color-white;
 }
 input[type="text"] {
    text-overflow: ellipsis; 
 }
-.content_container {
+.content-container {
     margin-bottom:                                                          $margin-groupbottom;
 }
 a {
     text-decoration:                                                        none !important;
-    color:                                                                  $color_cerulean;
+    color:                                                                  $color-cerulean;
     &:hover,&:focus,&:active{
-        color:                                                              $color_ceruleanDark;
+        color:                                                              $color-cerulean-dark;
     }
 }
 
 .bold {
     font-weight: bold;
 }
-.global_container {
+.global-container {
     position:                                                               relative;
     overflow-x:																hidden;
     height:                                                                 auto;     
 }
 
-.content_container_pusher::after {
+.content-container-pusher::after {
     position:                                                               absolute;
     top:                                                                    0;
     right:                                                                  0;
     width:                                                                  0;
     height:                                                                 0;
-    background:                                                             $color_black;
+    background:                                                             $color-black;
     content:                                                                '';
     opacity:                                                                0;
     visibility:                                                             hidden;
 }
 
-.content_container_pusher{
+.content-container-pusher{
     position:                                                               relative;
     left:                                                                   0;
     z-index:                                                                1;
@@ -91,10 +91,10 @@ a {
     -webkit-transition:                                                     -webkit-transform 0.4s;
     -ms-transition:                                                         -ms-transform 0.4s;
     transition:                                                             transform 0.4s;
-    background-color:                                                       $color_white;    
+    background-color:                                                       $color-white;    
 }
 
-.content_container {
+.content-container {
     overflow:																visible;
     width:                                                                  100%;
     height:                                                                 auto;
@@ -108,16 +108,16 @@ a {
     overflow:                                                               hidden;
 }
 
-.menu_open .content_container {
+.menu_open .content-container {
     overflow:                                                               hidden; 
     height:                                                                 100%;
 }
 
-.menu_open .navigation_bar {
+.menu_open .navigation-bar {
     //position:                                                             absolute;
 }
 
-.menu_open .content_container_pusher::after {
+.menu_open .content-container-pusher::after {
     width:                                                                  100%;
     height:                                                                 100%;
     opacity:                                                                0.01;
@@ -126,14 +126,14 @@ a {
 
 // Effect
 
-.menu_left.menu_open .content_container_pusher{
+.menu_left.menu_open .content-container-pusher{
     -webkit-transform:                                                      translate3d(250px, 0, 0);
     -moz-transform:                                                         translate3d(250px, 0, 0);
     -ms-transform:                                                          translate(250px, 0);
     transform:                                                              translate3d(250px, 0, 0);
 }
 
-.menu_right.menu_open .content_container_pusher{
+.menu_right.menu_open .content-container-pusher{
     -webkit-transform:                                                      translate3d(-250px, 0, 0);
     -moz-transform:                                                         translate3d(-250px, 0, 0);
     -ms-transform:                                                          translate(-250px, 0);
@@ -154,7 +154,7 @@ a {
     height:                                                                 auto;
     overflow:																hidden;
 
-    background:                                                             $color_cerulean;
+    background:                                                             $color-cerulean;
 
     -webkit-transition:                                                     all 0.4s;
     -moz-transition:                                                        all 0.4s;
@@ -197,7 +197,7 @@ a {
     }
 
     ul li a span.icon {
-        color:                                                                  $color_white;
+        color:                                                                  $color-white;
         font-size:																35px;
         line-height: 															60px;
         margin:																	0 0 0 20px;
@@ -205,7 +205,7 @@ a {
     }
 
     ul li a span.title {
-        color:                                                                  $color_white;
+        color:                                                                  $color-white;
         font-weight:                                                            400;
         line-height: 															60px;
         font-size:                                                              15px;
@@ -226,7 +226,7 @@ a {
     }
 
     ul li.phone span.subtitle {
-        color:																	$color_white;
+        color:																	$color-white;
         margin-left:															60px;
         font-size: 																12px;
         opacity:																0.9;
@@ -349,7 +349,7 @@ a {
 // NAVIGATION BAR 
 ////////////////////////////////////////////////////////////////////////////////
 
-.navigation_bar {
+.navigation-bar {
     display:                                                                block;
     float:																	left;
     width:                                                                  100%;
@@ -357,8 +357,8 @@ a {
     margin:                                                                 0px;
     padding:                                                                0px;
     z-index:                                                                3;
-    color:                                                                  $color_white;
-    background-color:                                                       $color_internationalorange;
+    color:                                                                  $color-white;
+    background-color:                                                       $color-internationalorange;
 
     -webkit-transition:                                                     -webkit-transform 0.4s;
     -moz-transition:                                                        -moz-transform 0.4s;
@@ -412,10 +412,10 @@ a {
     }
 
     .logo_vliegtickets span {		
-        background-image:                                                   url("../assets/img/logo_vliegtickets.svg");
+        background-image:                                                   url("../images/logo/vliegtickets.svg");
     }
 
-    .navigation_bar_wrapper {
+    .navigation-bar-wrapper {
         height:                                                             45px;
         width:                                                              100%;
 
@@ -450,19 +450,19 @@ a {
 
 // Navigation bar - Overlay that blocks interaction when menu is open
 
-.navigation_bar_overlay {
+.navigation-bar-overlay {
     display:                                                                none;
     position:                                                             	absolute;
     top:                                                                    0px;
     left:                                                                   40px;
     height:                                                                 45px;
-    background-color:                                                       $color_white;
+    background-color:                                                       $color-white;
     width:                                                                  100%;
     opacity:                                                                0.01;
     z-index: 																4;
 }
 
-.navigation_bar_overlay.visible {
+.navigation-bar-overlay.visible {
     display:                                                                block;
 }
 
@@ -472,7 +472,7 @@ a {
     display:                                                                block;
     float:                                                                  left;
 
-    background-color:                                                       $color_internationalorange;
+    background-color:                                                       $color-internationalorange;
 }
 
 .nav_btn.menu_left {
@@ -497,15 +497,15 @@ a {
     padding-top:                                                            5px;
     &:active, &.active {
         border-top-left-radius:                                             10px;
-        background-color:                                                   $color_white;
+        background-color:                                                   $color-white;
         background-position:                                                -45px 0px;
         &:before {
-            color:                                                          $color_cerulean;
+            color:                                                          $color-cerulean;
         }
     }
     &:before {
         font-size:                                                          35px;
-        color:                                                              $color_white;
+        color:                                                              $color-white;
         margin-top:                                                         5px;
     }
 }
@@ -592,7 +592,7 @@ a {
     width:                      100%;
     .sub-header-body {
         border-top:             1px solid rgba(255,255,255,0.3);
-        background-color:       $color_internationalorange;
+        background-color:       $color-internationalorange;
     }
 }
 
@@ -604,19 +604,19 @@ a {
     margin-top:                 30px;
     width:                      100%;
     li {
-        border-bottom:          1px solid $color_mercury;
+        border-bottom:          1px solid $color-mercury;
         a {
             padding:            15px $margin-horizontal;
             display:            block;
             color:              black;
             &:active {
-                background-color: $color_alabaster;
+                background-color: $color-alabaster;
             }
 
         }
         &.phone {
             a {
-                color:          $color_cerulean;
+                color:          $color-cerulean;
                 .subtitle {
                     font-size:  12px;
                     color:      black;
@@ -632,7 +632,7 @@ a {
             float:              right;
         }
         &:first-child{
-            border-top:         1px solid  $color_mercury;
+            border-top:         1px solid  $color-mercury;
         }
 
     }
@@ -655,7 +655,7 @@ a {
 .overlay-body{
     padding:                    55px 0 0 0;
 }
-.content_container.searchPage .form-group .input-group .input-group-addon.clear-btn{
+.content-container.searchPage .form-group .input-group .input-group-addon.clear-btn{
     min-width:                  35px;
 }
 .btn-lg {
@@ -729,7 +729,7 @@ a {
 ////////////////////////////////////////////////////////////////////////////////
 .page-header {
     margin:0;
-    border-bottom: 1px solid $color_mercury;
+    border-bottom: 1px solid $color-mercury;
 }
 .radio label {
     display: block;
@@ -777,16 +777,16 @@ a {
 .btn-group .btn {
     padding: 																9px 9px;
     box-shadow:																none;
-    border-color:															$color_silver;	
-    background-color:														$color_white;
-    color:																	$color_black;
+    border-color:															$color-silver;	
+    background-color:														$color-white;
+    color:																	$color-black;
 }
 
 .btn-group .btn.active {
     box-shadow:																none;
-    background-color:														$color_cerulean;
-    border-color:															$color_cerulean;
-    color:																	$color_white;
+    background-color:														$color-cerulean;
+    border-color:															$color-cerulean;
+    color:																	$color-white;
 }
 
 // Tables
@@ -794,10 +794,10 @@ a {
     thead{
         tr{
             th{
-                background:     											$color_wild_sand;
-                border-color:   											$color_mercury;
+                background:     											$color-wild-sand;
+                border-color:   											$color-mercury;
                 border-bottom-width: 										1px;
-                color:          											$color_suva_gray;
+                color:          											$color-suva-gray;
                 padding:        											8px 12px;
                 font-weight:    											normal;
             }
@@ -806,7 +806,7 @@ a {
     tbody{
         tr{
             td{
-                border-color:   											$color_mercury;
+                border-color:   											$color-mercury;
                 padding:        											8px 12px;
             }
         }
@@ -816,7 +816,7 @@ a {
 // Glyphicons
 
 .glyphicon {
-    color:																	$color_cerulean;
+    color:																	$color-cerulean;
 }
 
 // Input
@@ -826,17 +826,17 @@ a {
             border-left:													0px;
         }
         height:																40px;
-        border:																1px solid $color_silver;
+        border:																1px solid $color-silver;
         box-shadow: 														none;
-        color:																$color_black;
+        color:																$color-black;
     }
 
     .input-group-addon {
-        background-color:													$color_white;				
+        background-color:													$color-white;				
     }
 
     .input-group-addon .input-group-text {
-        color:																$color_black;
+        color:																$color-black;
         font-weight: 														700;
         font-size:															13px;			
     }
@@ -860,7 +860,7 @@ a {
         content: 															"\e61a";
         font-size: 															30px;
         margin-left:    													-37px;
-        color: 																$color_internationalorange;
+        color: 																$color-internationalorange;
     }
     label{
         > * {
@@ -903,7 +903,7 @@ a {
         content: 															"\e61a";
         font-size: 															28px;
         margin-left:    													-38px;
-        color: 																$color_internationalorange;
+        color: 																$color-internationalorange;
     }
     label{
         line-height:        												30px;
@@ -959,12 +959,12 @@ a {
     }
     &.radio-seperator{
         padding-bottom:         20px;
-        border-bottom:          1px solid $color_mercury;
+        border-bottom:          1px solid $color-mercury;
     }
 }
 //checkbox list {
 .checkbox.list {
-    border-bottom: 1px solid $color_mercury;
+    border-bottom: 1px solid $color-mercury;
     padding-left: 2px;
     margin: 0px;
     height: 50px;
@@ -1011,7 +1011,7 @@ a {
 //list group item
 
 .list-group-item {
-    border-bottom: 1px solid $color_mercury;	
+    border-bottom: 1px solid $color-mercury;	
 }
 
 //
@@ -1033,7 +1033,7 @@ a {
     li {
         padding:                10px;
         &:not(:last-child){
-            border-bottom:      1px solid $color_mercury;
+            border-bottom:      1px solid $color-mercury;
         }
         &:first-child{
             border-top-left-radius: 0;
@@ -1048,7 +1048,7 @@ a {
 .vt-list.vt-list-border-bottom {
     li {
         &:last-child{
-            border-bottom:      1px solid $color_mercury;
+            border-bottom:      1px solid $color-mercury;
         }
     }
 }
@@ -1063,7 +1063,7 @@ a {
         content: "\e61a";
         font-size: 30px;
         margin-left:    -37px;
-        color: $color_internationalorange;
+        color: $color-internationalorange;
     }
     label{
         width:100%;
@@ -1164,46 +1164,46 @@ a {
     line-height:  $text-size-large+2;
 }
 .vt-text-color-white{
-    color: $color_white;
+    color: $color-white;
 }
 .vt-text-color-black{
-    color: $color_black;
+    color: $color-black;
     &:hover, &:active {
-        color: $color_black;
+        color: $color-black;
     }
 }
 .vt-text-color-wildwatermelon{
-    color: $color_wildwatermelon;
+    color: $color-wildwatermelon;
 }
 .vt-text-color-limeade{
-    color: $color_limeade;
+    color: $color-limeade;
 }
 .vt-text-color-grenadier {
-    color: $color_grenadier;
+    color: $color-grenadier;
 }
 .vt-text-color-international-orange{
-    color: $color_internationalorange;
+    color: $color-internationalorange;
 }
 .vt-text-white-space-normal {
     white-space: normal;
 }
 .vt-text-color-cerulean {
-    color: $color_cerulean;
+    color: $color-cerulean;
 }
 .vt-text-color-dove-gray {
-    color: $color_dove_gray;
+    color: $color-dove-gray;
 }
 .vt-text-color-lochmara {
-    color:          $color_lochmara;
+    color:          $color-lochmara;
 }
 .vt-text-small-dove-gray {
     font-size:      10px;
-    color:          $color_dove_gray;
+    color:          $color-dove-gray;
     line-height:    20px;
 }
 .vt-text-transfer {
     font-size:      12px;
-    color:          $color_cerulean;
+    color:          $color-cerulean;
     line-height:    20px;
 }
 .vt-text-opac {
@@ -1222,7 +1222,7 @@ a {
     text-transform: uppercase;
 }
 .vt-seperator {
-    border-bottom:              1px solid $color_mercury;
+    border-bottom:              1px solid $color-mercury;
     &.size-10{
         line-height:            10px;
     }
@@ -1232,10 +1232,10 @@ a {
     }
 }
 .vt-border-top {
-    border-top:                 1px solid $color_mercury;
+    border-top:                 1px solid $color-mercury;
 }
 .vt-progress-bar-international-orange{
-    background-color:           $color_internationalorange;
+    background-color:           $color-internationalorange;
 }
 ////////////////////////////////////////////////////////////////////////////////
 // Images
@@ -1370,19 +1370,19 @@ a {
 // Input variants
 ////////////////////////////////////////////////////////////////////////////////
 .btn-limeade {
-    @include button-variant(white,$color_limeade,$color_limeade);
+    @include button-variant(white,$color-limeade,$color-limeade);
 }
 .btn-cerulean {
-    @include button-variant(white,$color_cerulean,$color_cerulean);
+    @include button-variant(white,$color-cerulean,$color-cerulean);
 }
 .btn-lochmara {
-    @include button-variant(white,$color_lochmara,$color_lochmara);
+    @include button-variant(white,$color-lochmara,$color-lochmara);
 }
 .btn-cerulean-inverse {
-    @include button-variant($color_cerulean,white,$color_cerulean);
+    @include button-variant($color-cerulean,white,$color-cerulean);
 }
 .btn-hawkes_blue{
-    @include button-variant($color_cerulean,$color_hawkes_blue,$color_hawkes_blue);
+    @include button-variant($color-cerulean,$color-hawkes_blue,$color-hawkes_blue);
 }
-@include radio-variant('.radio-cerulean', $color_cerulean); 
-@include checkbox-variant('.checkbox-cerulean', $color_cerulean); 
+@include radio-variant('.radio-cerulean', $color-cerulean); 
+@include checkbox-variant('.checkbox-cerulean', $color-cerulean); 

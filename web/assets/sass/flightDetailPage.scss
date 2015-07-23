@@ -1,0 +1,97 @@
+////////////////////////////////////////////////////////////////////////////////
+// Internal IMPORTS
+////////////////////////////////////////////////////////////////////////////////
+@import 'imports/variables';
+@import 'imports/mixins';
+
+#detail-content{
+    margin :                        38px 0 0 0;
+}
+.fixed-sub-header {
+    .flight-details {
+        background-color:           $color-internationalorange;
+        color:                      $color-white;
+        border-top:                 1px solid $color-border-opac;
+        padding:                    10px;
+    }
+}
+.price-summary{
+    div {
+        clear:both;
+        span {
+            &.left{
+                float:              left;
+            }
+            &.right{
+                text-align:         right;
+                float:              right;
+            }
+        }
+        
+    }
+}
+.flight-icon {
+    width:                  30px;
+    height:                 20px;
+    float:                  left;
+    span {
+        &:before{
+            font-size:      26px;
+        }
+    }
+    &.detail {
+        span {
+            &:before{
+                font-size:  20px;
+            }
+        }
+    }
+}
+.flight-data {
+    overflow:                   hidden;
+    &.flight{
+        background-image:       url('../assets/img/ico_flightduration_top.svg'), url('../assets/img/ico_flightduration_bottom.svg'), url('../assets/img/ico_flightduration_repeat.svg');
+        background-position:    left top, left bottom, left center !important;
+        background-repeat:      no-repeat, no-repeat, repeat-y !important;
+        background-size:        20px 20px, 20px 20px, 20px 5px;
+        height:                 100%;
+        padding-left:           30px;
+    }
+}
+.flight-data > .row > div, .flight-icon{
+    margin-top:                 3px;
+    margin-bottom:              3px;
+}
+.flight-type{
+    font-weight:                bold;
+    line-height:                26px;
+}
+.price-total-passengers{
+    line-height:                22px;
+    .vt-text-color-lochmara{
+        line-height:            30px;
+        display:                inline-block;
+        float:                  right;
+        padding-left:           40px;
+        background-image:       url('../assets/img/logo_airmiles.svg');
+        background-position:    left;
+        background-repeat:      no-repeat;
+        background-size:        30px 30px;
+        height:                 100%;
+    }
+}
+.price-total-header {
+    .total-price {
+        float:                  left;
+        position:               relative;
+        width:                  90px;
+    }
+    .vt-seperator{
+        position:               relative;
+        top:                    -10px;
+        margin-left:            90px;
+    }
+}
+.airline-icon  {
+    height: 20px;
+}

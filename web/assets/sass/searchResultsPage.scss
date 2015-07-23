@@ -1,0 +1,189 @@
+// -----------------------------------------------------------------
+// Internal imports
+// -----------------------------------------------------------------
+@import 'imports/variables';
+@import 'imports/mixins';
+@import 'imports/datePicker';
+@import 'imports/searchOverlay';
+
+.search-results-page {
+  .sub-header {
+    .result-info {
+      background-color: $color-internationalorange;
+      border-bottom: 1px solid $color-border-opac;
+      border-top: 0;
+      color: $color-white;
+      padding: 5px 0;
+    }
+    .result-dates {
+      background-color: $color-internationalorange;
+      color: $color-white;
+      font-size: 10px;
+      padding: 5px 0;
+      .icon:before{
+        font-size: 18px;
+      }
+      &:last-of-type{
+        border-left: 1px solid rgba(255,255,255,0.3);
+      }
+    }
+    .result-extra-info {
+      padding: 5px 0;
+      background-color: $color-alabaster;
+    }
+  }
+  .flight-icon {
+    float: left;
+    width: 15px;
+  }
+  .flight-data {
+    overflow: hidden;
+  }
+  .fixed-bottom {
+    background-color: $color-cerulean;
+    color: $color-white;
+    width: 100%;
+    z-index: 3;
+    .filters {
+      border-right: 1px solid $color-white;
+    }
+    .sorting{
+      padding: 0;
+      .icon-sort {
+        position: absolute;
+        top: 11px;
+        left: 5px;
+      }
+      select {
+        direction: rtl;
+        padding-left: 30px;
+        padding-right: 10px;
+        background-color: transparent;
+        border: none;
+        color : $color-white;
+        height: 46px;
+      }
+    }
+
+  }
+  .vt-text-color-lochmara{
+    display: inline-block;
+    float: right;
+    padding-left: 30px;
+    background-image: url('../assets/img/logo_airmiles.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    line-height: 10px;
+    height: 30px;
+    margin: $margin-vertical 0 0 0;
+    .airmiles-text{
+      font-size: 8px;
+    }
+  }
+  .flight-day {
+    font-size: 7px;
+  }
+  .airport{
+    font-size: 11px;
+    line-height: 20px;
+  }
+  .vt-price-bold {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  .vt-price-sub{
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .single-result{
+    margin-top: 22px;
+  }
+  .bg-airline {
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+  }
+  #result-content {
+    margin-bottom: 50px;
+  }
+}
+
+// -----------------------------------------------------------------
+// Filters
+// -----------------------------------------------------------------
+
+// Checkbox list styling
+.checkbox.list {
+  line-height: 0px;
+}
+
+.checkbox.list span.airline {
+  max-width: 140px;
+}
+
+.checkbox.list span.price {
+  text-align: right;
+  float:right;
+  color: $color-gray;
+  font-size: 12px;
+  padding-right: 36px;
+}
+
+// Tabview, a container with segmented control
+.MB_tabview {
+  display: block;
+  width: 100%;
+  border: 1px solid $color-silver;
+  @include border-radius($borderradius-bigbutton, $borderradius-bigbutton, $borderradius-bigbutton, $borderradius-bigbutton);
+  height: 190px;
+
+
+  //background-color: #ccc;
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 1px solid $color-silver;
+    @include border-radius(0, 0, 0, $borderradius-bigbutton);
+  }
+
+
+  .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 1px solid $color-silver;
+    @include border-radius($borderradius-bigbutton, 0, 0, 0);
+  }
+
+  .slider_wrapper {
+    margin-top: 15px;
+    padding: 30px;
+  }
+}
+
+
+// Checkbox list image overwrite
+.checkbox.list.bg-airline {
+  display:           inherit;
+  width:             auto;
+  height:           50px;
+  padding-left:         54px;
+  background-position:     10px center;
+  background-size:      30px;
+}
+#loader-nextpage {
+  position: absolute;
+  top: 150px;
+}
+#endDate {
+  &:before{
+    content: '\2192';
+    margin: 0 5px;
+  }
+}
+
+.btn-rounded.btn-md{
+  border-radius: 20px;
+}

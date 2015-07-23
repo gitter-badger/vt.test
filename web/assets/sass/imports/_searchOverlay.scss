@@ -1,0 +1,63 @@
+#loader-nextpage {
+  position: absolute;
+  top: 250px;
+
+  .loader {
+    background-color: $color-white;
+    border-radius: $borderradius-mediumbutton;
+    bottom: 30px;
+    font-size: 12px;
+    vertical-align: middle;
+    width: auto;
+
+    .progress {
+      height: 5px;
+    }
+    .ad-image {
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        max-height: 200px;
+        @media only screen
+        and (max-device-height : 480px) {
+          max-height: 100px;
+          width: auto;
+        }
+      }
+    }
+
+    .icon {
+      line-height: 30px;
+      &:before {
+        font-size: 30px;
+        line-height: 51px;
+      }
+    }
+
+    .safe-booking {
+      color: $color-suva-gray;
+      font-size: 10px;
+
+      img {
+        height: auto;
+        width: 150px;
+      }
+    }
+  }
+
+  &.searching {
+    position: fixed;
+    top: 20px;
+  }
+}
+
+@media only screen
+and (min-device-height : 320px)
+and (max-device-height : 480px) {
+  #loader-nextpage.searching {
+    .ad-image {
+      display: none;
+    }
+  }
+}

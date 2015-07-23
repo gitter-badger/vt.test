@@ -44,6 +44,12 @@
                 '@jsConfig'
                 '@jsModules' %}
                 <script src="{{ asset_url }}"></script>
+                
+                <!--Livereload script rendered -->
+                <script>document.write('<script src="http://'
+                    + (location.host || 'localhost').split(':')[0]
+                    + ':35729/livereload.js"></'
+                    + 'script>')</script>
             {% endjavascripts %}
         {% endblock %}
     </body>

@@ -1,5 +1,5 @@
 <!-- Global container -->
-<div class="global_container" id="global_container">
+<div class="global-container" id="global_container">
     <!-- Left menu -->
     <div class="menu left">
         <div class="menu_wrapper">
@@ -15,7 +15,7 @@
             <ul>
                 <li class="active">
                     <a href="../pages/searchPage.html">
-                        <span class="icon icon-plane_depart_big"> </span>
+                        <span class="icon icon-plane-depart-big"> </span>
                         <span class="title">{% trans %}Search a flight{% endtrans %}</span>
                     </a>
                 </li>
@@ -69,14 +69,14 @@
     <!-- <div class="menu right"> OPTIONAL RIGHT MENU </div>-->
 
     <!-- CONTENT_CONTAINER PUSHER -->
-    <div class="content_container_pusher">
+    <div class="content-container-pusher">
 
         <!-- NAVIGATION BAR -->      
-        <div class="navigation_bar">      
-            <div class="navigation_bar_overlay" id="navigation_bar_overlay"></div>
+        <div class="navigation-bar">      
+            <div class="navigation-bar-overlay" id="navigation_bar_overlay"></div>
             <table>
                 <tr>
-                <div class="navigation_bar_wrapper">
+                <div class="navigation-bar-wrapper">
 
                     <!-- LEFT ELEMENT -->
                     <div class="left">
@@ -105,14 +105,14 @@
         </div><!-- /NAVIGATION BAR -->
 
         <!-- PAGE -->
-        <div class="content_container searchPage">
+        <div class="content-container search-page">
             <div class="vt-margin">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
-                            <span class="input-group-text">Van:</span></div>
-                        <input type="text" class="form-control" id="flyFrom" placeholder="Kies uw vertrek luchthaven…" onfocus="searchModule.showSearchOverlay('from');" value="Amsterdam (AMS), Nederland">
+                            <span class="input-group-text">{% trans %}From{% endtrans %}:</span></div>
+                        <input type="text" class="form-control" id="flyFrom" placeholder="{% trans %}Choose your departure airport{% endtrans %}" onfocus="searchModule.showSearchOverlay('from');" value="Amsterdam (AMS), Nederland">
                         <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></div>
                     </div>
                 </div>
@@ -120,8 +120,8 @@
                     <div class="input-group">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
-                            <span class="input-group-text">Naar:</span></div>
-                            <input type="text" class="form-control" id="flyTo" placeholder="Kies uw bestemming…" onfocus="searchModule.showSearchOverlay('to');">
+                            <span class="input-group-text">{% trans %}To{% endtrans %}:</span></div>
+                            <input type="text" class="form-control" id="flyTo" placeholder="{% trans %}Choose your destination{% endtrans %}" onfocus="searchModule.showSearchOverlay('to');">
                         <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></span></div>
                     </div>
                 </div>
@@ -133,29 +133,29 @@
                 </div>
                 <div class="btn-group btn-group-justified vt-margin-groupbottom" data-toggle="buttons">
                     <label class="btn btn-default active">
-                        <input type="radio" name="flightType" id="typeRoundTrip" autocomplete="off" checked>Retourvlucht
+                        <input type="radio" name="flightType" id="typeRoundTrip" autocomplete="off" checked>{% trans %}Return flight{% endtrans %}
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" name="flightType" id="typeSingleFlight" autocomplete="off">Enkele vlucht
+                        <input type="radio" name="flightType" id="typeSingleFlight" autocomplete="off">{% trans %}Single flight{% endtrans %}
                     </label>
                 </div>
                 <div class="form-group">
-                    <span class="form-label" for="date">Heen & terug</span>
+                    <span class="form-label" for="date">{% trans %}Round trip{% endtrans %}</span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <a id="dp-button" class="btn btn-default btn-icon-left" onclick="$j('#datepicker_overlay').show();$j('#global_container').hide();datepicker.showDatePicker();"><span class="icon icon-color-cerulean icon-date">&nbsp;</span><span id="startDate"></span><span id="endDate"></span></a>
+                            <a id="dp-button" class="btn btn-default btn-icon-left" onclick="$j('#datepicker_overlay').show();$j('#global_container').hide();datepicker.showDatePicker();"><span class="icon icon-color-cerulean icon-date">&nbsp;</span><span id="startDate"></span><span class="end-date" id="endDate"></span></a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-4">
-                        <span class="form-label">Volwassenen</span>
+                        <span class="form-label">{% trans %}Adults{% endtrans %}</span>
                     </div>
                     <div class="col-xs-4">
-                        <span class="form-label">Kind <span class="subtext">(2-11jr)</span></span>
+                        <span class="form-label">{% trans %}Children{% endtrans %} <span class="subtext">(2-11{% trans %}yr{% endtrans %})</span></span>
                     </div>
                     <div class="col-xs-4">
-                        <span class="form-label">Baby <span class="subtext">(0-1jr)</span></span>
+                        <span class="form-label">{% trans %}Babies{% endtrans %} <span class="subtext">(0-1{% trans %}yr{% endtrans %})</span></span>
                     </div>
                 </div>
                 <div class="row vt-margin-groupbottom">
@@ -217,7 +217,7 @@
                 <div>
                     <div class="form-group">
                         <a class="collapsed" data-toggle="collapse" href="#extendedSearch" aria-expanded="false" aria-controls="extendedSearch">
-                            <span class="collapse-show">Toon</span><span class="collapse-hide">Verberg</span> uitgebreid zoeken
+                            <span class="collapse-show">{% trans %}Show{% endtrans %}</span><span class="collapse-hide">{% trans %}Hide{% endtrans %}</span> {% trans %}advanced search{% endtrans %}
                             <span class="icon icon-collapse pull-right">
                                 <span class="path1 icon-size-medium icon-color-hawkes_blue"></span><span class="path2 icon-size-medium icon-color-cerulean"></span>
                             </span>
@@ -279,7 +279,7 @@
     </div><!-- /CONTAINER PUSHER -->
 </div><!-- /GLOBAL CONTAINER -->
     <div id="search_overlay" class="overlay">
-        <div class="navigation_bar">
+        <div class="navigation-bar">
             <span class="icon icon-size-large icon-color-white icon-back close-btn" onclick="searchModule.hideSearchOverlay();"></span>
             <div class="input-group" style="padding-left: 10px;">
                 <div class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span id="searchLabel" class="input-group-text">Van:</span> </div>
@@ -394,7 +394,7 @@
             <ul class="vt-list vt-list-border-bottom">
                 <li>
                     <div class="row">
-                        <span class="col-xs-2 icon icon-color-cerulean icon-plane_depart_big"></span>
+                        <span class="col-xs-2 icon icon-color-cerulean icon-plane-depart-big"></span>
                         <span class="col-xs-8">
                             Amsterdam <span class="bold">(AMS)</span><br>
                             Paramaribo <span class="bold">(PBM)</span><br>
@@ -420,7 +420,7 @@
         </div>
     </div>
     <div id="datepicker_overlay" class="overlay">
-        <div class="navigation_bar text-center">
+        <div class="navigation-bar text-center">
             <div class="row">
                 <div class="col-xs-2">
                     <span class="icon icon-size-medium icon-color-white icon-close_1 close-btn" onclick="$j('#datepicker_overlay').hide();$j('#global_container').show();datepicker.hideDatePicker();datepicker.reset();"></span>

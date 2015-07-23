@@ -1,0 +1,345 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?-exz9i9');
+  src: url('../fonts/icomoon.eot?#iefix-exz9i9') format('embedded-opentype'),
+  url('../fonts/icomoon.woff?-exz9i9') format('woff'),
+  url('../fonts/icomoon.ttf?-exz9i9') format('truetype'),
+  url('../fonts/icomoon.svg?-exz9i9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'icomoon';
+  // Better Font Rendering
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon-hotel:before {
+  content: '\e600';
+}
+
+.icon-desktop:before {
+  content: '\e601';
+}
+
+.icon-user:before {
+  content: '\e602';
+}
+
+.icon-logout:before {
+  content: '\e603';
+}
+
+.icon-checkin .path1:before {
+  color: rgb(35, 31, 32);
+  content: '\e604';
+}
+
+.icon-checkin .path2:before {
+  color: rgb(2, 2, 2);
+  content: '\e605';
+  margin-left: -1em;
+}
+
+.icon-phone:before {
+  content: '\e606';
+}
+
+.icon-car:before {
+  content: '\e607';
+}
+
+.icon-plane_depart_big:before {
+  content: '\e608';
+}
+
+.icon-plane_return_big:before {
+  content: '\e609';
+}
+
+.icon-marker:before {
+  content: '\e60a';
+}
+
+.icon-date:before {
+  content: '\e60b';
+}
+
+.icon-expand .path1:before {
+  color: rgba(0, 0, 0, .1);
+  content: '\e60c';
+}
+
+.icon-expand .path2:before {
+  color: rgb(35, 31, 32);
+  content: '\e60d';
+  margin-left: -1em;
+}
+
+.icon-collapse .path1:before {
+  color: rgba(0, 0, 0, .1);
+  content: '\e60e';
+}
+.icon-collapse .path2:before {
+  content: '\e60f';
+  margin-left: -1em;
+  color: rgb(35, 31, 32);
+}
+
+.icon-adult:before {
+  content: '\e610';
+}
+
+.icon-child:before {
+  content: '\e611';
+}
+
+.icon-baby:before {
+  content: '\e612';
+}
+
+.icon-transfer:before {
+  content: '\e613';
+}
+
+.icon-desktop_invert:before {
+  content: '\e614';
+}
+
+.icon-budget:before {
+  content: '\e615';
+}
+
+.icon-plane_return_small:before {
+  content: '\e616';
+}
+
+.icon-plane_depart_small:before {
+  content: '\e617';
+}
+
+.icon-traveltime:before {
+  content: '\e618';
+}
+
+.icon-destination:before {
+  content: '\e619';
+}
+
+.icon-checkmark_1:before {
+  content: '\e61a';
+}
+
+.icon-airport_depart:before {
+  content: '\e61b';
+}
+
+.icon-airport_arrive:before {
+  content: '\e61c';
+}
+
+.icon-sort:before {
+  content: '\e61d';
+}
+
+.icon-filter:before {
+  content: '\e61e';
+}
+
+.icon-close_1:before {
+  content: '\e61f';
+}
+
+.icon-search:before {
+  content: '\e620';
+}
+
+.icon-time:before {
+  content: '\e621';
+}
+
+.icon-star:before {
+  content: '\e622';
+}
+
+.icon-plane_depart_flighttime .path1:before {
+  content: '\e623';
+  color: rgb(0, 0, 0);
+}
+.icon-plane_depart_flighttime .path2:before {
+  content: '\e624';
+  margin-left: -1em;
+  color: rgb(35, 31, 32);
+}
+
+.icon-plane_return_flighttime .path1:before {
+  content: '\e625';
+  color: rgb(35, 31, 32);
+}
+.icon-plane_return_flighttime .path2:before {
+  content: '\e626';
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.icon-bookmobile:before {
+  content: '\e627';
+}
+
+.icon-mail_share:before {
+  content: '\e628';
+}
+
+.icon-options .path1:before {
+  content: '\e629';
+  color: rgb(0, 0, 0);
+}
+.icon-options .path2:before {
+  content: '\e62a';
+  margin-left: -1em;
+  color: rgb(35, 31, 32);
+}
+
+.icon-menu:before {
+  content: '\e62b';
+}
+
+.icon-whatsapp:before {
+  content: '\e62c';
+}
+
+.icon-mail:before {
+  content: '\e62d';
+}
+
+.icon-mobile_bubble:before {
+  content: '\e62e';
+}
+
+.icon-plus:before {
+  content: '\e62f';
+}
+
+.icon-minus:before {
+  content: '\e630';
+}
+
+.icon-alert:before {
+  content: '\e631';
+}
+
+.icon-flight_data:before {
+  content: '\e632';
+}
+
+.icon-list_arrow:before {
+  content: '\e633';
+}
+
+.icon-information:before {
+  content: '\e634';
+}
+
+.icon-edit_2 .path1:before {
+  content: '\e635';
+  color: rgba(0, 0, 0, 0.100000001490116);
+}
+.icon-edit_2 .path2:before {
+  content: '\e636';
+  margin-left: -1em;
+  color: rgb(35, 31, 32);
+}
+.icon-edit_2 .path3:before {
+  content: '\e637';
+  margin-left: -1em;
+  color: rgb(35, 31, 32);
+}
+
+.icon-loader .path1:before {
+  content: '\e638';
+  color: rgb(0, 0, 0);
+}
+.icon-loader .path2:before {
+  content: '\e639';
+  margin-left: -1em;
+  color: rgb(35, 31, 32);
+}
+.icon-loader .path3:before {
+  content: '\e63a';
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.icon-checkin_online:before {
+  content: '\e63b';
+}
+
+.icon-svg51:before {
+  content: '\e63c';
+}
+
+.icon-receipt:before {
+  content: '\e63d';
+}
+
+.icon-checkmark_2:before {
+  content: '\e63e';
+}
+
+.icon-dropdown:before {
+  content: '\e63f';
+}
+
+.icon-close_2:before {
+  content: '\e640';
+}
+
+.icon-edit_1:before {
+  content: '\e641';
+}
+.icon-size-small:before {
+    font-size: 16px;
+}
+.icon-size-medium:before {
+    font-size: 26px;
+}
+.icon-size-large:before {
+    font-size: 35px;
+}
+.icon-size-extra-large:before {
+    font-size: 125px;
+}
+.icon-back:before {
+  content: '\e642';
+}
+.icon-color-cerulean:before, .path1.icon-color-cerulean:before, .path2.icon-color-cerulean:before, .path3.icon-color-cerulean:before{
+    color: $color-cerulean;
+}
+.icon-color-suva_gray:before, .path1.icon-color-suva_gray:before, .path2.icon-color-suva_gray:before, .path3.icon-color-suva_gray:before {
+    color: $color-suva-gray;
+}
+.icon-color-white:before, .path1.icon-color-white:before, .path2.icon-color-white:before, .path3.icon-color-white:before {
+    color: $color-white;
+}
+.icon-color-black:before, .path1.icon-color-black:before, .path2.icon-color-black:before, .path3.icon-color-black:before {
+    color: $color-black;
+}
+.icon-color-hawkes_blue:before, .path1.icon-color-hawkes_blue:before, .path2.icon-color-hawkes_blue:before, .path3.icon-color-hawkes_blue:before {
+    color: $color-hawkes-blue;
+}
+.icon-color-international_orange:before, .path1.icon-color-international_orange:before, .path2.icon-color-international_orange:before, .path3.icon-color-international_orange:before {
+    color: $color-internationalorange;
+}
+.icon-color-limeade:before, .path1.icon-color-limeade:before, .path2.icon-color-limeade:before, .path3.icon-color-limeade:before {
+    color: $color-limeade;
+}

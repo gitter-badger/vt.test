@@ -11,10 +11,29 @@
 /web/bundles/
 /web/assets/vendor/
 
-# Executable php archives, downloaded by task
-*.phar
 *~
 *.log
 
+# Executable php archives
+*.phar
+
+# IDE project directories
+/nbproject/
+.idea/
+
 # Automatic build logs and results
 /app/build/
+
+# Dependencies for client-side tasks
+/node_modules/
+/web/bundles/
+/web/assets/js/vendor/
+/web/assets/js/translation/
+
+# Desktop Services Store hidden file which stores custom attributes of a folder
+# such as the icons position or the background image choice, created by OS X
+.DS_Store
+
+# Image cache which makes thumbnail viewing faster, created by Windows
+# whenever images are encountered in a folder.
+Thumbs.db

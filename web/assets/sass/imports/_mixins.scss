@@ -1,0 +1,89 @@
+@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  border-top-left-radius: $topleft;
+}
+
+@mixin checkbox-variant($parent, $color) {
+  #{$parent} input[type="checkbox"] + label {
+    &::before {
+      border-color: $color;
+      border-width: 1px;
+    }
+  }
+
+  #{$parent} input[type="checkbox"]:checked + label {
+    &::before {
+      background-color: $color;
+      border-color: $color;
+    }
+
+    &::after {
+      color: $color-white;
+    }
+  }
+}
+
+@mixin radio-variant($parent, $color) {
+  #{$parent} input[type="radio"] {
+    & + label {
+      &::after {
+        background-color: $color;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        border-color: $color-silver;
+      }
+
+      &::after {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+    color: $color;
+  }
+
+  &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+      background-color: $color-silver;
+      border-color: $color-silver;
+      color: $color-white;
+    }
+  }
+
+  .badge {
+    background-color: $color;
+    color: $background;
+  }
+}

@@ -1,0 +1,352 @@
+////////////////////////////////////////////////////////////////////////////////
+// Internal IMPORTS
+////////////////////////////////////////////////////////////////////////////////
+@import 'imports/variables';
+@import 'imports/mixins';
+
+.edit-traveler{
+    line-height:        50px;
+    margin-left:        -10px;
+}
+.radio.service-level {
+    margin-bottom: 0;
+    label span {
+        line-height:    28px;
+    }
+    &.vt-border-top {
+        padding-top:    10px;
+        margin-top:     0;
+    }
+}
+.traveler.open {
+    background-color:   $color-hawkes-blue;
+    .checkbox {
+        label{
+            color:          $color-black;
+            &:after {
+                  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 0;
+  padding-left: 3px;
+  padding-top: 1px;
+  font-size: 11px;
+  font-family: 'icomoon';
+  content: '\e61a';
+  font-size: 30px;
+  margin-left: -37px;
+  color: #fff;
+            }
+        }
+    }
+}
+.extendedOptions-row {
+    .left-item, .between-item, .right-item {
+        box-sizing:                 border-box;
+        line-height:                30px;
+        margin-bottom:              15px;
+    }
+    .left-item {
+        background-color:           $color-carouselpink;
+        border-right:               2px solid $color-white;
+        border-top-left-radius:     $borderradius-mediumbutton;
+        border-bottom-left-radius:  $borderradius-mediumbutton;
+    }
+    .between-item{
+        background-color:           $color-bajawhite;
+        border-right:               1px solid $color-white;
+        border-left:                1px solid $color-white;
+    }
+    .right-item {
+        background-color:           $color-frost;
+        border-left:                2px solid $color-white;
+        border-top-right-radius:    $borderradius-mediumbutton;
+        border-bottom-right-radius: $borderradius-mediumbutton;
+    }
+}
+.flight-icon{
+    float: left;
+    width: 15px;
+}
+.flight-data {
+    overflow: hidden;
+}
+.vt-airmiles{
+    line-height:            30px;
+    display:                inline-block;
+    float:                  right;
+    padding-left:           40px;
+    background-image:       url('../assets/img/logo_airmiles.svg');
+    background-position:    left;
+    background-repeat:      no-repeat;
+    background-size:        30px 30px;
+    height:                 100%;
+}
+.airmiles {
+    background-color:       $color-hawkes-blue;
+    .logo-left {
+        background-image:       url('../assets/img/logo_airmiles.svg');
+        background-position:    13px center;
+        background-repeat:      no-repeat;
+        background-size:        40px 40px;
+        div {
+            line-height: 20px;
+        }
+    }
+    &.section-header {
+        margin-top: 0;
+    }
+    .check-saldo, .logo-left .check-saldo {
+        background-color:           $color-lochmara;
+        color:                      $color-hawkes-blue;
+        line-height:                30px;
+        border-top-left-radius:     $borderradius-mediumbutton;
+        border-bottom-left-radius:  $borderradius-mediumbutton;
+        margin-top:                 5px;
+    }
+}
+.airmiles-price{
+    display:                none;
+    &.active{
+        display:            block;
+    }
+}
+.booking-overview-airline{
+    padding-top:            40px;
+    background-repeat:      no-repeat;
+    background-size:        60px;
+    background-image:       url('../assets/img/airlines/klm.svg');
+    background-position:    center -10px;
+}
+
+.section-header {
+    line-height:            38px;
+    margin-top:             5px;
+}
+.checkbox label .terms {
+    line-height:            20px;
+}
+.login-overlay{
+    display: none;
+    .navigation-bar.with-title {
+        .close-btn {
+            margin-top: 0;
+            margin-left: -5px;
+        }
+        span {
+            line-height: 45px;
+        }
+    }
+}
+.logged-in-popup {
+    position:                       absolute;
+    top:                            35px;
+    z-index:                        10;
+    left:                           20px;
+    padding-top:                    20px;
+    overflow:                       hidden;
+    display:                        none;
+    .logged-in-popup-body{
+        width:                      280px;
+        background-color:           rgba(0,0,0,0.9);
+        border-radius:              $borderradius-mediumbutton;
+        border-top-left-radius:     0;
+        &:after {
+            bottom:                 80%;
+            left:                   0%;
+            border:                 solid transparent;
+            content:                ' ';
+            height:                 0;
+            width:                  0;
+            position:               absolute;
+            pointer-events:         none;
+            border-color:           rgba(0,0,0,0);
+            border-bottom-color:    rgba(0,0,0,0.9);
+            border-width:           25px;
+            margin-left:            -30px;
+        }
+    }
+
+
+}
+.travel-scheme-overlay, .airmiles-overlay, .password-overlay {
+    display:                none;
+    position:               absolute;
+    top:                    60px;
+    left:                   $margin-horizontal;
+    right:                  $margin-horizontal;
+    z-index:                15;
+
+}
+.travel-scheme-overlay .travel-scheme, .airmiles-overlay .airmiles, .password-overlay{
+    background-color:       $color-white;
+    width:                  auto;
+    vertical-align:         middle;
+    border-radius:          $borderradius-mediumbutton;
+    .btn {
+        border-bottom-left-radius:          $borderradius-mediumbutton;
+        border-bottom-right-radius:         $borderradius-mediumbutton;
+        border-top-left-radius:             0;
+        border-top-right-radius:            0;
+    }
+}
+.airmiles-overlay{
+    .airmiles{
+        top:                    60px;
+        .airmiles-logo {
+            width: 60px;
+            height: 60px;
+            background-color:       white;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            background-image:       url('../assets/img/logo_airmiles.svg');
+            background-position:    left;
+            background-repeat:      no-repeat;
+            background-size:        60px 60px;
+            position:               absolute;
+            top:                    -15px;
+            left:                   50%;
+            margin-left:            -30px;
+        }
+    }
+}
+.travel-scheme-overlay{
+    .travel-scheme {
+        top:                        $margin-vertical;
+        .airmiles-logo{
+            line-height:            30px;
+            height:                 30px;
+            display:                inline-block;
+            padding-left:           37px;
+            background-image:       url('../assets/img/logo_airmiles.svg');
+            background-position:    left;
+            background-repeat:      no-repeat;
+            background-size:        30px 30px;
+        }
+    }
+}
+.booking-payment{
+    #airmiles-content-success {
+        display:            none;
+        .logo-left {
+            padding-left:   45px;
+        }
+    }
+    #airmiles-content-failure.logo-left , #airmiles-content-used {
+        padding-left:   60px;
+    }
+    .close-airmiles, #airmiles-content-success, #airmiles-content-failure, #airmiles-content-used{
+        display:            none;
+    }
+    &.airmiles-success {
+        #airmiles-content-success, .close-airmiles {
+            display:        block;
+        }
+    }
+    &.airmiles-failure {
+        #airmiles-content-failure, .close-airmiles {
+            display:        block;
+        }
+    }
+    &.airmiles-used{
+        #airmiles-content-used, .airmiles-price {
+            display:        block;
+        }
+        .discount {
+            display:        none;
+        }
+    }
+    &.airmiles-success, &.airmiles-failure{
+        .close-airmiles {
+            display:        block;
+        }  
+    }
+    &.airmiles-success, &.airmiles-failure, &.airmiles-used {
+        #airmiles-content-default {
+            display:        none;
+        }  
+    }
+}
+.flight-icon {
+    width:                  30px;
+    height:                 20px;
+    float:                  left;
+    span {
+        &:before{
+            font-size:      26px;
+        }
+    }
+    &.detail {
+        span {
+            &:before{
+                font-size:  20px;
+            }
+        }
+    }
+}
+.flight-data {
+    overflow:                   hidden;
+    &.flight{
+        background-image:       url('../assets/img/ico_flightduration_top.svg'), url('../assets/img/ico_flightduration_bottom.svg'), url('../assets/img/ico_flightduration_repeat.svg');
+        background-position:    left top, left bottom, left center !important;
+        background-repeat:      no-repeat, no-repeat, repeat-y !important;
+        background-size:        20px 20px, 20px 20px, 20px 5px;
+        height:                 100%;
+        padding-left:           30px;
+    }
+}
+.flight-data > .row > div, .flight-icon{
+    margin-top:                 3px;
+    margin-bottom:              3px;
+}
+.flight-type{
+    font-weight:                bold;
+    line-height:                26px;
+}
+.price-total-passengers{
+    line-height:                22px;
+    .vt-text-color-lochmara{
+        line-height:            30px;
+        display:                inline-block;
+        float:                  right;
+        padding-left:           40px;
+        background-image:       url('../assets/img/logo_airmiles.svg');
+        background-position:    left;
+        background-repeat:      no-repeat;
+        background-size:        30px 30px;
+        height:                 100%;
+    }
+}
+.price-total-header {
+    .total-price {
+        float:                  left;
+        position:               relative;
+        width:                  90px;
+    }
+    .vt-seperator{
+        position:               relative;
+        top:                    -10px;
+        margin-left:            90px;
+    }
+}
+.airline-icon  {
+    height: 20px;
+}
+.booking-steps {
+    text-align: center;
+    .booking-steps-image{
+        width: 100%;
+    }
+    .booking-steps-text{
+        .col-xs-3{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .booking-steps-image, .booking-steps-text{
+        margin: auto;
+        max-width: 350px;
+    }
+}

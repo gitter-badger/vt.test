@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="nl" target-language="nl" datatype="plaintext" original="file.ext">
     <body>
       <trans-unit id="96a584bb438f13400f592714faeaae6f" resname="Including alternative airports">
-        <source>Including alternative airports</source>
-        <target>Inclusief alternatieve luchthavens</target>
-      </trans-unit>
+        <source>Including alternative airports</source> <target>Inclusief alternatieve luchthavens</target> </trans-unit>
       <trans-unit id="99dea78007133396a7b8ed70578ac6ae" resname="Login">
         <source>Login</source>
         <target>Inloggen</target>
@@ -23,17 +21,35 @@
         <target>Boek hotel</target>
       </trans-unit>
       <trans-unit id="f38a1c701135faa51071aa483c1cd5b0" resname="Rent a car">
-        <source>Rent a car</source>
-        <target>Boek huurauto</target>
-      </trans-unit>
+        <source>Rent a car</source> <target>Boek huurauto</target> </trans-unit>
       <trans-unit id="0323de4f66a1700e2173e9bcdce02715" resname="Logout">
-        <source>Logout</source>
-        <target>Uitloggen</target>
-      </trans-unit>
+        <source>Logout</source> <target>Uitloggen</target> </trans-unit>
       <trans-unit id="1ca3581b28ba4eb410d127bc3743e953" resname="View desktop version">
-        <source>View desktop version</source>
-        <target>Bekijk desktopversie</target>
-      </trans-unit>
+        <source>View desktop version</source> <target>Bekijk desktopversie</target> </trans-unit>
+      <trans-unit id="5da618e8e4b89c66fe86e32cdafde142" resname="From">
+        <source>From</source> <target state="needs-translation">Van</target> </trans-unit>
+      <trans-unit id="e12167aa0a7698e6ebc92b4ce3909b53" resname="To">
+        <source>To</source> <target state="needs-translation">Naar</target> </trans-unit>
+      <trans-unit id="4f9c61d00ecff4f6441506f1671bb65a" resname="Return flight">
+        <source>Return flight</source> <target state="needs-translation">Retourvlucht</target> </trans-unit>
+      <trans-unit id="ef35abf8fa61212206de4ce97d1d6e7d" resname="Single flight">
+        <source>Single flight</source> <target state="needs-translation">Enkele vlucht</target> </trans-unit>
+      <trans-unit id="554c0a5a2e02f120143bc906a1e34707" resname="Round trip">
+        <source>Round trip</source> <target state="needs-translation">Heen &amp; terug</target> </trans-unit>
+      <trans-unit id="fa4db5c7540aa96b2267921fe268a330" resname="Adults">
+        <source>Adults</source> <target state="needs-translation">Volwassenen</target> </trans-unit>
+      <trans-unit id="64e4aca4297806247f62a7b5f8cbd3df" resname="Children">
+        <source>Children</source> <target state="needs-translation">Kind</target> </trans-unit>
+      <trans-unit id="24457c6b0ac87e9c58d80dca40b16dee" resname="yr">
+        <source>yr</source> <target state="needs-translation">jr</target> </trans-unit>
+      <trans-unit id="066cd752c82ddc6231a9723b5822a945" resname="Babies">
+        <source>Babies</source> <target state="needs-translation">Baby</target> </trans-unit>
+      <trans-unit id="498f79c4c5bbde77f1bceb6c86fd0f6d" resname="Show">
+        <source>Show</source> <target state="needs-translation">Toon</target> </trans-unit>
+      <trans-unit id="62a5e490880a92eef74f167d9dc6dca0" resname="Hide">
+        <source>Hide</source> <target state="needs-translation">Verberg</target> </trans-unit>
+      <trans-unit id="7cc6aa94798138315772817c6cb5168a" resname="advanced search">
+        <source>advanced search</source> <target state="needs-translation">uitgebreid zoeken</target> </trans-unit>
     </body>
   </file>
 </xliff>

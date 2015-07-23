@@ -51,8 +51,9 @@ assetic:
     assets:
         cssFiles:
             inputs:
-                - 'assets/css/style.css'
-                - 'assets/css/searchPage.css'
+                - 'assets/css/application.css'
+              #  - 'assets/css/style.css'
+              #  - 'assets/css/searchPage.css'
         
         jsVendors:
             inputs:
@@ -104,9 +105,9 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
     
-# 
+# JsTranslationBundle Configuration
 bazinga_js_translation:
-    locale_fallback:    en
+    locale_fallback:    "%locale%"
     default_domain:     messages
     active_locales:
         - en
