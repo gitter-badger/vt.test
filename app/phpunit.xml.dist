@@ -55,6 +55,11 @@
                 <directory>../src/*/Bundle/*Bundle/Resources</directory>
                 <directory>../src/*/Bundle/*Bundle/Tests</directory>
             </exclude>
+            
+            <directory>../../library/Symfony/services/*</directory>
+            <exclude>
+                <directory>../../library/Symfony/services/*/Tests</directory>
+            </exclude>
         </whitelist>
     </filter>
 </phpunit>
