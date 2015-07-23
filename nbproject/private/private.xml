@@ -3,29 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/flightDetailPage.scss</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/app/config/config.yml</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/imports/_general.scss</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Resources/public/js/config/index.config.js</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/imports/_datePicker.scss</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/imports/_variables.scss</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/build.xml</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/css/searchPage.css</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/.scss-lint.yml</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Resources/views/Default/templates/home.view.html.twig</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/app/Resources/views/base.html.twig</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/style.scss</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/bookingPage.scss</file>
             <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/Gruntfile.js</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/searchPage.scss</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/.editorconfig</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Resources/public/js/index.module.js</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/package.json</file>
+            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Controller/DefaultController.php</file>
+            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Tests/Controller/DefaultControllerTest.php</file>
+            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/app/config/config.yml</file>
+            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/app/config/services.yml</file>
+            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/app/phpunit.xml.dist</file>
             <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/composer.json</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/bower.json</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/src/IndexBundle/Resources/public/js/controllers/home.controller.js</file>
-            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/web/assets/sass/searchResultsPage.scss</file>
+            <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/build.xml</file>
             <file>file:/home/maglovanyi/WORKSHOP/m.vliegtickets.loc/.gitignore</file>
         </group>
     </open-files>
