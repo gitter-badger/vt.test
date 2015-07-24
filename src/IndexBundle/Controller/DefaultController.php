@@ -16,7 +16,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {        
+        echo 123; exit;
         $airtrade = $this->get('airtrade_client');
+        $airtrade->factorys();
         return $this->render('IndexBundle:Default:index.html.twig');
     }
     

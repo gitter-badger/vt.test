@@ -1,7 +1,7 @@
 parameters:
-    service_base_url:   "http://otvapitest.airtrade.com"
-    account_code:       "MontysAccount"
-    session_params:
+    airtrade.service_base_url:   "http://otvapitest.airtrade.com"
+    airtrade.account_code:       "MontysAccount"
+    airtrade.session_params:
         name:               "Otravo"
         application_type:   "WebApi"
         culture_code:       "nl-NL"
@@ -21,8 +21,9 @@ services:
         
     airtrade_client_session:
         class:      Services\Airtrade\RestClientSession
-        arguments:    ["%account_code%", "%session_params%"]
+        arguments:    ["%airtrade.account_code%", "%airtrade.session_params%"]
+        public: false
 
     airtrade_client:
         class:      Services\Airtrade\RestClient
-        arguments:    ["@http_client", "@airtrade_client_session", "%service_base_url%", "%account_code%"]
+        arguments:    ["@http_client", "@airtrade_client_session", "%airtrade.service_base_url%", "%airtrade.account_code%"]
