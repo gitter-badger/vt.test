@@ -41,10 +41,18 @@ module.exports = function(config) {
         // Test results reporter to use
         // Possible options: 'dots', 'progress', 'junit', 'growl', 'coverage'
         reporters: ['progress', 'coverage'],
+        
+        preprocessors: {
+            'web/assets/js/*[!tests]*/*.js': ['coverage'],
+            'src/**/Resources/public/js/**/*.js': ['coverage']
+        },
 
+        
         coverageReporter: {
-            type: 'cobertura',
-            dir: 'app/build/coverage/client'
+            dir: 'app/build/coverage/client',
+            reporters: [
+                { type: 'cobertura', subdir: '.', file: 'cobertura.xml' }
+            ]
         },
 
         // Web server port
