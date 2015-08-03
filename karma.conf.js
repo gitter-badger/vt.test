@@ -40,20 +40,19 @@ module.exports = function(config) {
 
         // Test results reporter to use
         // Possible options: 'dots', 'progress', 'junit', 'growl', 'coverage'
-//        reporters: ['progress', 'coverage'],
-        
-//        preprocessors: {
-//            'web/assets/js/*[!tests]*/*.js': ['coverage'],
-//            'src/**/Resources/public/js/**/*.js': ['coverage']
-//        },
+        reporters: ['dots', 'progress', 'coverage'],
 
+        preprocessors: {
+            'web/assets/js/*[!tests]*/*.js': ['coverage'],
+            'src/**/Resources/public/js/**/*.js': ['coverage']
+        },
         
-//        coverageReporter: {
-//            dir: 'app/build/coverage/client',
-//            reporters: [
-//                { type: 'cobertura', subdir: '.', file: 'cobertura.xml' }
-//            ]
-//        },
+        coverageReporter: {
+            dir: 'app/build/coverage/client',
+            reporters: [
+                { type: 'cobertura', subdir: '.', file: 'cobertura.xml' }
+            ]
+        },
 
         // Web server port
         port: 8765,
@@ -79,6 +78,7 @@ module.exports = function(config) {
 
         // Continuous Integration mode
         // If true, it capture browsers, tun tests and exit
-        sigleRun: true
+        
+        singleRun: true
     });
 };
