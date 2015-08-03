@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt, {
-        pattern: ['grunt-*', 'sass-*']
+        pattern: ['grunt-*', 'sass-*', '!grunt-template-jasmine-istanbul']
     });
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
