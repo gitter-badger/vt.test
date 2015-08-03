@@ -46,7 +46,7 @@ class DefaultControllerTest extends WebTestCase
         // Test if Content-Type is valid application/json
         $this->assertSame('application/json', $response->headers->get('Content-Type'));
         // Test if request returns expected response
-        $this->assertEquals('{"data":[{"Code":"KEL","DisplayName":"Kiel, KEL, Duitsland","LocationType":"Airport"},{"Code":"KBP","DisplayName":"Kiev (Borispol), KBP, Oekra\u00efne","LocationType":"Airport"}]}', $response->getContent());
+        $this->assertEquals('[{"$id":"1","Code":"KEL","DisplayName":"Kiel, KEL, Duitsland","LocationType":"Airport"},{"$id":"2","Code":"KBP","DisplayName":"Kiev (Borispol), KBP, Oekra\u00efne","LocationType":"Airport"}]', $response->getContent());
         // Test that response is not empty
         $this->assertNotEmpty($this->client->getResponse()->getContent());
         
@@ -58,7 +58,7 @@ class DefaultControllerTest extends WebTestCase
         // Test if Content-Type is valid application/json
         $this->assertSame('application/json', $response->headers->get('Content-Type'));
         // Test if request returns expected response
-        $this->assertEquals('{"data":[{"Code":"","DisplayName":"No results","LocationType":"Unkown"}]}', $response->getContent());
+        $this->assertEquals('[{"$id":"1","Code":"","DisplayName":"No results","LocationType":"Unkown"}]', $response->getContent());
         // Test that response is not empty
         $this->assertNotEmpty($this->client->getResponse()->getContent());
     }
