@@ -1,0 +1,79 @@
+<div class="overlay" data-ng-show="home.showSearchOverlay">
+    <div class="navigation-bar">
+        <span class="icon icon-size-large icon-color-white icon-back close-btn" data-ng-click="home.showSearchOverlay=false"></span>
+        <div class="input-group" style="padding-left: 10px;">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span id="searchLabel" class="input-group-text">{% verbatim %}{{ home.showSearchOverlay | trans }}{% endverbatim %}:</span> </div>
+            <input type="text" focus="home.showSearchOverlay" class="form-control hasclear" data-ng-model="overlay.input" data-ng-keyup="overlay.autocomplete()" placeholder="{% verbatim %}{{ 'Choose your ' + (home.showSearchOverlay === 'From' ? 'departure' : 'destination')  | trans }}{% endverbatim %}" >
+            <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;
+                    $j('#suggestions').hide();"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></div>
+        </div>
+    </div>
+    <div class="results">
+        <table id="suggestions" class="table table-hover" style="margin-bottom: 0" data-ng-show="overlay.results">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> {% trans %}Destinations found{% endtrans %}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="result in overlay.results">
+                    <td data-ng-click="overlay.selectValue(result.DisplayName)">{% verbatim %}{{ result.DisplayName }}{% endverbatim %}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover" style="margin-bottom: 0">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {% trans %}Most selected destinations{% endtrans %}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td onclick="searchModule.selectResult($j(this));">
+                        Amsterdam (AMS), Nederland
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="searchModule.selectResult($j(this));">
+                        Eindhoven (EIN), Nederland
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="searchModule.selectResult($j(this));">
+                        Rotterdam (RTM), Nederland
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="searchModule.selectResult($j(this));">
+                        Düsseldorf (DUS), Duitsland
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> {% trans %}Recent searches{% endtrans %}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td onclick="searchModule.selectResult($j(this));">
+                        Barcelona (BCN), Spanje
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="searchModule.selectResult($j(this));">
+                        Eindhoven (EIN), Nederland
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -21,7 +21,7 @@
     "angular": "~1.4.3",
     "angular-resource": "~1.4.3",
     "angular-ui-router": "~0.2.15",
-    
+
     "jquery": "2.x.x",
     "fastclick": "1.x.x",
     "font-awesome": "4.3.x",
@@ -34,7 +34,9 @@
     "open-sans-fontface": "*",
     "angular-symfony-translation": "~1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "angular-mocks": "^1.4.3"
+  },
   "resolutions": {
     "angular": "1.4.3"
   },

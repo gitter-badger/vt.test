@@ -1,9 +1,9 @@
 .overlay {
-    display:                none;
     .navigation-bar{
         height:             auto;
         padding:            10px 12px;
         .close-btn{
+            cursor: pointer;
             float:                      left;
             height:                     25px;
             margin-top:                 4px;

@@ -54,24 +54,27 @@ assetic:
                 - 'assets/css/application.css'
               #  - 'assets/css/style.css'
               #  - 'assets/css/searchPage.css'
-        
+
         jsVendors:
             inputs:
                 - 'assets/js/vendor/angular/angular.js'
                 - 'assets/js/vendor/angular-resource/angular-resource.js'
                 - 'assets/js/vendor/angular-ui-router/release/angular-ui-router.js'
+            #    - 'assets/js/vendor/lodash/lodash.js'
                 - 'bundles/bazingajstranslation/js/translator.min.js'
                 - 'assets/js/translations/config.js'
                 - 'assets/js/translations/*/*.js'
                 - 'assets/js/vendor/angular-symfony-translation/dist/angular-symfony-translation.js'
-                
+
         jsConfig:
             inputs:
                 - 'assets/js/config.js'
                 - 'assets/js/app.js'
-                
+                - 'assets/js/**/*.js'
+
         jsModules:
             inputs:
+
                 - '@IndexBundle/Resources/public/js/*.js'
                 - '@IndexBundle/Resources/public/js/**/*.js'
 
@@ -104,7 +107,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-    
+
 # JsTranslationBundle Configuration
 bazinga_js_translation:
     locale_fallback:    "%locale%"

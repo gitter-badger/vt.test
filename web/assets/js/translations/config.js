@@ -1,4 +1,4 @@
 (function (Translator) {
-    Translator.fallback      = 'en';
+    Translator.fallback      = 'nl';
     Translator.defaultDomain = 'messages';
 })(Translator);

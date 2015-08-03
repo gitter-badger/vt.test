@@ -17,13 +17,13 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
     http_client:
-        class:      Guzzle\Http\Client
+        class:      GuzzleHttp\Client
         
-    airtrade_client_session:
-        class:      Services\Airtrade\RestClientSession
-        arguments:    ["%airtrade.account_code%", "%airtrade.session_params%"]
+    airtrade_user_session:
+        class:      Services\Airtrade\RestUserSession
+        arguments:    ["@session", "%airtrade.account_code%", "%airtrade.session_params%"]
         public: false
 
     airtrade_client:
         class:      Services\Airtrade\RestClient
-        arguments:    ["@http_client", "@airtrade_client_session", "%airtrade.service_base_url%", "%airtrade.account_code%"]
+        arguments:    ["@http_client", "@airtrade_user_session", "%airtrade.service_base_url%", "%airtrade.account_code%"]

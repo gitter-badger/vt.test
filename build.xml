@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Vliegtickets" default="build" basedir="." description="This is a buildfile for Vliegtickest project.">
     <!-- Required properties -->
-    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.loc" override="true"/>
+    <property name="base.dir" value="/home/maglovanyi/WORKSHOP/m.vliegtickets.jenkins" override="true"/>
     <property name="vendors.dir" value="${base.dir}/../library/Symfony/vendor" />
     <property name="api.dir" value="${vendors.dir}/../services" />
     <property name="source.dir" value="${base.dir}/src" />
     <property name="build.dir" value="${base.dir}/app/build" />
-    
+
     <!-- Filesets -->
     <fileset id="sourcecode" dir="${source.dir}">
         <include name="**/*.php"/>
         <exclude name="Tests/"/>
     </fileset>
-    
+
     <fileset id="apicode" dir="${api.dir}">
         <include name="**/*.php"/>
     </fileset>
-    
+
      <!-- Project build clean -->
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="${build.dir}/api"/>
@@ -26,7 +26,7 @@
         <delete dir="${build.dir}/pdepend"/>
         <delete dir="${build.dir}/docs/*"/>
     </target>
-    
+
     <!-- Project build prepare -->
     <target name="prepare" depends="clean" description="Prepare for build">
         <mkdir dir="${build.dir}/api"/>
@@ -35,35 +35,35 @@
         <mkdir dir="${build.dir}/logs"/>
         <mkdir dir="${build.dir}/pdepend"/>
     </target>
-    
+
     <target name="install:composer" description="Installing composer">
         <echo msg="Fetching Composer"/>
         <exec
             command="curl -sS https://getcomposer.org/installer | php"
             passthru="true"/>
     </target>
-    
+
     <target name="install:phpmd" description="Install PHPMD globally">
         <exec
             command="wget -c http://static.phpmd.org/php/latest/phpmd.phar"
             checkreturn="true"
             passthru="true"
-            level="verbose"/>   
-    </target>   
-    
+            level="verbose"/>
+    </target>
+
     <target name="vendors" depends="install:composer" description="Update vendors">
          <exec command="php composer.phar update" checkreturn="true" passthru="true" level="verbose">
             <arg value="--optimize-autoloader" />
-        </exec>      
+        </exec>
     </target>
-    
+
     <target name="translations" description="Collect project translations">
         <exec command="php app/console cache:clear" passthru="true" level="verbose" description="Clear cache so that Symfony can discover the new translation resources" />
         <exec command="php app/console debug:translation nl IndexBundle" passthru="true" level="verbose" description="Check missing translations" />
         <exec command="php app/console translation:update --force --output-format=xlf nl IndexBundle" passthru="true" level="verbose" description="Generate translations index for bundles" />
         <exec command="php app/console bazinga:js-translation:dump web/assets/js" passthru="true" level="verbose" description="Dump the translation files to be used on client side" />
     </target>
-    
+
     <!-- Syntax errors detector -->
     <target name="lint" description="Check syntax of source.">
         <phplint>
@@ -71,7 +71,7 @@
             <fileset refid="apicode" />
         </phplint>
     </target>
-    
+
     <!-- copy/paste detector -->
     <target name="check:cpd" description="Checks similar code blocks.">
         <echo msg="Checking similar code blocks ..."/>
@@ -86,7 +86,7 @@
     <target name="phpmd" depends="install:phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
         <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${build.dir}/logs/phpmd.xml" />
     </target>
-    
+
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
             <arg value="-c" />
@@ -96,7 +96,7 @@
 
     <!-- Default target -->
     <target name="build" depends="prepare,vendors,lint,phpmd,phpunit"></target>
-    
+
     <target name="test" depends="phpunit"></target>
     <target name="translate" depends="translations"></target>
 </project>

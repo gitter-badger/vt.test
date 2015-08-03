@@ -1,13 +1,14 @@
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('index').controller('HomeController', HomeController);
+    function HomeController() {
+        // VM represents the View’s Model (aka ViewModel)
+        var vm = this;
+        vm.search = {};
 
-HomeController.$inject = [];
+        return vm;
+    }
 
-function HomeController() {
-    var vm = this;
-
-    vm.hello = 'Hello world!';
-
-    return vm;
-}
+    angular.module('index').controller('HomeController', HomeController);
+    HomeController.$inject = [];
+}());

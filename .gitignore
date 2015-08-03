@@ -1,9 +1,7 @@
-/app/bootstrap.php.cache
-/app/cache/*
-!app/cache/.gitkeep
+
+
 /app/config/parameters.yml
-/app/logs/*
-!app/logs/.gitkeep
+
 /app/phpunit.xml
 /bin/
 
@@ -11,6 +9,13 @@
 /web/bundles/
 /web/assets/vendor/
 
+# Cache and log files
+/app/bootstrap.php.cache
+/app/cache/*
+!app/cache/.gitkeep
+/app/logs/*
+!app/logs/.gitkeep
+.sass-cache/*
 *~
 *.log
 

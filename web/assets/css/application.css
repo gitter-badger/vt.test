@@ -10404,305 +10404,303 @@ button.close {
 
 /* line 78, ../sass/imports/_glyphicons.scss */
 .icon-expand .path1:before {
-  content: '\e60c';
-  color: rgba(0, 0, 0, 0.1); }
+  color: rgba(0, 0, 0, 0.1);
+  content: '\e60c'; }
 
-/* line 82, ../sass/imports/_glyphicons.scss */
+/* line 83, ../sass/imports/_glyphicons.scss */
 .icon-expand .path2:before {
+  color: #231f20;
   content: '\e60d';
-  margin-left: -1em;
-  color: #231f20; }
+  margin-left: -1em; }
 
-/* line 88, ../sass/imports/_glyphicons.scss */
+/* line 89, ../sass/imports/_glyphicons.scss */
 .icon-collapse .path1:before {
-  content: '\e60e';
-  color: rgba(0, 0, 0, 0.1); }
+  color: rgba(0, 0, 0, 0.1);
+  content: '\e60e'; }
 
-/* line 92, ../sass/imports/_glyphicons.scss */
+/* line 94, ../sass/imports/_glyphicons.scss */
 .icon-collapse .path2:before {
   content: '\e60f';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 98, ../sass/imports/_glyphicons.scss */
+/* line 100, ../sass/imports/_glyphicons.scss */
 .icon-adult:before {
   content: '\e610'; }
 
-/* line 102, ../sass/imports/_glyphicons.scss */
+/* line 104, ../sass/imports/_glyphicons.scss */
 .icon-child:before {
   content: '\e611'; }
 
-/* line 106, ../sass/imports/_glyphicons.scss */
+/* line 108, ../sass/imports/_glyphicons.scss */
 .icon-baby:before {
   content: '\e612'; }
 
-/* line 110, ../sass/imports/_glyphicons.scss */
+/* line 112, ../sass/imports/_glyphicons.scss */
 .icon-transfer:before {
   content: '\e613'; }
 
-/* line 114, ../sass/imports/_glyphicons.scss */
+/* line 116, ../sass/imports/_glyphicons.scss */
 .icon-desktop_invert:before {
   content: '\e614'; }
 
-/* line 118, ../sass/imports/_glyphicons.scss */
+/* line 120, ../sass/imports/_glyphicons.scss */
 .icon-budget:before {
   content: '\e615'; }
 
-/* line 122, ../sass/imports/_glyphicons.scss */
+/* line 124, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_small:before {
   content: '\e616'; }
 
-/* line 126, ../sass/imports/_glyphicons.scss */
+/* line 128, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_small:before {
   content: '\e617'; }
 
-/* line 130, ../sass/imports/_glyphicons.scss */
+/* line 132, ../sass/imports/_glyphicons.scss */
 .icon-traveltime:before {
   content: '\e618'; }
 
-/* line 134, ../sass/imports/_glyphicons.scss */
+/* line 136, ../sass/imports/_glyphicons.scss */
 .icon-destination:before {
   content: '\e619'; }
 
-/* line 138, ../sass/imports/_glyphicons.scss */
+/* line 140, ../sass/imports/_glyphicons.scss */
 .icon-checkmark_1:before {
   content: '\e61a'; }
 
-/* line 142, ../sass/imports/_glyphicons.scss */
+/* line 144, ../sass/imports/_glyphicons.scss */
 .icon-airport_depart:before {
   content: '\e61b'; }
 
-/* line 146, ../sass/imports/_glyphicons.scss */
+/* line 148, ../sass/imports/_glyphicons.scss */
 .icon-airport_arrive:before {
   content: '\e61c'; }
 
-/* line 150, ../sass/imports/_glyphicons.scss */
+/* line 152, ../sass/imports/_glyphicons.scss */
 .icon-sort:before {
   content: '\e61d'; }
 
-/* line 154, ../sass/imports/_glyphicons.scss */
+/* line 156, ../sass/imports/_glyphicons.scss */
 .icon-filter:before {
   content: '\e61e'; }
 
-/* line 158, ../sass/imports/_glyphicons.scss */
+/* line 160, ../sass/imports/_glyphicons.scss */
 .icon-close_1:before {
   content: '\e61f'; }
 
-/* line 162, ../sass/imports/_glyphicons.scss */
+/* line 164, ../sass/imports/_glyphicons.scss */
 .icon-search:before {
   content: '\e620'; }
 
-/* line 166, ../sass/imports/_glyphicons.scss */
+/* line 168, ../sass/imports/_glyphicons.scss */
 .icon-time:before {
   content: '\e621'; }
 
-/* line 170, ../sass/imports/_glyphicons.scss */
+/* line 172, ../sass/imports/_glyphicons.scss */
 .icon-star:before {
   content: '\e622'; }
 
-/* line 174, ../sass/imports/_glyphicons.scss */
+/* line 176, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_flighttime .path1:before {
   content: '\e623';
   color: black; }
 
-/* line 178, ../sass/imports/_glyphicons.scss */
+/* line 180, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_flighttime .path2:before {
   content: '\e624';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 184, ../sass/imports/_glyphicons.scss */
+/* line 186, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_flighttime .path1:before {
   content: '\e625';
   color: #231f20; }
 
-/* line 188, ../sass/imports/_glyphicons.scss */
+/* line 190, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_flighttime .path2:before {
   content: '\e626';
   margin-left: -1em;
   color: black; }
 
-/* line 194, ../sass/imports/_glyphicons.scss */
+/* line 196, ../sass/imports/_glyphicons.scss */
 .icon-bookmobile:before {
   content: '\e627'; }
 
-/* line 198, ../sass/imports/_glyphicons.scss */
+/* line 200, ../sass/imports/_glyphicons.scss */
 .icon-mail_share:before {
   content: '\e628'; }
 
-/* line 202, ../sass/imports/_glyphicons.scss */
+/* line 204, ../sass/imports/_glyphicons.scss */
 .icon-options .path1:before {
   content: '\e629';
   color: black; }
 
-/* line 206, ../sass/imports/_glyphicons.scss */
+/* line 208, ../sass/imports/_glyphicons.scss */
 .icon-options .path2:before {
   content: '\e62a';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 212, ../sass/imports/_glyphicons.scss */
+/* line 214, ../sass/imports/_glyphicons.scss */
 .icon-menu:before {
   content: '\e62b'; }
 
-/* line 216, ../sass/imports/_glyphicons.scss */
+/* line 218, ../sass/imports/_glyphicons.scss */
 .icon-whatsapp:before {
   content: '\e62c'; }
 
-/* line 220, ../sass/imports/_glyphicons.scss */
+/* line 222, ../sass/imports/_glyphicons.scss */
 .icon-mail:before {
   content: '\e62d'; }
 
-/* line 224, ../sass/imports/_glyphicons.scss */
+/* line 226, ../sass/imports/_glyphicons.scss */
 .icon-mobile_bubble:before {
   content: '\e62e'; }
 
-/* line 228, ../sass/imports/_glyphicons.scss */
+/* line 230, ../sass/imports/_glyphicons.scss */
 .icon-plus:before {
   content: '\e62f'; }
 
-/* line 232, ../sass/imports/_glyphicons.scss */
+/* line 234, ../sass/imports/_glyphicons.scss */
 .icon-minus:before {
   content: '\e630'; }
 
-/* line 236, ../sass/imports/_glyphicons.scss */
+/* line 238, ../sass/imports/_glyphicons.scss */
 .icon-alert:before {
   content: '\e631'; }
 
-/* line 240, ../sass/imports/_glyphicons.scss */
+/* line 242, ../sass/imports/_glyphicons.scss */
 .icon-flight_data:before {
   content: '\e632'; }
 
-/* line 244, ../sass/imports/_glyphicons.scss */
+/* line 246, ../sass/imports/_glyphicons.scss */
 .icon-list_arrow:before {
   content: '\e633'; }
 
-/* line 248, ../sass/imports/_glyphicons.scss */
+/* line 250, ../sass/imports/_glyphicons.scss */
 .icon-information:before {
   content: '\e634'; }
 
-/* line 252, ../sass/imports/_glyphicons.scss */
+/* line 254, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path1:before {
   content: '\e635';
   color: rgba(0, 0, 0, 0.1); }
 
-/* line 256, ../sass/imports/_glyphicons.scss */
+/* line 258, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path2:before {
   content: '\e636';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 261, ../sass/imports/_glyphicons.scss */
+/* line 263, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path3:before {
   content: '\e637';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 267, ../sass/imports/_glyphicons.scss */
+/* line 269, ../sass/imports/_glyphicons.scss */
 .icon-loader .path1:before {
   content: '\e638';
   color: black; }
 
-/* line 271, ../sass/imports/_glyphicons.scss */
+/* line 273, ../sass/imports/_glyphicons.scss */
 .icon-loader .path2:before {
   content: '\e639';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 276, ../sass/imports/_glyphicons.scss */
+/* line 278, ../sass/imports/_glyphicons.scss */
 .icon-loader .path3:before {
   content: '\e63a';
   margin-left: -1em;
   color: black; }
 
-/* line 282, ../sass/imports/_glyphicons.scss */
+/* line 284, ../sass/imports/_glyphicons.scss */
 .icon-checkin_online:before {
   content: '\e63b'; }
 
-/* line 286, ../sass/imports/_glyphicons.scss */
+/* line 288, ../sass/imports/_glyphicons.scss */
 .icon-svg51:before {
   content: '\e63c'; }
 
-/* line 290, ../sass/imports/_glyphicons.scss */
+/* line 292, ../sass/imports/_glyphicons.scss */
 .icon-receipt:before {
   content: '\e63d'; }
 
-/* line 294, ../sass/imports/_glyphicons.scss */
+/* line 296, ../sass/imports/_glyphicons.scss */
 .icon-checkmark_2:before {
   content: '\e63e'; }
 
-/* line 298, ../sass/imports/_glyphicons.scss */
+/* line 300, ../sass/imports/_glyphicons.scss */
 .icon-dropdown:before {
   content: '\e63f'; }
 
-/* line 302, ../sass/imports/_glyphicons.scss */
+/* line 304, ../sass/imports/_glyphicons.scss */
 .icon-close_2:before {
   content: '\e640'; }
 
-/* line 306, ../sass/imports/_glyphicons.scss */
+/* line 308, ../sass/imports/_glyphicons.scss */
 .icon-edit_1:before {
   content: '\e641'; }
 
-/* line 309, ../sass/imports/_glyphicons.scss */
+/* line 311, ../sass/imports/_glyphicons.scss */
 .icon-size-small:before {
   font-size: 16px; }
 
-/* line 312, ../sass/imports/_glyphicons.scss */
+/* line 314, ../sass/imports/_glyphicons.scss */
 .icon-size-medium:before {
   font-size: 26px; }
 
-/* line 315, ../sass/imports/_glyphicons.scss */
+/* line 317, ../sass/imports/_glyphicons.scss */
 .icon-size-large:before {
   font-size: 35px; }
 
-/* line 318, ../sass/imports/_glyphicons.scss */
+/* line 320, ../sass/imports/_glyphicons.scss */
 .icon-size-extra-large:before {
   font-size: 125px; }
 
-/* line 321, ../sass/imports/_glyphicons.scss */
+/* line 323, ../sass/imports/_glyphicons.scss */
 .icon-back:before {
   content: '\e642'; }
 
-/* line 324, ../sass/imports/_glyphicons.scss */
+/* line 326, ../sass/imports/_glyphicons.scss */
 .icon-color-cerulean:before, .path1.icon-color-cerulean:before, .path2.icon-color-cerulean:before, .path3.icon-color-cerulean:before {
   color: #00a8e0; }
 
-/* line 327, ../sass/imports/_glyphicons.scss */
+/* line 329, ../sass/imports/_glyphicons.scss */
 .icon-color-suva_gray:before, .path1.icon-color-suva_gray:before, .path2.icon-color-suva_gray:before, .path3.icon-color-suva_gray:before {
   color: #7d7d7d; }
 
-/* line 330, ../sass/imports/_glyphicons.scss */
+/* line 332, ../sass/imports/_glyphicons.scss */
 .icon-color-white:before, .path1.icon-color-white:before, .path2.icon-color-white:before, .path3.icon-color-white:before {
   color: #fff; }
 
-/* line 333, ../sass/imports/_glyphicons.scss */
+/* line 335, ../sass/imports/_glyphicons.scss */
 .icon-color-black:before, .path1.icon-color-black:before, .path2.icon-color-black:before, .path3.icon-color-black:before {
   color: #000; }
 
-/* line 336, ../sass/imports/_glyphicons.scss */
+/* line 338, ../sass/imports/_glyphicons.scss */
 .icon-color-hawkes_blue:before, .path1.icon-color-hawkes_blue:before, .path2.icon-color-hawkes_blue:before, .path3.icon-color-hawkes_blue:before {
   color: #e8f4fd; }
 
-/* line 339, ../sass/imports/_glyphicons.scss */
+/* line 341, ../sass/imports/_glyphicons.scss */
 .icon-color-international_orange:before, .path1.icon-color-international_orange:before, .path2.icon-color-international_orange:before, .path3.icon-color-international_orange:before {
   color: #fe5000; }
 
-/* line 342, ../sass/imports/_glyphicons.scss */
+/* line 344, ../sass/imports/_glyphicons.scss */
 .icon-color-limeade:before, .path1.icon-color-limeade:before, .path2.icon-color-limeade:before, .path3.icon-color-limeade:before {
   color: #6ab301; }
 
-/* line 1, ../sass/imports/_overlay.scss */
-.overlay {
-  display: none; }
-  /* line 3, ../sass/imports/_overlay.scss */
-  .overlay .navigation-bar {
-    height: auto;
-    padding: 10px 12px; }
-    /* line 6, ../sass/imports/_overlay.scss */
-    .overlay .navigation-bar .close-btn {
-      float: left;
-      height: 25px;
-      margin-top: 4px; }
+/* line 2, ../sass/imports/_overlay.scss */
+.overlay .navigation-bar {
+  height: auto;
+  padding: 10px 12px; }
+  /* line 5, ../sass/imports/_overlay.scss */
+  .overlay .navigation-bar .close-btn {
+    cursor: pointer;
+    float: left;
+    height: 25px;
+    margin-top: 4px; }
 
 /*---------------------------------*/
 /* DEFAULT UI SLIDER STYLING
@@ -11304,7 +11302,6 @@ a {
 /* line 352, ../sass/imports/_general.scss */
 .navigation-bar {
   display: block;
-  float: left;
   width: 100%;
   height: 45px;
   margin: 0px;
@@ -12510,305 +12507,303 @@ a {
 
 /* line 78, ../sass/imports/_glyphicons.scss */
 .icon-expand .path1:before {
-  content: '\e60c';
-  color: rgba(0, 0, 0, 0.1); }
+  color: rgba(0, 0, 0, 0.1);
+  content: '\e60c'; }
 
-/* line 82, ../sass/imports/_glyphicons.scss */
+/* line 83, ../sass/imports/_glyphicons.scss */
 .icon-expand .path2:before {
+  color: #231f20;
   content: '\e60d';
-  margin-left: -1em;
-  color: #231f20; }
+  margin-left: -1em; }
 
-/* line 88, ../sass/imports/_glyphicons.scss */
+/* line 89, ../sass/imports/_glyphicons.scss */
 .icon-collapse .path1:before {
-  content: '\e60e';
-  color: rgba(0, 0, 0, 0.1); }
+  color: rgba(0, 0, 0, 0.1);
+  content: '\e60e'; }
 
-/* line 92, ../sass/imports/_glyphicons.scss */
+/* line 94, ../sass/imports/_glyphicons.scss */
 .icon-collapse .path2:before {
   content: '\e60f';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 98, ../sass/imports/_glyphicons.scss */
+/* line 100, ../sass/imports/_glyphicons.scss */
 .icon-adult:before {
   content: '\e610'; }
 
-/* line 102, ../sass/imports/_glyphicons.scss */
+/* line 104, ../sass/imports/_glyphicons.scss */
 .icon-child:before {
   content: '\e611'; }
 
-/* line 106, ../sass/imports/_glyphicons.scss */
+/* line 108, ../sass/imports/_glyphicons.scss */
 .icon-baby:before {
   content: '\e612'; }
 
-/* line 110, ../sass/imports/_glyphicons.scss */
+/* line 112, ../sass/imports/_glyphicons.scss */
 .icon-transfer:before {
   content: '\e613'; }
 
-/* line 114, ../sass/imports/_glyphicons.scss */
+/* line 116, ../sass/imports/_glyphicons.scss */
 .icon-desktop_invert:before {
   content: '\e614'; }
 
-/* line 118, ../sass/imports/_glyphicons.scss */
+/* line 120, ../sass/imports/_glyphicons.scss */
 .icon-budget:before {
   content: '\e615'; }
 
-/* line 122, ../sass/imports/_glyphicons.scss */
+/* line 124, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_small:before {
   content: '\e616'; }
 
-/* line 126, ../sass/imports/_glyphicons.scss */
+/* line 128, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_small:before {
   content: '\e617'; }
 
-/* line 130, ../sass/imports/_glyphicons.scss */
+/* line 132, ../sass/imports/_glyphicons.scss */
 .icon-traveltime:before {
   content: '\e618'; }
 
-/* line 134, ../sass/imports/_glyphicons.scss */
+/* line 136, ../sass/imports/_glyphicons.scss */
 .icon-destination:before {
   content: '\e619'; }
 
-/* line 138, ../sass/imports/_glyphicons.scss */
+/* line 140, ../sass/imports/_glyphicons.scss */
 .icon-checkmark_1:before {
   content: '\e61a'; }
 
-/* line 142, ../sass/imports/_glyphicons.scss */
+/* line 144, ../sass/imports/_glyphicons.scss */
 .icon-airport_depart:before {
   content: '\e61b'; }
 
-/* line 146, ../sass/imports/_glyphicons.scss */
+/* line 148, ../sass/imports/_glyphicons.scss */
 .icon-airport_arrive:before {
   content: '\e61c'; }
 
-/* line 150, ../sass/imports/_glyphicons.scss */
+/* line 152, ../sass/imports/_glyphicons.scss */
 .icon-sort:before {
   content: '\e61d'; }
 
-/* line 154, ../sass/imports/_glyphicons.scss */
+/* line 156, ../sass/imports/_glyphicons.scss */
 .icon-filter:before {
   content: '\e61e'; }
 
-/* line 158, ../sass/imports/_glyphicons.scss */
+/* line 160, ../sass/imports/_glyphicons.scss */
 .icon-close_1:before {
   content: '\e61f'; }
 
-/* line 162, ../sass/imports/_glyphicons.scss */
+/* line 164, ../sass/imports/_glyphicons.scss */
 .icon-search:before {
   content: '\e620'; }
 
-/* line 166, ../sass/imports/_glyphicons.scss */
+/* line 168, ../sass/imports/_glyphicons.scss */
 .icon-time:before {
   content: '\e621'; }
 
-/* line 170, ../sass/imports/_glyphicons.scss */
+/* line 172, ../sass/imports/_glyphicons.scss */
 .icon-star:before {
   content: '\e622'; }
 
-/* line 174, ../sass/imports/_glyphicons.scss */
+/* line 176, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_flighttime .path1:before {
   content: '\e623';
   color: black; }
 
-/* line 178, ../sass/imports/_glyphicons.scss */
+/* line 180, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_flighttime .path2:before {
   content: '\e624';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 184, ../sass/imports/_glyphicons.scss */
+/* line 186, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_flighttime .path1:before {
   content: '\e625';
   color: #231f20; }
 
-/* line 188, ../sass/imports/_glyphicons.scss */
+/* line 190, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_flighttime .path2:before {
   content: '\e626';
   margin-left: -1em;
   color: black; }
 
-/* line 194, ../sass/imports/_glyphicons.scss */
+/* line 196, ../sass/imports/_glyphicons.scss */
 .icon-bookmobile:before {
   content: '\e627'; }
 
-/* line 198, ../sass/imports/_glyphicons.scss */
+/* line 200, ../sass/imports/_glyphicons.scss */
 .icon-mail_share:before {
   content: '\e628'; }
 
-/* line 202, ../sass/imports/_glyphicons.scss */
+/* line 204, ../sass/imports/_glyphicons.scss */
 .icon-options .path1:before {
   content: '\e629';
   color: black; }
 
-/* line 206, ../sass/imports/_glyphicons.scss */
+/* line 208, ../sass/imports/_glyphicons.scss */
 .icon-options .path2:before {
   content: '\e62a';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 212, ../sass/imports/_glyphicons.scss */
+/* line 214, ../sass/imports/_glyphicons.scss */
 .icon-menu:before {
   content: '\e62b'; }
 
-/* line 216, ../sass/imports/_glyphicons.scss */
+/* line 218, ../sass/imports/_glyphicons.scss */
 .icon-whatsapp:before {
   content: '\e62c'; }
 
-/* line 220, ../sass/imports/_glyphicons.scss */
+/* line 222, ../sass/imports/_glyphicons.scss */
 .icon-mail:before {
   content: '\e62d'; }
 
-/* line 224, ../sass/imports/_glyphicons.scss */
+/* line 226, ../sass/imports/_glyphicons.scss */
 .icon-mobile_bubble:before {
   content: '\e62e'; }
 
-/* line 228, ../sass/imports/_glyphicons.scss */
+/* line 230, ../sass/imports/_glyphicons.scss */
 .icon-plus:before {
   content: '\e62f'; }
 
-/* line 232, ../sass/imports/_glyphicons.scss */
+/* line 234, ../sass/imports/_glyphicons.scss */
 .icon-minus:before {
   content: '\e630'; }
 
-/* line 236, ../sass/imports/_glyphicons.scss */
+/* line 238, ../sass/imports/_glyphicons.scss */
 .icon-alert:before {
   content: '\e631'; }
 
-/* line 240, ../sass/imports/_glyphicons.scss */
+/* line 242, ../sass/imports/_glyphicons.scss */
 .icon-flight_data:before {
   content: '\e632'; }
 
-/* line 244, ../sass/imports/_glyphicons.scss */
+/* line 246, ../sass/imports/_glyphicons.scss */
 .icon-list_arrow:before {
   content: '\e633'; }
 
-/* line 248, ../sass/imports/_glyphicons.scss */
+/* line 250, ../sass/imports/_glyphicons.scss */
 .icon-information:before {
   content: '\e634'; }
 
-/* line 252, ../sass/imports/_glyphicons.scss */
+/* line 254, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path1:before {
   content: '\e635';
   color: rgba(0, 0, 0, 0.1); }
 
-/* line 256, ../sass/imports/_glyphicons.scss */
+/* line 258, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path2:before {
   content: '\e636';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 261, ../sass/imports/_glyphicons.scss */
+/* line 263, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path3:before {
   content: '\e637';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 267, ../sass/imports/_glyphicons.scss */
+/* line 269, ../sass/imports/_glyphicons.scss */
 .icon-loader .path1:before {
   content: '\e638';
   color: black; }
 
-/* line 271, ../sass/imports/_glyphicons.scss */
+/* line 273, ../sass/imports/_glyphicons.scss */
 .icon-loader .path2:before {
   content: '\e639';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 276, ../sass/imports/_glyphicons.scss */
+/* line 278, ../sass/imports/_glyphicons.scss */
 .icon-loader .path3:before {
   content: '\e63a';
   margin-left: -1em;
   color: black; }
 
-/* line 282, ../sass/imports/_glyphicons.scss */
+/* line 284, ../sass/imports/_glyphicons.scss */
 .icon-checkin_online:before {
   content: '\e63b'; }
 
-/* line 286, ../sass/imports/_glyphicons.scss */
+/* line 288, ../sass/imports/_glyphicons.scss */
 .icon-svg51:before {
   content: '\e63c'; }
 
-/* line 290, ../sass/imports/_glyphicons.scss */
+/* line 292, ../sass/imports/_glyphicons.scss */
 .icon-receipt:before {
   content: '\e63d'; }
 
-/* line 294, ../sass/imports/_glyphicons.scss */
+/* line 296, ../sass/imports/_glyphicons.scss */
 .icon-checkmark_2:before {
   content: '\e63e'; }
 
-/* line 298, ../sass/imports/_glyphicons.scss */
+/* line 300, ../sass/imports/_glyphicons.scss */
 .icon-dropdown:before {
   content: '\e63f'; }
 
-/* line 302, ../sass/imports/_glyphicons.scss */
+/* line 304, ../sass/imports/_glyphicons.scss */
 .icon-close_2:before {
   content: '\e640'; }
 
-/* line 306, ../sass/imports/_glyphicons.scss */
+/* line 308, ../sass/imports/_glyphicons.scss */
 .icon-edit_1:before {
   content: '\e641'; }
 
-/* line 309, ../sass/imports/_glyphicons.scss */
+/* line 311, ../sass/imports/_glyphicons.scss */
 .icon-size-small:before {
   font-size: 16px; }
 
-/* line 312, ../sass/imports/_glyphicons.scss */
+/* line 314, ../sass/imports/_glyphicons.scss */
 .icon-size-medium:before {
   font-size: 26px; }
 
-/* line 315, ../sass/imports/_glyphicons.scss */
+/* line 317, ../sass/imports/_glyphicons.scss */
 .icon-size-large:before {
   font-size: 35px; }
 
-/* line 318, ../sass/imports/_glyphicons.scss */
+/* line 320, ../sass/imports/_glyphicons.scss */
 .icon-size-extra-large:before {
   font-size: 125px; }
 
-/* line 321, ../sass/imports/_glyphicons.scss */
+/* line 323, ../sass/imports/_glyphicons.scss */
 .icon-back:before {
   content: '\e642'; }
 
-/* line 324, ../sass/imports/_glyphicons.scss */
+/* line 326, ../sass/imports/_glyphicons.scss */
 .icon-color-cerulean:before, .path1.icon-color-cerulean:before, .path2.icon-color-cerulean:before, .path3.icon-color-cerulean:before {
   color: #00a8e0; }
 
-/* line 327, ../sass/imports/_glyphicons.scss */
+/* line 329, ../sass/imports/_glyphicons.scss */
 .icon-color-suva_gray:before, .path1.icon-color-suva_gray:before, .path2.icon-color-suva_gray:before, .path3.icon-color-suva_gray:before {
   color: #7d7d7d; }
 
-/* line 330, ../sass/imports/_glyphicons.scss */
+/* line 332, ../sass/imports/_glyphicons.scss */
 .icon-color-white:before, .path1.icon-color-white:before, .path2.icon-color-white:before, .path3.icon-color-white:before {
   color: #fff; }
 
-/* line 333, ../sass/imports/_glyphicons.scss */
+/* line 335, ../sass/imports/_glyphicons.scss */
 .icon-color-black:before, .path1.icon-color-black:before, .path2.icon-color-black:before, .path3.icon-color-black:before {
   color: #000; }
 
-/* line 336, ../sass/imports/_glyphicons.scss */
+/* line 338, ../sass/imports/_glyphicons.scss */
 .icon-color-hawkes_blue:before, .path1.icon-color-hawkes_blue:before, .path2.icon-color-hawkes_blue:before, .path3.icon-color-hawkes_blue:before {
   color: #e8f4fd; }
 
-/* line 339, ../sass/imports/_glyphicons.scss */
+/* line 341, ../sass/imports/_glyphicons.scss */
 .icon-color-international_orange:before, .path1.icon-color-international_orange:before, .path2.icon-color-international_orange:before, .path3.icon-color-international_orange:before {
   color: #fe5000; }
 
-/* line 342, ../sass/imports/_glyphicons.scss */
+/* line 344, ../sass/imports/_glyphicons.scss */
 .icon-color-limeade:before, .path1.icon-color-limeade:before, .path2.icon-color-limeade:before, .path3.icon-color-limeade:before {
   color: #6ab301; }
 
-/* line 1, ../sass/imports/_overlay.scss */
-.overlay {
-  display: none; }
-  /* line 3, ../sass/imports/_overlay.scss */
-  .overlay .navigation-bar {
-    height: auto;
-    padding: 10px 12px; }
-    /* line 6, ../sass/imports/_overlay.scss */
-    .overlay .navigation-bar .close-btn {
-      float: left;
-      height: 25px;
-      margin-top: 4px; }
+/* line 2, ../sass/imports/_overlay.scss */
+.overlay .navigation-bar {
+  height: auto;
+  padding: 10px 12px; }
+  /* line 5, ../sass/imports/_overlay.scss */
+  .overlay .navigation-bar .close-btn {
+    cursor: pointer;
+    float: left;
+    height: 25px;
+    margin-top: 4px; }
 
 /* line 1, ../sass/imports/_searchOverlay.scss */
 #loader-nextpage {
@@ -13357,6 +13352,10 @@ a {
 .end-date:before {
   content: '\2192';
   margin: 0 5px; }
+
+/* line 51, ../sass/searchPage.scss */
+.results {
+  display: block; }
 
 /* line 4, ../sass/imports/_datePicker.scss */
 #datepicker_overlay.overlay .navigation-bar .close-btn {
@@ -23563,305 +23562,303 @@ button.close {
 
 /* line 78, ../sass/imports/_glyphicons.scss */
 .icon-expand .path1:before {
-  content: '\e60c';
-  color: rgba(0, 0, 0, 0.1); }
+  color: rgba(0, 0, 0, 0.1);
+  content: '\e60c'; }
 
-/* line 82, ../sass/imports/_glyphicons.scss */
+/* line 83, ../sass/imports/_glyphicons.scss */
 .icon-expand .path2:before {
+  color: #231f20;
   content: '\e60d';
-  margin-left: -1em;
-  color: #231f20; }
+  margin-left: -1em; }
 
-/* line 88, ../sass/imports/_glyphicons.scss */
+/* line 89, ../sass/imports/_glyphicons.scss */
 .icon-collapse .path1:before {
-  content: '\e60e';
-  color: rgba(0, 0, 0, 0.1); }
+  color: rgba(0, 0, 0, 0.1);
+  content: '\e60e'; }
 
-/* line 92, ../sass/imports/_glyphicons.scss */
+/* line 94, ../sass/imports/_glyphicons.scss */
 .icon-collapse .path2:before {
   content: '\e60f';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 98, ../sass/imports/_glyphicons.scss */
+/* line 100, ../sass/imports/_glyphicons.scss */
 .icon-adult:before {
   content: '\e610'; }
 
-/* line 102, ../sass/imports/_glyphicons.scss */
+/* line 104, ../sass/imports/_glyphicons.scss */
 .icon-child:before {
   content: '\e611'; }
 
-/* line 106, ../sass/imports/_glyphicons.scss */
+/* line 108, ../sass/imports/_glyphicons.scss */
 .icon-baby:before {
   content: '\e612'; }
 
-/* line 110, ../sass/imports/_glyphicons.scss */
+/* line 112, ../sass/imports/_glyphicons.scss */
 .icon-transfer:before {
   content: '\e613'; }
 
-/* line 114, ../sass/imports/_glyphicons.scss */
+/* line 116, ../sass/imports/_glyphicons.scss */
 .icon-desktop_invert:before {
   content: '\e614'; }
 
-/* line 118, ../sass/imports/_glyphicons.scss */
+/* line 120, ../sass/imports/_glyphicons.scss */
 .icon-budget:before {
   content: '\e615'; }
 
-/* line 122, ../sass/imports/_glyphicons.scss */
+/* line 124, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_small:before {
   content: '\e616'; }
 
-/* line 126, ../sass/imports/_glyphicons.scss */
+/* line 128, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_small:before {
   content: '\e617'; }
 
-/* line 130, ../sass/imports/_glyphicons.scss */
+/* line 132, ../sass/imports/_glyphicons.scss */
 .icon-traveltime:before {
   content: '\e618'; }
 
-/* line 134, ../sass/imports/_glyphicons.scss */
+/* line 136, ../sass/imports/_glyphicons.scss */
 .icon-destination:before {
   content: '\e619'; }
 
-/* line 138, ../sass/imports/_glyphicons.scss */
+/* line 140, ../sass/imports/_glyphicons.scss */
 .icon-checkmark_1:before {
   content: '\e61a'; }
 
-/* line 142, ../sass/imports/_glyphicons.scss */
+/* line 144, ../sass/imports/_glyphicons.scss */
 .icon-airport_depart:before {
   content: '\e61b'; }
 
-/* line 146, ../sass/imports/_glyphicons.scss */
+/* line 148, ../sass/imports/_glyphicons.scss */
 .icon-airport_arrive:before {
   content: '\e61c'; }
 
-/* line 150, ../sass/imports/_glyphicons.scss */
+/* line 152, ../sass/imports/_glyphicons.scss */
 .icon-sort:before {
   content: '\e61d'; }
 
-/* line 154, ../sass/imports/_glyphicons.scss */
+/* line 156, ../sass/imports/_glyphicons.scss */
 .icon-filter:before {
   content: '\e61e'; }
 
-/* line 158, ../sass/imports/_glyphicons.scss */
+/* line 160, ../sass/imports/_glyphicons.scss */
 .icon-close_1:before {
   content: '\e61f'; }
 
-/* line 162, ../sass/imports/_glyphicons.scss */
+/* line 164, ../sass/imports/_glyphicons.scss */
 .icon-search:before {
   content: '\e620'; }
 
-/* line 166, ../sass/imports/_glyphicons.scss */
+/* line 168, ../sass/imports/_glyphicons.scss */
 .icon-time:before {
   content: '\e621'; }
 
-/* line 170, ../sass/imports/_glyphicons.scss */
+/* line 172, ../sass/imports/_glyphicons.scss */
 .icon-star:before {
   content: '\e622'; }
 
-/* line 174, ../sass/imports/_glyphicons.scss */
+/* line 176, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_flighttime .path1:before {
   content: '\e623';
   color: black; }
 
-/* line 178, ../sass/imports/_glyphicons.scss */
+/* line 180, ../sass/imports/_glyphicons.scss */
 .icon-plane_depart_flighttime .path2:before {
   content: '\e624';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 184, ../sass/imports/_glyphicons.scss */
+/* line 186, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_flighttime .path1:before {
   content: '\e625';
   color: #231f20; }
 
-/* line 188, ../sass/imports/_glyphicons.scss */
+/* line 190, ../sass/imports/_glyphicons.scss */
 .icon-plane_return_flighttime .path2:before {
   content: '\e626';
   margin-left: -1em;
   color: black; }
 
-/* line 194, ../sass/imports/_glyphicons.scss */
+/* line 196, ../sass/imports/_glyphicons.scss */
 .icon-bookmobile:before {
   content: '\e627'; }
 
-/* line 198, ../sass/imports/_glyphicons.scss */
+/* line 200, ../sass/imports/_glyphicons.scss */
 .icon-mail_share:before {
   content: '\e628'; }
 
-/* line 202, ../sass/imports/_glyphicons.scss */
+/* line 204, ../sass/imports/_glyphicons.scss */
 .icon-options .path1:before {
   content: '\e629';
   color: black; }
 
-/* line 206, ../sass/imports/_glyphicons.scss */
+/* line 208, ../sass/imports/_glyphicons.scss */
 .icon-options .path2:before {
   content: '\e62a';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 212, ../sass/imports/_glyphicons.scss */
+/* line 214, ../sass/imports/_glyphicons.scss */
 .icon-menu:before {
   content: '\e62b'; }
 
-/* line 216, ../sass/imports/_glyphicons.scss */
+/* line 218, ../sass/imports/_glyphicons.scss */
 .icon-whatsapp:before {
   content: '\e62c'; }
 
-/* line 220, ../sass/imports/_glyphicons.scss */
+/* line 222, ../sass/imports/_glyphicons.scss */
 .icon-mail:before {
   content: '\e62d'; }
 
-/* line 224, ../sass/imports/_glyphicons.scss */
+/* line 226, ../sass/imports/_glyphicons.scss */
 .icon-mobile_bubble:before {
   content: '\e62e'; }
 
-/* line 228, ../sass/imports/_glyphicons.scss */
+/* line 230, ../sass/imports/_glyphicons.scss */
 .icon-plus:before {
   content: '\e62f'; }
 
-/* line 232, ../sass/imports/_glyphicons.scss */
+/* line 234, ../sass/imports/_glyphicons.scss */
 .icon-minus:before {
   content: '\e630'; }
 
-/* line 236, ../sass/imports/_glyphicons.scss */
+/* line 238, ../sass/imports/_glyphicons.scss */
 .icon-alert:before {
   content: '\e631'; }
 
-/* line 240, ../sass/imports/_glyphicons.scss */
+/* line 242, ../sass/imports/_glyphicons.scss */
 .icon-flight_data:before {
   content: '\e632'; }
 
-/* line 244, ../sass/imports/_glyphicons.scss */
+/* line 246, ../sass/imports/_glyphicons.scss */
 .icon-list_arrow:before {
   content: '\e633'; }
 
-/* line 248, ../sass/imports/_glyphicons.scss */
+/* line 250, ../sass/imports/_glyphicons.scss */
 .icon-information:before {
   content: '\e634'; }
 
-/* line 252, ../sass/imports/_glyphicons.scss */
+/* line 254, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path1:before {
   content: '\e635';
   color: rgba(0, 0, 0, 0.1); }
 
-/* line 256, ../sass/imports/_glyphicons.scss */
+/* line 258, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path2:before {
   content: '\e636';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 261, ../sass/imports/_glyphicons.scss */
+/* line 263, ../sass/imports/_glyphicons.scss */
 .icon-edit_2 .path3:before {
   content: '\e637';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 267, ../sass/imports/_glyphicons.scss */
+/* line 269, ../sass/imports/_glyphicons.scss */
 .icon-loader .path1:before {
   content: '\e638';
   color: black; }
 
-/* line 271, ../sass/imports/_glyphicons.scss */
+/* line 273, ../sass/imports/_glyphicons.scss */
 .icon-loader .path2:before {
   content: '\e639';
   margin-left: -1em;
   color: #231f20; }
 
-/* line 276, ../sass/imports/_glyphicons.scss */
+/* line 278, ../sass/imports/_glyphicons.scss */
 .icon-loader .path3:before {
   content: '\e63a';
   margin-left: -1em;
   color: black; }
 
-/* line 282, ../sass/imports/_glyphicons.scss */
+/* line 284, ../sass/imports/_glyphicons.scss */
 .icon-checkin_online:before {
   content: '\e63b'; }
 
-/* line 286, ../sass/imports/_glyphicons.scss */
+/* line 288, ../sass/imports/_glyphicons.scss */
 .icon-svg51:before {
   content: '\e63c'; }
 
-/* line 290, ../sass/imports/_glyphicons.scss */
+/* line 292, ../sass/imports/_glyphicons.scss */
 .icon-receipt:before {
   content: '\e63d'; }
 
-/* line 294, ../sass/imports/_glyphicons.scss */
+/* line 296, ../sass/imports/_glyphicons.scss */
 .icon-checkmark_2:before {
   content: '\e63e'; }
 
-/* line 298, ../sass/imports/_glyphicons.scss */
+/* line 300, ../sass/imports/_glyphicons.scss */
 .icon-dropdown:before {
   content: '\e63f'; }
 
-/* line 302, ../sass/imports/_glyphicons.scss */
+/* line 304, ../sass/imports/_glyphicons.scss */
 .icon-close_2:before {
   content: '\e640'; }
 
-/* line 306, ../sass/imports/_glyphicons.scss */
+/* line 308, ../sass/imports/_glyphicons.scss */
 .icon-edit_1:before {
   content: '\e641'; }
 
-/* line 309, ../sass/imports/_glyphicons.scss */
+/* line 311, ../sass/imports/_glyphicons.scss */
 .icon-size-small:before {
   font-size: 16px; }
 
-/* line 312, ../sass/imports/_glyphicons.scss */
+/* line 314, ../sass/imports/_glyphicons.scss */
 .icon-size-medium:before {
   font-size: 26px; }
 
-/* line 315, ../sass/imports/_glyphicons.scss */
+/* line 317, ../sass/imports/_glyphicons.scss */
 .icon-size-large:before {
   font-size: 35px; }
 
-/* line 318, ../sass/imports/_glyphicons.scss */
+/* line 320, ../sass/imports/_glyphicons.scss */
 .icon-size-extra-large:before {
   font-size: 125px; }
 
-/* line 321, ../sass/imports/_glyphicons.scss */
+/* line 323, ../sass/imports/_glyphicons.scss */
 .icon-back:before {
   content: '\e642'; }
 
-/* line 324, ../sass/imports/_glyphicons.scss */
+/* line 326, ../sass/imports/_glyphicons.scss */
 .icon-color-cerulean:before, .path1.icon-color-cerulean:before, .path2.icon-color-cerulean:before, .path3.icon-color-cerulean:before {
   color: #00a8e0; }
 
-/* line 327, ../sass/imports/_glyphicons.scss */
+/* line 329, ../sass/imports/_glyphicons.scss */
 .icon-color-suva_gray:before, .path1.icon-color-suva_gray:before, .path2.icon-color-suva_gray:before, .path3.icon-color-suva_gray:before {
   color: #7d7d7d; }
 
-/* line 330, ../sass/imports/_glyphicons.scss */
+/* line 332, ../sass/imports/_glyphicons.scss */
 .icon-color-white:before, .path1.icon-color-white:before, .path2.icon-color-white:before, .path3.icon-color-white:before {
   color: #fff; }
 
-/* line 333, ../sass/imports/_glyphicons.scss */
+/* line 335, ../sass/imports/_glyphicons.scss */
 .icon-color-black:before, .path1.icon-color-black:before, .path2.icon-color-black:before, .path3.icon-color-black:before {
   color: #000; }
 
-/* line 336, ../sass/imports/_glyphicons.scss */
+/* line 338, ../sass/imports/_glyphicons.scss */
 .icon-color-hawkes_blue:before, .path1.icon-color-hawkes_blue:before, .path2.icon-color-hawkes_blue:before, .path3.icon-color-hawkes_blue:before {
   color: #e8f4fd; }
 
-/* line 339, ../sass/imports/_glyphicons.scss */
+/* line 341, ../sass/imports/_glyphicons.scss */
 .icon-color-international_orange:before, .path1.icon-color-international_orange:before, .path2.icon-color-international_orange:before, .path3.icon-color-international_orange:before {
   color: #fe5000; }
 
-/* line 342, ../sass/imports/_glyphicons.scss */
+/* line 344, ../sass/imports/_glyphicons.scss */
 .icon-color-limeade:before, .path1.icon-color-limeade:before, .path2.icon-color-limeade:before, .path3.icon-color-limeade:before {
   color: #6ab301; }
 
-/* line 1, ../sass/imports/_overlay.scss */
-.overlay {
-  display: none; }
-  /* line 3, ../sass/imports/_overlay.scss */
-  .overlay .navigation-bar {
-    height: auto;
-    padding: 10px 12px; }
-    /* line 6, ../sass/imports/_overlay.scss */
-    .overlay .navigation-bar .close-btn {
-      float: left;
-      height: 25px;
-      margin-top: 4px; }
+/* line 2, ../sass/imports/_overlay.scss */
+.overlay .navigation-bar {
+  height: auto;
+  padding: 10px 12px; }
+  /* line 5, ../sass/imports/_overlay.scss */
+  .overlay .navigation-bar .close-btn {
+    cursor: pointer;
+    float: left;
+    height: 25px;
+    margin-top: 4px; }
 
 /*---------------------------------*/
 /* DEFAULT UI SLIDER STYLING
@@ -24463,7 +24460,6 @@ a {
 /* line 352, ../sass/imports/_general.scss */
 .navigation-bar {
   display: block;
-  float: left;
   width: 100%;
   height: 45px;
   margin: 0px;

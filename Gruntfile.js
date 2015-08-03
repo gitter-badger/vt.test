@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
-    "use strict";
+    'use strict';
 
     // Unified Watch Object
     var watchFiles = {
-        clientSass: ["src/**/Resources/public/sass/*.{scss,sass}"]
-            .concat(["web/assets/sass/**/*.{scss,sass}", "web/assets/sass/*.{scss,sass}"])
+        clientSass: ['src/**/Resources/public/sass/*.{scss,sass}']
+            .concat(['web/assets/sass/**/*.{scss,sass}', 'web/assets/sass/*.{scss,sass}'])
     };
 
     // -----------------------------------------------------------------
@@ -84,6 +84,12 @@ module.exports = function(grunt) {
             }
         },
 
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        },
+
         bower: {
             install: {
                 options: {
@@ -105,8 +111,7 @@ module.exports = function(grunt) {
     grunt.registerTask('minify', ['sass:production', 'uglify', 'htmlmin', 'imagemin']);
 
     // Test tasks
-    grunt.registerTask('test:server', ['env:test', 'mocha_istanbul:coverage']);
-    grunt.registerTask('test:client', ['env:test', 'karma:unit']);
+    grunt.registerTask('test', ['karma:unit']);
 
     // Default task
     grunt.registerTask('default', [
