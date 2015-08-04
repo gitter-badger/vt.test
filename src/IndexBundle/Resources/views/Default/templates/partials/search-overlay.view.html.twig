@@ -3,7 +3,7 @@
         <span class="icon icon-size-large icon-color-white icon-back close-btn" data-ng-click="home.showSearchOverlay=false"></span>
         <div class="input-group" style="padding-left: 10px;">
             <div class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span id="searchLabel" class="input-group-text">{% verbatim %}{{ home.showSearchOverlay | trans }}{% endverbatim %}:</span> </div>
-            <input type="text" focus="home.showSearchOverlay" class="form-control hasclear" data-ng-model="overlay.input" data-ng-keyup="overlay.autocomplete()" placeholder="{% verbatim %}{{ 'Choose your ' + (home.showSearchOverlay === 'From' ? 'departure' : 'destination')  | trans }}{% endverbatim %}" >
+            <eased-input focus="home.showSearchOverlay" class="form-control hasclear" data-value="overlay.input" data-keyup="overlay.autocomplete(input)" placeholder="{% verbatim %}{{ 'Choose your ' + (home.showSearchOverlay === 'From' ? 'departure' : 'destination')  | trans }}{% endverbatim %}" timeout="800" ></eased-input>
             <div class="input-group-addon clear-btn" onclick="$j(this).prev().val('');$j(this).prev().change();;
                     $j('#suggestions').hide();"><span class="icon icon-size-medium icon-color-suva_gray icon-close_1"></span></div>
         </div>

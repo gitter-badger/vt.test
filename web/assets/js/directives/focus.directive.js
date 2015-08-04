@@ -1,6 +1,7 @@
 (function() {
     'use strict';
 
+    // Set a focus on a field if its value has changed
     function Focus($timeout) {
         function link(scope, element, attrs) {
             scope.$watch(attrs.focus, function(newValue, oldValue) {

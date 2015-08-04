@@ -19,21 +19,13 @@
     function SearchOverlayController(Autocomplete, $timeout) {
         var vm = this;
 
-        vm.autocomplete = function() {
-            if (!vm.input) {
-                return;
-            }
+        vm.autocomplete = function(input) {
+            vm.input = input || vm.input;
+            if (!vm.input) { return; }
 
-            if (vm.timer) {
-                $timeout.cancel(vm.timer);
-            }
-
-            vm.timer = $timeout(function () {
-                vm.results = Autocomplete.query({
-                    location: vm.input
-                });
-            }, 500);
-
+            vm.results = Autocomplete.query({
+                location: vm.input
+            });
         };
 
         vm.selectValue = function(value) {
@@ -47,5 +39,5 @@
 
     angular.module('directives').controller('SearchOverlayController', SearchOverlayController);
     angular.module('directives').directive('searchOverlay', SearchOverlay);
-    SearchOverlay.$inject = ['Autocomplete', '$timeout'];
+    SearchOverlay.$inject = ['Autocomplete'];
 }());
