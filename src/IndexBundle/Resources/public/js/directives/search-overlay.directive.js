@@ -28,7 +28,7 @@
             });
         };
 
-        vm.selectValue = function(value) {
+        vm.selectOption = function(value) {
             vm.input = null;
             vm.search[vm.showSearchOverlay.toLowerCase()] = value;
             vm.showSearchOverlay = false;

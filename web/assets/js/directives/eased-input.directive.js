@@ -5,6 +5,7 @@
     function EasedInput($timeout) {
         function link(scope, element, attrs) {
             scope.update = function () {
+
                 if (scope.pendingPromise) {
                     $timeout.cancel(scope.pendingPromise);
                 }

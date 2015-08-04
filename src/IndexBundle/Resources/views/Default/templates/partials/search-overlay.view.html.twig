@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr data-ng-repeat="result in overlay.results">
-                    <td data-ng-click="overlay.selectValue(result.DisplayName)">{% verbatim %}{{ result.DisplayName }}{% endverbatim %}</td>
+                    <td data-ng-click="overlay.selectOption(result.DisplayName)">{% verbatim %}{{ result.DisplayName }}{% endverbatim %}</td>
                 </tr>
             </tbody>
         </table>

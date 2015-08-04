@@ -2,8 +2,12 @@
 
 // Module dependencies
 var tests = {
-    client: ['src/**/Resources/public/js/tests/unit/*.js'],
-    e2e: ['src/**/Resources/public/js/tests/e2e/*.js']
+    client: [
+        'src/**/Resources/public/js/tests/unit/*.js',
+        'web/assets/js/tests/unit/*.js'],
+    e2e: [
+        'src/**/Resources/public/js/tests/e2e/*.js',
+        'web/assets/js/tests/e2e/*.js']
 };
 
 var assets = {
@@ -46,7 +50,7 @@ module.exports = function(config) {
             'web/assets/js/*[!tests]*/*.js': ['coverage'],
             'src/**/Resources/public/js/**/*.js': ['coverage']
         },
-        
+
         coverageReporter: {
             dir: 'app/build/coverage/client',
             reporters: [
@@ -78,7 +82,7 @@ module.exports = function(config) {
 
         // Continuous Integration mode
         // If true, it capture browsers, tun tests and exit
-        
+
         singleRun: true
     });
 };

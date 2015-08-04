@@ -22,8 +22,8 @@
             controller = $controller('SearchOverlayController', { $scope: scope }, data);
         }));
 
-        it('should compute the size to create other values', function() {
-            controller.selectValue('Rome (Alle Luchthavens), ROM, Italië');
+        it('should should set appropriate values on selecting an option', function() {
+            controller.selectOption('Rome (Alle Luchthavens), ROM, Italië');
             expect(controller.input).toBe(null);
             expect(controller.showSearchOverlay).toBe(false);
             expect(controller.search.from).toBe('Rome (Alle Luchthavens), ROM, Italië');
