@@ -6,7 +6,8 @@
         var element,
             scope,
             $compile,
-            $timeout;
+            $timeout,
+            isolatedScope;
 
         // Load the main application module
         beforeEach(module(configuration.applicationName));
@@ -20,25 +21,49 @@
 
             element = $compile(element)(scope);
             scope.$digest();
+
+            isolatedScope = element.isolateScope();
         }));
 
         it('should set correct timeout', function() {
-            var isolated = element.isolateScope();
-            expect(isolated.timeout).toBe('300');
+            expect(isolatedScope.timeout).toBe(300);
         });
 
         it('should update value only after timeout', function() {
-            var isolated = element.isolateScope();
             // Change the model in directive's scope
-            isolated.input = 'Test data';
-            isolated.update();
-            expect(isolated.value).toBe(undefined);
+            isolatedScope.input = 'Test data';
+            isolatedScope.update();
+            expect(isolatedScope.value).toBe(undefined);
 
             $timeout.flush(100);
-            expect(isolated.value).toBe(undefined);
+            expect(isolatedScope.value).toBe(undefined);
 
             $timeout.flush(200);
-            expect(isolated.value).toBe('Test data');
+            expect(isolatedScope.value).toBe('Test data');
+            $timeout.verifyNoPendingTasks();
+        });
+
+        it('should reset timeout after change', function() {
+            // Set inital data to the input model
+            isolatedScope.input = 'Test data';
+            isolatedScope.update();
+
+            // Timeout has not yet expired, value should be undefined
+            $timeout.flush(200);
+            expect(isolatedScope.value).toBe(undefined);
+
+            // Change the value of input, timeout should be reset now
+            isolatedScope.input = 'Some other data';
+            isolatedScope.update();
+
+            // New timeout has not yet expired, value should still be undefined
+            $timeout.flush(200);
+            expect(isolatedScope.value).toBe(undefined);
+
+            // Refreshed timeout has expired, the model value should be updated
+            $timeout.flush(200);
+            expect(isolatedScope.value).toBe('Some other data');
+            $timeout.verifyNoPendingTasks();
         });
     });
 })();

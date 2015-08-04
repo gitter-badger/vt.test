@@ -13,7 +13,7 @@
     label span {
         line-height:    28px;
     }
-    &.vt-border-top {
+    &.vt-border-top { 
         padding-top:    10px;
         margin-top:     0;
     }
@@ -261,12 +261,12 @@
     &.airmiles-success, &.airmiles-failure{
         .close-airmiles {
             display:        block;
-        }  
+        }
     }
     &.airmiles-success, &.airmiles-failure, &.airmiles-used {
         #airmiles-content-default {
             display:        none;
-        }  
+        }
     }
 }
 .flight-icon {

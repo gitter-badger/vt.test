@@ -4,8 +4,9 @@
     // Set a focus on a field if its value has changed
     function EasedInput($timeout) {
         function link(scope, element, attrs) {
-            scope.update = function () {
+            scope.timeout = parseInt(attrs.timeout, 10);
 
+            scope.update = function () {
                 if (scope.pendingPromise) {
                     $timeout.cancel(scope.pendingPromise);
                 }
@@ -22,7 +23,6 @@
             scope: {
                 value: '=',
                 keyup: '&',
-                timeout: '@',
                 placeholder: '@',
                 class: '@'
             },

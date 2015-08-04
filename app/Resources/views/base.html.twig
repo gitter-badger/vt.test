@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale|split('_')[0] }}">
-    <head>        
+    <head>
         <title>{% block title %}Vliegtickets{% endblock %}</title>
-        
+
         <!-- General META -->
         <meta charset="UTF-8" />
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="fragment" content="!">
-	<base href="/">
-        
-        <!-- Responsive META -->
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-        
-        <!-- Semantic META -->
-	<meta name="keywords" content="Vliegticets, book tickets">
-	<meta name="description" content="Mobile website">
-        
-        <!-- Fav Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        
+    	<meta name="fragment" content="!">
+    	<base href="/">
+
+            <!-- Responsive META -->
+    	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+            <!-- Semantic META -->
+    	<meta name="keywords" content="Vliegticets, book tickets">
+    	<meta name="description" content="Mobile website">
+
+            <!-- Fav Icon -->
+    	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
         <!--Application CSS Files-->
         {% block stylesheets %}
             {% stylesheets '@cssFiles' filter='cssrewrite' %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
-        
+
         <!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,10 +36,10 @@
     </head>
     <body class="ng-cloak">
         {% block body %}{% endblock %}
-        
+
         <!--Application JavaScript Files-->
         {% block javascripts %}
-            {% javascripts 
+            {% javascripts
                 '@jsVendors'
                 '@jsConfig'
                 '@jsModules' %}
