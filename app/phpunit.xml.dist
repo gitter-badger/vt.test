@@ -37,10 +37,10 @@
             highLowerBound="70"/>
         <log
             type="coverage-clover"
-            target="build/logs/clover.xml"/>
+            target="build/coverage/server/clover.xml"/>
         <log
             type="junit"
-            target="build/logs/junit.xml"
+            target="build/coverage/server/junit.xml"
             logIncompleteSkipped="false"/>
     </logging>
 
@@ -55,7 +55,7 @@
                 <directory>../src/*/Bundle/*Bundle/Resources</directory>
                 <directory>../src/*/Bundle/*Bundle/Tests</directory>
             </exclude>
-            
+
             <directory>../../library/Symfony/services/*</directory>
             <exclude>
                 <directory>../../library/Symfony/services/*/Tests</directory>

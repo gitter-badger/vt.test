@@ -19,20 +19,16 @@
 
      <!-- Project build clean -->
     <target name="clean" description="Cleanup build artifacts">
-        <delete dir="${build.dir}/api"/>
-        <delete dir="${build.dir}/code-browser"/>
         <delete dir="${build.dir}/coverage"/>
-        <delete dir="${build.dir}/logs"/>
+        <delete dir="${build.dir}/reports"/>
         <delete dir="${build.dir}/pdepend"/>
         <delete dir="${build.dir}/docs/*"/>
     </target>
 
     <!-- Project build prepare -->
     <target name="prepare" depends="clean" description="Prepare for build">
-        <mkdir dir="${build.dir}/api"/>
-        <mkdir dir="${build.dir}/code-browser"/>
         <mkdir dir="${build.dir}/coverage"/>
-        <mkdir dir="${build.dir}/logs"/>
+        <mkdir dir="${build.dir}/reports"/>
         <mkdir dir="${build.dir}/pdepend"/>
     </target>
 
@@ -73,18 +69,18 @@
     </target>
 
     <!-- copy/paste detector -->
-    <target name="check:cpd" description="Checks similar code blocks.">
+    <target name="cpd" description="Checks similar code blocks.">
         <echo msg="Checking similar code blocks ..."/>
         <phpcpd>
             <fileset refid="sourcecode"/>
             <fileset refid="apicode" />
-            <formatter type="pmd" outfile="${dir.reports}/pmd-cpd.xml"/>
+            <formatter type="pmd" outfile="${build.dir}/reports/copy-paste-detect.xml"/>
         </phpcpd>
     </target>
 
     <!-- Mess detector -->
     <target name="phpmd" depends="install:phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-        <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${build.dir}/logs/phpmd.xml" />
+        <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${build.dir}/reports/mess-detect.xml" />
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">

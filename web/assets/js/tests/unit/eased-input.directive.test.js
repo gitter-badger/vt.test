@@ -29,21 +29,23 @@
             expect(isolatedScope.timeout).toBe(300);
         });
 
-        it('should update value only after timeout', function() {
+        it('should update model only after timeout has expired', function() {
             // Change the model in directive's scope
             isolatedScope.input = 'Test data';
             isolatedScope.update();
             expect(isolatedScope.value).toBe(undefined);
 
+            // Timeout has not yet expired, value should be undefined
             $timeout.flush(100);
             expect(isolatedScope.value).toBe(undefined);
 
+            // Timeout has expired, the model value should be updated
             $timeout.flush(200);
             expect(isolatedScope.value).toBe('Test data');
             $timeout.verifyNoPendingTasks();
         });
 
-        it('should reset timeout after change', function() {
+        it('should reset timeout if input value was changed', function() {
             // Set inital data to the input model
             isolatedScope.input = 'Test data';
             isolatedScope.update();
