@@ -129,12 +129,6 @@
             passthru="true"
             level="verbose"/>
 
-        <echo msg="Fetching PHPLoc"/>
-        <exec command="wget https://phar.phpunit.de/phploc.phar"
-            checkreturn="true"
-            passthru="true"
-            level="verbose"/>
-
         <echo msg="Fetching SensioLabs Security Checker"/>
         <exec command="wget -c http://get.sensiolabs.org/security-checker.phar"
             checkreturn="true"
@@ -165,7 +159,7 @@
     <!-- Target: PHPLoc (PHP Lines of Code)            -->
     <!-- ============================================  -->
     <target name="phploc" description="Generate phploc.csv">
-        <exec command="phploc --log-csv ${build.dir}/reports/phploc.csv ${source.dir} "
+        <exec command="php phploc.phar --log-csv ${build.dir}/reports/phploc.csv ${source.dir} "
             checkreturn="true"
             passthru="true"
             level="verbose" />
