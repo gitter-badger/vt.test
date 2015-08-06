@@ -6,7 +6,7 @@
         "psr-4": {
             "": "src/",
             "SymfonyStandard\\": "app/SymfonyStandard/",
-            "Services\\": "/home/maglovanyi/WORKSHOP/library/Symfony/services/"
+            "Services\\": "../library/Symfony/services/"
         }
     },
     "require": {
@@ -27,7 +27,9 @@
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
         "phpunit/phpunit": "~4.0.10",
-        "phing/phing": "2.*"
+        "phing/phing": "2.*",
+        "squizlabs/php_codesniffer": "*",
+        "escapestudios/symfony2-coding-standard": "~2.0"
     },
     "scripts": {
         "post-root-package-install": [
@@ -54,7 +56,7 @@
     },
     "config": {
         "bin-dir": "bin",
-        "vendor-dir": "/home/maglovanyi/WORKSHOP/library/Symfony/vendor"
+        "vendor-dir": "../library/Symfony/vendor"
     },
     "extra": {
         "symfony-app-dir": "app",

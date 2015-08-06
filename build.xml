@@ -9,80 +9,149 @@
 
     <!-- Filesets -->
     <fileset id="sourcecode" dir="${source.dir}">
+        <include name="*.php"/>
         <include name="**/*.php"/>
         <exclude name="Tests/"/>
     </fileset>
 
     <fileset id="apicode" dir="${api.dir}">
+        <include name="*.php"/>
         <include name="**/*.php"/>
+        <exclude name="Tests/"/>
     </fileset>
 
-     <!-- Project build clean -->
-    <target name="clean" description="Cleanup build artifacts">
-        <delete dir="${build.dir}/coverage"/>
-        <delete dir="${build.dir}/reports"/>
-        <delete dir="${build.dir}/pdepend"/>
-        <delete dir="${build.dir}/docs/*"/>
-    </target>
+    <!-- ============================================  -->
+    <!-- (DEFAULT) Target: prepare                     -->
+    <!-- ============================================  -->
+    <target name="prepare" description="Cleanup build artifacts and prepare for build">
+        <echo msg="Making directory build..." />
 
-    <!-- Project build prepare -->
-    <target name="prepare" depends="clean" description="Prepare for build">
+        <delete dir="${build.dir}/coverage" includeemptydirs="true" verbose="false" failonerror="true" />
+        <delete dir="${build.dir}/reports" includeemptydirs="true" verbose="false" failonerror="true" />
+        <delete dir="${build.dir}/pdepend" includeemptydirs="true" verbose="false" failonerror="true" />
+        <delete dir="${build.dir}/docs" includeemptydirs="true" verbose="false" failonerror="true" />
+
         <mkdir dir="${build.dir}/coverage"/>
         <mkdir dir="${build.dir}/reports"/>
         <mkdir dir="${build.dir}/pdepend"/>
+        <mkdir dir="${build.dir}/docs"/>
     </target>
 
-    <target name="install:composer" description="Installing composer">
-        <echo msg="Fetching Composer"/>
-        <exec
-            command="curl -sS https://getcomposer.org/installer | php"
-            passthru="true"/>
-    </target>
-
-    <target name="install:phpmd" description="Install PHPMD globally">
-        <exec
-            command="wget -c http://static.phpmd.org/php/latest/phpmd.phar"
-            checkreturn="true"
-            passthru="true"
-            level="verbose"/>
-    </target>
-
-    <target name="vendors" depends="install:composer" description="Update vendors">
-         <exec command="php composer.phar update" checkreturn="true" passthru="true" level="verbose">
-            <arg value="--optimize-autoloader" />
-        </exec>
-    </target>
-
-    <target name="translations" description="Collect project translations">
-        <exec command="php app/console cache:clear" passthru="true" level="verbose" description="Clear cache so that Symfony can discover the new translation resources" />
-        <exec command="php app/console debug:translation nl IndexBundle" passthru="true" level="verbose" description="Check missing translations" />
-        <exec command="php app/console translation:update --force --output-format=xlf nl IndexBundle" passthru="true" level="verbose" description="Generate translations index for bundles" />
-        <exec command="php app/console bazinga:js-translation:dump web/assets/js" passthru="true" level="verbose" description="Dump the translation files to be used on client side" />
-    </target>
-
-    <!-- Syntax errors detector -->
-    <target name="lint" description="Check syntax of source.">
+    <!-- ============================================  -->
+    <!-- Target: lint                                  -->
+    <!-- ============================================  -->
+    <target name="lint" description="Check syntax errors of source">
         <phplint>
             <fileset refid="sourcecode" />
             <fileset refid="apicode" />
         </phplint>
     </target>
 
-    <!-- copy/paste detector -->
-    <target name="cpd" description="Checks similar code blocks.">
-        <echo msg="Checking similar code blocks ..."/>
-        <phpcpd>
-            <fileset refid="sourcecode"/>
+    <!-- ============================================  -->
+    <!-- Target: PHPMD (Project Mess Detector)         -->
+    <!-- ============================================  -->
+    <target name="phpmd" description="Generate pmd.xml using PHPMD">
+        <phpmd>
+            <fileset refid="sourcecode" />
             <fileset refid="apicode" />
-            <formatter type="pmd" outfile="${build.dir}/reports/copy-paste-detect.xml"/>
-        </phpcpd>
+            <formatter type="xml" outfile="${build.dir}/reports/pmd.xml"/>
+        </phpmd>
     </target>
 
-    <!-- Mess detector -->
-    <target name="phpmd" depends="install:phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-        <exec command="php phpmd.phar ${source.dir}/**/*.php xml codesize,design,naming,unusedcode --reportfile ${build.dir}/reports/mess-detect.xml" />
+    <!-- ============================================  -->
+    <!-- Target: PHPCPD (Copy/Paste Detector)          -->
+    <!-- ============================================  -->
+    <target name="phpcpd" description="Copy/Paste Detection">
+        <exec executable="phpcpd">
+            <arg value="--log-pmd" />
+            <arg value="${build.dir}/reports/cpd.xml" />
+
+            <arg path="${source.dir}" />
+        </exec>
     </target>
 
+    <!-- ============================================  -->
+    <!-- Target: PHP Depend                            -->
+    <!-- ============================================  -->
+    <target name="pdepend" description="Calculate dependencies of the code base">
+        <phpdepend>
+            <fileset refid="sourcecode" />
+            <fileset refid="apicode" />
+            <logger type="jdepend-xml" outfile="${build.dir}/reports/jdepend.xml"/>
+            <logger type="jdepend-chart" outfile="${build.dir}/pdepend/dependencies.svg"/>
+            <logger type="overview-pyramid" outfile="${build.dir}/pdepend/overview-pyramid.svg"/>
+        </phpdepend>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: PHPCS (PHP Code Sniffer)              -->
+    <!-- ============================================  -->
+    <target name="phpcs"
+        description="Provides full CodeSniffer test to Symfony2 standards results.">
+        <phpcodesniffer standard="Symfony2" showSniffs="true" showWarnings="true">
+            <fileset refid="sourcecode" />
+            <fileset refid="apicode" />
+
+            <formatter type="checkstyle" outfile="${build.dir}/reports/phpcs-checkstyle.xml"/>
+            <formatter type="full" outfile="${build.dir}/reports/phpcs-all.txt"/>
+            <formatter type="summary" outfile="${build.dir}/reports/phpcs-summary.txt"/>
+
+            <formatter type="summary" usefile="false"  />
+            <formatter type="full" outfile="${build.dir}/reports/standards-check.xml" />
+        </phpcodesniffer>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: PHPDoc                                -->
+    <!-- ============================================  -->
+    <target name="phpdoc" description="Generate API documentation using PHPDocumentor">
+        <phpdoc2 title="Vliegtickets API Documentation"
+            destdir="${build.dir}/docs"
+            template="responsive">
+            <fileset refid="sourcecode" />
+            <fileset refid="apicode" />
+        </phpdoc2>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: PHPLoc (PHP Lines of Code)            -->
+    <!-- ============================================  -->
+    <target name="phploc" description="Generate phploc.csv">
+        <exec command="phploc --log-csv ${build.dir}/reports/phploc.csv ${source.dir} "
+            checkreturn="true"
+            passthru="true"
+            level="verbose" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: Fetch tools                           -->
+    <!-- ============================================  -->
+    <target name="fetch" description="Fetch tools">
+        <echo msg="Fetching Composer"/>
+        <exec command="curl -sS https://getcomposer.org/installer | php"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+
+        <echo msg="Fetching SensioLabs Security Checker"/>
+        <exec command="wget -c http://get.sensiolabs.org/security-checker.phar"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: Fetch Symfony vendors                 -->
+    <!-- ============================================  -->
+    <target name="vendors" depends="fetch" description="Update vendors">
+        <exec command="php composer.phar update" checkreturn="true" passthru="true" level="verbose">
+            <arg value="--optimize-autoloader" />
+        </exec>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: Unit test                             -->
+    <!-- ============================================  -->
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" passthru="true" checkreturn="true">
             <arg value="-c" />
@@ -90,9 +159,61 @@
         </exec>
     </target>
 
-    <!-- Default target -->
-    <target name="build" depends="prepare,vendors,lint,phpmd,phpunit"></target>
+    <!-- ============================================  -->
+    <!-- Target: Security Check                        -->
+    <!-- ============================================  -->
+    <target name="scheck" description="SensioLabs Security Checker">
+        <exec command="php security-checker.phar security:check composer.lock"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+    </target>
 
-    <target name="test" depends="phpunit"></target>
-    <target name="translate" depends="translations"></target>
+    <!-- ============================================  -->
+    <!-- Target: generate translations index           -->
+    <!-- ============================================  -->
+    <target name="translate" description="Collect project translations">
+        <exec command="php app/console cache:clear"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"
+            description="Clear cache so that Symfony can discover the new translation resources" />
+        <exec command="php app/console debug:translation nl IndexBundle"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"
+            description="Check missing translations" />
+        <exec command="php app/console translation:update --force --output-format=xlf nl IndexBundle"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"
+            description="Generate translations index for bundles" />
+        <exec command="php app/console bazinga:js-translation:dump web/assets/js"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"
+            description="Dump the translation files to be used on client side" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- (DEFAULT) Target: main                        -->
+    <!-- ============================================  -->
+    <target name="build" description="Start analyzing our application">
+        <echo msg="Start Build" />
+
+        <phingCall target="prepare" />
+        <phingCall target="lint" />
+        <phingCall target="phpmd" />
+        <phingCall target="phpcpd" />
+        <phingCall target="pdepend" />
+        <phingCall target="phpcs" />
+        <phingCall target="phpdoc" />
+        <phingCall target="phploc" />
+        <phingCall target="vendors" />
+        <phingCall target="phpunit" />
+        <phingCall target="scheck" />
+        <phingCall target="translate" />
+
+        <echo msg="Finished Build" />
+    </target>
 </project>
