@@ -26,15 +26,15 @@
     <target name="prepare" description="Cleanup build artifacts and prepare for build">
         <echo msg="Making directory build..." />
 
-        <delete dir="${build.dir}/coverage" includeemptydirs="true" verbose="false" failonerror="true" />
-        <delete dir="${build.dir}/reports" includeemptydirs="true" verbose="false" failonerror="true" />
-        <delete dir="${build.dir}/pdepend" includeemptydirs="true" verbose="false" failonerror="true" />
-        <delete dir="${build.dir}/docs" includeemptydirs="true" verbose="false" failonerror="true" />
+        <delete dir="${build.dir}/coverage" includeemptydirs="true" verbose="false" />
+        <delete dir="${build.dir}/reports" includeemptydirs="true" verbose="false" />
+        <delete dir="${build.dir}/pdepend" includeemptydirs="true" verbose="false" />
+        <delete dir="${build.dir}/docs" includeemptydirs="true" verbose="false" />
 
-        <mkdir dir="${build.dir}/coverage"/>
-        <mkdir dir="${build.dir}/reports"/>
-        <mkdir dir="${build.dir}/pdepend"/>
-        <mkdir dir="${build.dir}/docs"/>
+        <mkdir dir="${build.dir}/coverage" failonerror="true"/>
+        <mkdir dir="${build.dir}/reports" failonerror="true"/>
+        <mkdir dir="${build.dir}/pdepend" failonerror="true"/>
+        <mkdir dir="${build.dir}/docs" failonerror="true"/>
     </target>
 
     <!-- ============================================  -->
