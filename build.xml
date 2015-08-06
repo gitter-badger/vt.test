@@ -114,21 +114,23 @@
     </target>
 
     <!-- ============================================  -->
-    <!-- Target: PHPLoc (PHP Lines of Code)            -->
-    <!-- ============================================  -->
-    <target name="phploc" description="Generate phploc.csv">
-        <exec command="phploc --log-csv ${build.dir}/reports/phploc.csv ${source.dir} "
-            checkreturn="true"
-            passthru="true"
-            level="verbose" />
-    </target>
-
-    <!-- ============================================  -->
     <!-- Target: Fetch tools                           -->
     <!-- ============================================  -->
     <target name="fetch" description="Fetch tools">
         <echo msg="Fetching Composer"/>
         <exec command="curl -sS https://getcomposer.org/installer | php"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+
+        <echo msg="Fetching PHPLoc"/>
+        <exec command="wget https://phar.phpunit.de/phploc.phar"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+
+        <echo msg="Fetching PHPLoc"/>
+        <exec command="wget https://phar.phpunit.de/phploc.phar"
             checkreturn="true"
             passthru="true"
             level="verbose"/>
@@ -157,6 +159,16 @@
             <arg value="-c" />
             <arg path="${base.dir}/app/phpunit.xml.dist" />
         </exec>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: PHPLoc (PHP Lines of Code)            -->
+    <!-- ============================================  -->
+    <target name="phploc" description="Generate phploc.csv">
+        <exec command="phploc --log-csv ${build.dir}/reports/phploc.csv ${source.dir} "
+            checkreturn="true"
+            passthru="true"
+            level="verbose" />
     </target>
 
     <!-- ============================================  -->
@@ -208,9 +220,9 @@
         <phingCall target="pdepend" />
         <phingCall target="phpcs" />
         <phingCall target="phpdoc" />
-        <phingCall target="phploc" />
         <phingCall target="vendors" />
         <phingCall target="phpunit" />
+        <phingCall target="phploc" />
         <phingCall target="scheck" />
         <phingCall target="translate" />
 
