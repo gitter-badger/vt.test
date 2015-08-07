@@ -29,7 +29,7 @@
             target="build/coverage/server/clover.xml"/>
 
         <log type="coverage-html"
-            target="build/coverage"
+            target="build/coverage/server"
 
             charset="UTF-8"
             yui="true"
