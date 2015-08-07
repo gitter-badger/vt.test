@@ -165,8 +165,10 @@
             level="verbose">
             <arg value="--count-tests" />
             <arg value="--log-csv" />
-            <arg path="${source.dir}" />
             <arg path="${build.dir}/reports/phploc.csv" />
+            <arg value="--log-xml" />
+            <arg path="${build.dir}/reports/phploc.xml" />
+            <arg path="${source.dir}" />
         </exec>
     </target>
 

@@ -36,6 +36,9 @@
             highlight="true"
             lowUpperBound="35"
             highLowerBound="70"/>
+
+        <log type="coverage-crap4j"
+            target="build/coverage/server/crap4j.xml"/>
     </logging>
 
     <filter>
