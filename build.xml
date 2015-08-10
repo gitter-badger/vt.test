@@ -14,7 +14,7 @@
         <exclude name="Tests/"/>
     </fileset>
 
-    <fileset id="apicode" dir="${api.dir}">
+    <fileset id="apicode" dir="${api.dir}"> 
         <include name="*.php"/>
         <include name="**/*.php"/>
         <exclude name="Tests/"/>
