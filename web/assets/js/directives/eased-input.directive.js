@@ -26,7 +26,7 @@
                 placeholder: '@',
                 class: '@'
             },
-            template: '<input type="text" data-ng-model="input" data-ng-change="update()" data-ng-keyup="update()" >',
+            template: '<input type="text" data-ng-model="input" data-ng-change="update()" data-ng-keyup="update()">',
             replace: true,
             link: link
         };
