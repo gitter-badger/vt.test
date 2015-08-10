@@ -27,12 +27,12 @@ class DefaultController extends Controller
      */
     public function templateAction($partials = null, $name)
     {
-        return $this->render('IndexBundle:Default:templates/' .
-            ($partials ? $partials . '/': '') . $name . '.twig');
+        return $this->render('IndexBundle:Default:templates/'.
+            ($partials ? $partials.'/' : '').$name.'.twig');
     }
 
     /**
-     * Retrieve locations suggestion while user types in
+     * Retrieve locations suggestion while user types in.
      *
      * @Route("api/locations/{name}", name="locations_autocomplete")
      * @Method("GET")
@@ -40,6 +40,7 @@ class DefaultController extends Controller
     public function searchLocationsAutocompleteAction($name)
     {
         $autocomplete = new Autocomplete($this->get('airtrade_client')->factory(), new Lookup());
+
         return new JsonResponse($autocomplete->getOptions($name));
     }
 }

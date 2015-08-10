@@ -124,13 +124,19 @@
             level="verbose"/>
 
         <echo msg="Fetching PHPLoc"/>
-        <exec command="wget https://phar.phpunit.de/phploc.phar"
+        <exec command="wget -c https://phar.phpunit.de/phploc.phar"
             checkreturn="true"
             passthru="true"
             level="verbose"/>
 
         <echo msg="Fetching SensioLabs Security Checker"/>
         <exec command="wget -c http://get.sensiolabs.org/security-checker.phar"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+
+        <echo msg="Fetching SensioLabs PHP Coding Standards Fixer"/>
+        <exec command="wget -c http://get.sensiolabs.org/php-cs-fixer.phar"
             checkreturn="true"
             passthru="true"
             level="verbose"/>
@@ -158,13 +164,11 @@
     <!-- ============================================  -->
     <!-- Target: PHPLoc (PHP Lines of Code)            -->
     <!-- ============================================  -->
-
     <target name="phploc" description="Generate phploc.csv">
         <exec command="php phploc.phar --count-tests --log-csv ${build.dir}/reports/phploc.csv ${source.dir}"
             checkreturn="true"
             passthru="true"
-            level="verbose">
-        </exec>
+            level="verbose"/>
     </target>
 
     <!-- ============================================  -->
@@ -172,6 +176,16 @@
     <!-- ============================================  -->
     <target name="scheck" description="SensioLabs Security Checker">
         <exec command="php security-checker.phar security:check composer.lock"
+            checkreturn="true"
+            passthru="true"
+            level="verbose"/>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: Coding Standards Fixer                -->
+    <!-- ============================================  -->
+    <target name="stfix" description="Fix code to Symfony standards">
+        <exec command="php php-cs-fixer.phar fix /src --verbose --level=symfony"
             checkreturn="true"
             passthru="true"
             level="verbose"/>
@@ -220,6 +234,7 @@
         <phingCall target="phpunit" />
         <phingCall target="phploc" />
         <phingCall target="scheck" />
+        <phingCall target="stfix" />
         <phingCall target="translate" />
 
         <echo msg="Finished Build" />
