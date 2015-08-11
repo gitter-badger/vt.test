@@ -129,12 +129,6 @@
             passthru="true"
             level="verbose"/>
 
-        <echo msg="Fetching SensioLabs Security Checker"/>
-        <exec command="wget -c http://get.sensiolabs.org/security-checker.phar"
-            checkreturn="true"
-            passthru="true"
-            level="verbose"/>
-
         <echo msg="Fetching SensioLabs PHP Coding Standards Fixer"/>
         <exec command="wget -c http://get.sensiolabs.org/php-cs-fixer.phar"
             checkreturn="true"
@@ -175,7 +169,7 @@
     <!-- Target: Security Check                        -->
     <!-- ============================================  -->
     <target name="scheck" description="SensioLabs Security Checker">
-        <exec command="php security-checker.phar security:check composer.lock"
+        <exec command="php app/console security:check"
             checkreturn="true"
             passthru="true"
             level="verbose"/>
