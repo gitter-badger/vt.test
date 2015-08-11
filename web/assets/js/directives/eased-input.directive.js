@@ -4,7 +4,7 @@
     // Set a focus on a field if its value has changed
     function EasedInput($timeout) {
         function link(scope, element, attrs) {
-            scope.timeout = parseInt(attrs.timeout, 10); 
+            scope.timeout = parseInt(attrs.timeout, 10);
 
             scope.update = function () {
                 if (scope.pendingPromise) {
@@ -13,13 +13,13 @@
 
                 scope.pendingPromise = $timeout(function () {
                     scope.value = scope.input;
-                    scope.keyup({input: scope.input});
+                    scope.keyup({input: scope.input}); 
                 }, scope.timeout);
             };
         }
 
         return {
-            restrict: 'E', 
+            restrict: 'E',
             scope: {
                 value: '=',
                 keyup: '&',
