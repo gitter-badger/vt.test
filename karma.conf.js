@@ -10,7 +10,7 @@ var tests = {
         'web/assets/js/tests/e2e/*.js']
 };
 
-var assets = {
+var assets = { 
     vendor: [
         'web/assets/js/vendor/angular/angular.js',
         'web/assets/js/vendor/angular-resource/angular-resource.js',
