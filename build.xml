@@ -223,7 +223,7 @@
     <target name="build" description="Start analyzing our application">
         <echo msg="Start Build" />
 
-        <!--phingCall target="prepare" />
+        <!--phingCall target="prepare" /> 
         <phingCall target="lint" />
         <phingCall target="phpmd" />
         <phingCall target="phpcpd" />
