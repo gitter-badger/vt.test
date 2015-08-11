@@ -19,7 +19,7 @@
         }
 
         return {
-            restrict: 'E',
+            restrict: 'E', 
             scope: {
                 value: '=',
                 keyup: '&',
