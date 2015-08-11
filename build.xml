@@ -222,8 +222,8 @@
     <!-- ============================================  -->
     <target name="build" description="Start analyzing our application">
         <echo msg="Start Build" />
-        <phingCall target="lint" />
-        <!--phingCall target="prepare" />
+
+        <phingCall target="prepare" />
         <phingCall target="lint" />
         <phingCall target="phpmd" />
         <phingCall target="phpcpd" />
@@ -235,7 +235,7 @@
         <phingCall target="phploc" />
         <phingCall target="scheck" />
         <phingCall target="stfix" />
-        <phingCall target="translate" /-->
+        <phingCall target="translate" />
 
         <echo msg="Finished Build" />
     </target>
