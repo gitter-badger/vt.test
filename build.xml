@@ -184,7 +184,7 @@
     <!-- ============================================  -->
     <!-- Target: Coding Standards Fixer                -->
     <!-- ============================================  -->
-    <target name="stfix" description="Fix code to Symfony standards">
+    <target name="stfix" description="Fix code to Symfony standards"> 
         <exec command="php php-cs-fixer.phar fix /src --verbose --level=symfony"
             checkreturn="true"
             passthru="true"
